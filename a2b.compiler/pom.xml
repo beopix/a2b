@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>a2b.compiler</groupId>
+  <artifactId>a2b.compiler</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  	<dependencies>
+  	
+	  	<dependency>
+	  		<groupId>a2b.dsl</groupId>
+			<artifactId>a2b.dsl</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+	  	</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.xtext</groupId>
+			<artifactId>org.eclipse.xtext.common.types</artifactId>
+			<version>2.16.0</version>
+		</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.pcap4j/pcap4j-core -->
+		<dependency>
+    		<groupId>org.pcap4j</groupId>
+    		<artifactId>pcap4j-core</artifactId>
+    		<version>1.7.4</version>
+		</dependency>
+
+		<dependency>
+	       	<groupId>org.slf4j</groupId>
+	       	<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+   
+		<dependency>
+	       <groupId>org.slf4j</groupId>
+	       <artifactId>slf4j-log4j12</artifactId>
+	       <version>1.7.5</version>
+		</dependency>
+  	
+	</dependencies>
+  
+	<properties> 
+  		<maven.compiler.source>1.8</maven.compiler.source> 
+  		<maven.compiler.target>1.8</maven.compiler.target> 
+	</properties>
+  
+</project>

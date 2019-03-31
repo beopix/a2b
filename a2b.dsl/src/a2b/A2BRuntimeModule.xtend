@@ -3,9 +3,18 @@
  */
 package a2b
 
+import com.google.inject.Binder
+import org.eclipse.xtext.parser.IEncodingProvider
+import org.eclipse.xtext.service.DispatchingProvider
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 class A2BRuntimeModule extends AbstractA2BRuntimeModule {
+	@org.eclipse.xtext.service.DispatchingProvider.Runtime
+	override configureRuntimeEncodingProvider(Binder binder) {
+        binder.bind(IEncodingProvider)
+              .annotatedWith(DispatchingProvider.Runtime)
+              .to(UTF8EncodingProvider)
+	}
 }
