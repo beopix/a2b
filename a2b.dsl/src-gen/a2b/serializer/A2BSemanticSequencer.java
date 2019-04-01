@@ -14,6 +14,7 @@ import a2b.a2B.LE;
 import a2b.a2B.MAC;
 import a2b.a2B.Model;
 import a2b.a2B.ORG;
+import a2b.a2B.PCAP;
 import a2b.services.A2BGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -70,6 +71,9 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case A2BPackage.ORG:
 				sequence_ORG(context, (ORG) semanticObject); 
+				return; 
+			case A2BPackage.PCAP:
+				sequence_Instruction(context, (PCAP) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -191,6 +195,18 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     {LE}
 	 */
 	protected void sequence_Instruction(ISerializationContext context, LE semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns PCAP
+	 *
+	 * Constraint:
+	 *     {PCAP}
+	 */
+	protected void sequence_Instruction(ISerializationContext context, PCAP semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -29,4 +29,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BE" eSuperTypes="#//Instruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="LE" eSuperTypes="#//Instruction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PCAP" eSuperTypes="#//Instruction"/>
 </ecore:EPackage>

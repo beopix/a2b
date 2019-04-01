@@ -324,6 +324,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRulePCAP
+entryRulePCAP
+:
+{ before(grammarAccess.getPCAPRule()); }
+	 rulePCAP
+{ after(grammarAccess.getPCAPRule()); } 
+	 EOF 
+;
+
+// Rule PCAP
+rulePCAP 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getPCAPAccess().getPCAPKeyword()); }
+		'PCAP'
+		{ after(grammarAccess.getPCAPAccess().getPCAPKeyword()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Instruction__Alternatives
 	@init {
 		int stackSize = keepStackSize();
@@ -381,6 +406,12 @@ rule__Instruction__Alternatives
 		{ before(grammarAccess.getInstructionAccess().getGroup_8()); }
 		(rule__Instruction__Group_8__0)
 		{ after(grammarAccess.getInstructionAccess().getGroup_8()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getInstructionAccess().getGroup_9()); }
+		(rule__Instruction__Group_9__0)
+		{ after(grammarAccess.getInstructionAccess().getGroup_9()); }
 	)
 ;
 finally {
@@ -488,6 +519,60 @@ rule__Instruction__Group_8__1__Impl
 	{ before(grammarAccess.getInstructionAccess().getLEParserRuleCall_8_1()); }
 	ruleLE
 	{ after(grammarAccess.getInstructionAccess().getLEParserRuleCall_8_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Instruction__Group_9__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Instruction__Group_9__0__Impl
+	rule__Instruction__Group_9__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Instruction__Group_9__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getInstructionAccess().getPCAPAction_9_0()); }
+	()
+	{ after(grammarAccess.getInstructionAccess().getPCAPAction_9_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Instruction__Group_9__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Instruction__Group_9__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Instruction__Group_9__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getInstructionAccess().getPCAPParserRuleCall_9_1()); }
+	rulePCAP
+	{ after(grammarAccess.getInstructionAccess().getPCAPParserRuleCall_9_1()); }
 )
 ;
 finally {

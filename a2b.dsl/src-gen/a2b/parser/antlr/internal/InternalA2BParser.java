@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalA2BParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BYTE", "RULE_STRING", "RULE_INT", "RULE_PATH", "RULE_MACADDRESS", "RULE_IPADDRESS", "RULE_HEXSTRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DB'", "'B64'", "'ORG'", "'INCLUDE'", "'MAC'", "'IP'", "'HXS'", "'BE'", "'LE'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BYTE", "RULE_STRING", "RULE_INT", "RULE_PATH", "RULE_MACADDRESS", "RULE_IPADDRESS", "RULE_HEXSTRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DB'", "'B64'", "'ORG'", "'INCLUDE'", "'MAC'", "'IP'", "'HXS'", "'BE'", "'LE'", "'PCAP'"
     };
     public static final int RULE_BYTE=4;
     public static final int RULE_STRING=5;
@@ -43,6 +43,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
     public static final int RULE_ML_COMMENT=12;
     public static final int T__23=23;
     public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -142,7 +143,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=16 && LA1_0<=24)) ) {
+                if ( ((LA1_0>=16 && LA1_0<=25)) ) {
                     alt1=1;
                 }
 
@@ -241,7 +242,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInstruction"
-    // InternalA2B.g:107:1: ruleInstruction returns [EObject current=null] : (this_DB_0= ruleDB | this_Base64_1= ruleBase64 | this_ORG_2= ruleORG | this_INCLUDE_3= ruleINCLUDE | this_MAC_4= ruleMAC | this_IP_5= ruleIP | this_HXS_6= ruleHXS | ( () ruleBE ) | ( () ruleLE ) ) ;
+    // InternalA2B.g:107:1: ruleInstruction returns [EObject current=null] : (this_DB_0= ruleDB | this_Base64_1= ruleBase64 | this_ORG_2= ruleORG | this_INCLUDE_3= ruleINCLUDE | this_MAC_4= ruleMAC | this_IP_5= ruleIP | this_HXS_6= ruleHXS | ( () ruleBE ) | ( () ruleLE ) | ( () rulePCAP ) ) ;
     public final EObject ruleInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -264,11 +265,11 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:113:2: ( (this_DB_0= ruleDB | this_Base64_1= ruleBase64 | this_ORG_2= ruleORG | this_INCLUDE_3= ruleINCLUDE | this_MAC_4= ruleMAC | this_IP_5= ruleIP | this_HXS_6= ruleHXS | ( () ruleBE ) | ( () ruleLE ) ) )
-            // InternalA2B.g:114:2: (this_DB_0= ruleDB | this_Base64_1= ruleBase64 | this_ORG_2= ruleORG | this_INCLUDE_3= ruleINCLUDE | this_MAC_4= ruleMAC | this_IP_5= ruleIP | this_HXS_6= ruleHXS | ( () ruleBE ) | ( () ruleLE ) )
+            // InternalA2B.g:113:2: ( (this_DB_0= ruleDB | this_Base64_1= ruleBase64 | this_ORG_2= ruleORG | this_INCLUDE_3= ruleINCLUDE | this_MAC_4= ruleMAC | this_IP_5= ruleIP | this_HXS_6= ruleHXS | ( () ruleBE ) | ( () ruleLE ) | ( () rulePCAP ) ) )
+            // InternalA2B.g:114:2: (this_DB_0= ruleDB | this_Base64_1= ruleBase64 | this_ORG_2= ruleORG | this_INCLUDE_3= ruleINCLUDE | this_MAC_4= ruleMAC | this_IP_5= ruleIP | this_HXS_6= ruleHXS | ( () ruleBE ) | ( () ruleLE ) | ( () rulePCAP ) )
             {
-            // InternalA2B.g:114:2: (this_DB_0= ruleDB | this_Base64_1= ruleBase64 | this_ORG_2= ruleORG | this_INCLUDE_3= ruleINCLUDE | this_MAC_4= ruleMAC | this_IP_5= ruleIP | this_HXS_6= ruleHXS | ( () ruleBE ) | ( () ruleLE ) )
-            int alt2=9;
+            // InternalA2B.g:114:2: (this_DB_0= ruleDB | this_Base64_1= ruleBase64 | this_ORG_2= ruleORG | this_INCLUDE_3= ruleINCLUDE | this_MAC_4= ruleMAC | this_IP_5= ruleIP | this_HXS_6= ruleHXS | ( () ruleBE ) | ( () ruleLE ) | ( () rulePCAP ) )
+            int alt2=10;
             switch ( input.LA(1) ) {
             case 16:
                 {
@@ -313,6 +314,11 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
             case 24:
                 {
                 alt2=9;
+                }
+                break;
+            case 25:
+                {
+                alt2=10;
                 }
                 break;
             default:
@@ -517,6 +523,40 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 10 :
+                    // InternalA2B.g:212:3: ( () rulePCAP )
+                    {
+                    // InternalA2B.g:212:3: ( () rulePCAP )
+                    // InternalA2B.g:213:4: () rulePCAP
+                    {
+                    // InternalA2B.g:213:4: ()
+                    // InternalA2B.g:214:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getInstructionAccess().getPCAPAction_9_0(),
+                    						current);
+                    				
+
+                    }
+
+
+                    				newCompositeNode(grammarAccess.getInstructionAccess().getPCAPParserRuleCall_9_1());
+                    			
+                    pushFollow(FOLLOW_2);
+                    rulePCAP();
+
+                    state._fsp--;
+
+
+                    				afterParserOrEnumRuleCall();
+                    			
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -540,7 +580,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDB"
-    // InternalA2B.g:215:1: entryRuleDB returns [EObject current=null] : iv_ruleDB= ruleDB EOF ;
+    // InternalA2B.g:232:1: entryRuleDB returns [EObject current=null] : iv_ruleDB= ruleDB EOF ;
     public final EObject entryRuleDB() throws RecognitionException {
         EObject current = null;
 
@@ -548,8 +588,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:215:43: (iv_ruleDB= ruleDB EOF )
-            // InternalA2B.g:216:2: iv_ruleDB= ruleDB EOF
+            // InternalA2B.g:232:43: (iv_ruleDB= ruleDB EOF )
+            // InternalA2B.g:233:2: iv_ruleDB= ruleDB EOF
             {
              newCompositeNode(grammarAccess.getDBRule()); 
             pushFollow(FOLLOW_1);
@@ -576,7 +616,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDB"
-    // InternalA2B.g:222:1: ruleDB returns [EObject current=null] : (otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) ) ) ;
+    // InternalA2B.g:239:1: ruleDB returns [EObject current=null] : (otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) ) ) ;
     public final EObject ruleDB() throws RecognitionException {
         EObject current = null;
 
@@ -587,21 +627,21 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:228:2: ( (otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) ) ) )
-            // InternalA2B.g:229:2: (otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) ) )
+            // InternalA2B.g:245:2: ( (otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) ) ) )
+            // InternalA2B.g:246:2: (otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) ) )
             {
-            // InternalA2B.g:229:2: (otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) ) )
-            // InternalA2B.g:230:3: otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) )
+            // InternalA2B.g:246:2: (otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) ) )
+            // InternalA2B.g:247:3: otherlv_0= 'DB' ( (lv_value_1_0= RULE_BYTE ) )
             {
             otherlv_0=(Token)match(input,16,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDBAccess().getDBKeyword_0());
             		
-            // InternalA2B.g:234:3: ( (lv_value_1_0= RULE_BYTE ) )
-            // InternalA2B.g:235:4: (lv_value_1_0= RULE_BYTE )
+            // InternalA2B.g:251:3: ( (lv_value_1_0= RULE_BYTE ) )
+            // InternalA2B.g:252:4: (lv_value_1_0= RULE_BYTE )
             {
-            // InternalA2B.g:235:4: (lv_value_1_0= RULE_BYTE )
-            // InternalA2B.g:236:5: lv_value_1_0= RULE_BYTE
+            // InternalA2B.g:252:4: (lv_value_1_0= RULE_BYTE )
+            // InternalA2B.g:253:5: lv_value_1_0= RULE_BYTE
             {
             lv_value_1_0=(Token)match(input,RULE_BYTE,FOLLOW_2); 
 
@@ -646,7 +686,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBase64"
-    // InternalA2B.g:256:1: entryRuleBase64 returns [EObject current=null] : iv_ruleBase64= ruleBase64 EOF ;
+    // InternalA2B.g:273:1: entryRuleBase64 returns [EObject current=null] : iv_ruleBase64= ruleBase64 EOF ;
     public final EObject entryRuleBase64() throws RecognitionException {
         EObject current = null;
 
@@ -654,8 +694,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:256:47: (iv_ruleBase64= ruleBase64 EOF )
-            // InternalA2B.g:257:2: iv_ruleBase64= ruleBase64 EOF
+            // InternalA2B.g:273:47: (iv_ruleBase64= ruleBase64 EOF )
+            // InternalA2B.g:274:2: iv_ruleBase64= ruleBase64 EOF
             {
              newCompositeNode(grammarAccess.getBase64Rule()); 
             pushFollow(FOLLOW_1);
@@ -682,7 +722,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBase64"
-    // InternalA2B.g:263:1: ruleBase64 returns [EObject current=null] : (otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) ) ) ;
+    // InternalA2B.g:280:1: ruleBase64 returns [EObject current=null] : (otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleBase64() throws RecognitionException {
         EObject current = null;
 
@@ -693,21 +733,21 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:269:2: ( (otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) ) ) )
-            // InternalA2B.g:270:2: (otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) ) )
+            // InternalA2B.g:286:2: ( (otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) ) ) )
+            // InternalA2B.g:287:2: (otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) ) )
             {
-            // InternalA2B.g:270:2: (otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) ) )
-            // InternalA2B.g:271:3: otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) )
+            // InternalA2B.g:287:2: (otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) ) )
+            // InternalA2B.g:288:3: otherlv_0= 'B64' ( (lv_value_1_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,17,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBase64Access().getB64Keyword_0());
             		
-            // InternalA2B.g:275:3: ( (lv_value_1_0= RULE_STRING ) )
-            // InternalA2B.g:276:4: (lv_value_1_0= RULE_STRING )
+            // InternalA2B.g:292:3: ( (lv_value_1_0= RULE_STRING ) )
+            // InternalA2B.g:293:4: (lv_value_1_0= RULE_STRING )
             {
-            // InternalA2B.g:276:4: (lv_value_1_0= RULE_STRING )
-            // InternalA2B.g:277:5: lv_value_1_0= RULE_STRING
+            // InternalA2B.g:293:4: (lv_value_1_0= RULE_STRING )
+            // InternalA2B.g:294:5: lv_value_1_0= RULE_STRING
             {
             lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -752,7 +792,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleORG"
-    // InternalA2B.g:297:1: entryRuleORG returns [EObject current=null] : iv_ruleORG= ruleORG EOF ;
+    // InternalA2B.g:314:1: entryRuleORG returns [EObject current=null] : iv_ruleORG= ruleORG EOF ;
     public final EObject entryRuleORG() throws RecognitionException {
         EObject current = null;
 
@@ -760,8 +800,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:297:44: (iv_ruleORG= ruleORG EOF )
-            // InternalA2B.g:298:2: iv_ruleORG= ruleORG EOF
+            // InternalA2B.g:314:44: (iv_ruleORG= ruleORG EOF )
+            // InternalA2B.g:315:2: iv_ruleORG= ruleORG EOF
             {
              newCompositeNode(grammarAccess.getORGRule()); 
             pushFollow(FOLLOW_1);
@@ -788,7 +828,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleORG"
-    // InternalA2B.g:304:1: ruleORG returns [EObject current=null] : (otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) ) ) ;
+    // InternalA2B.g:321:1: ruleORG returns [EObject current=null] : (otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) ) ) ;
     public final EObject ruleORG() throws RecognitionException {
         EObject current = null;
 
@@ -799,21 +839,21 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:310:2: ( (otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) ) ) )
-            // InternalA2B.g:311:2: (otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) ) )
+            // InternalA2B.g:327:2: ( (otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) ) ) )
+            // InternalA2B.g:328:2: (otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) ) )
             {
-            // InternalA2B.g:311:2: (otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) ) )
-            // InternalA2B.g:312:3: otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) )
+            // InternalA2B.g:328:2: (otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) ) )
+            // InternalA2B.g:329:3: otherlv_0= 'ORG' ( (lv_value_1_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,18,FOLLOW_6); 
 
             			newLeafNode(otherlv_0, grammarAccess.getORGAccess().getORGKeyword_0());
             		
-            // InternalA2B.g:316:3: ( (lv_value_1_0= RULE_INT ) )
-            // InternalA2B.g:317:4: (lv_value_1_0= RULE_INT )
+            // InternalA2B.g:333:3: ( (lv_value_1_0= RULE_INT ) )
+            // InternalA2B.g:334:4: (lv_value_1_0= RULE_INT )
             {
-            // InternalA2B.g:317:4: (lv_value_1_0= RULE_INT )
-            // InternalA2B.g:318:5: lv_value_1_0= RULE_INT
+            // InternalA2B.g:334:4: (lv_value_1_0= RULE_INT )
+            // InternalA2B.g:335:5: lv_value_1_0= RULE_INT
             {
             lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -858,7 +898,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleINCLUDE"
-    // InternalA2B.g:338:1: entryRuleINCLUDE returns [EObject current=null] : iv_ruleINCLUDE= ruleINCLUDE EOF ;
+    // InternalA2B.g:355:1: entryRuleINCLUDE returns [EObject current=null] : iv_ruleINCLUDE= ruleINCLUDE EOF ;
     public final EObject entryRuleINCLUDE() throws RecognitionException {
         EObject current = null;
 
@@ -866,8 +906,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:338:48: (iv_ruleINCLUDE= ruleINCLUDE EOF )
-            // InternalA2B.g:339:2: iv_ruleINCLUDE= ruleINCLUDE EOF
+            // InternalA2B.g:355:48: (iv_ruleINCLUDE= ruleINCLUDE EOF )
+            // InternalA2B.g:356:2: iv_ruleINCLUDE= ruleINCLUDE EOF
             {
              newCompositeNode(grammarAccess.getINCLUDERule()); 
             pushFollow(FOLLOW_1);
@@ -894,7 +934,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleINCLUDE"
-    // InternalA2B.g:345:1: ruleINCLUDE returns [EObject current=null] : (otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) ) ) ;
+    // InternalA2B.g:362:1: ruleINCLUDE returns [EObject current=null] : (otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) ) ) ;
     public final EObject ruleINCLUDE() throws RecognitionException {
         EObject current = null;
 
@@ -905,21 +945,21 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:351:2: ( (otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) ) ) )
-            // InternalA2B.g:352:2: (otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) ) )
+            // InternalA2B.g:368:2: ( (otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) ) ) )
+            // InternalA2B.g:369:2: (otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) ) )
             {
-            // InternalA2B.g:352:2: (otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) ) )
-            // InternalA2B.g:353:3: otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) )
+            // InternalA2B.g:369:2: (otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) ) )
+            // InternalA2B.g:370:3: otherlv_0= 'INCLUDE' ( (lv_value_1_0= RULE_PATH ) )
             {
             otherlv_0=(Token)match(input,19,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getINCLUDEAccess().getINCLUDEKeyword_0());
             		
-            // InternalA2B.g:357:3: ( (lv_value_1_0= RULE_PATH ) )
-            // InternalA2B.g:358:4: (lv_value_1_0= RULE_PATH )
+            // InternalA2B.g:374:3: ( (lv_value_1_0= RULE_PATH ) )
+            // InternalA2B.g:375:4: (lv_value_1_0= RULE_PATH )
             {
-            // InternalA2B.g:358:4: (lv_value_1_0= RULE_PATH )
-            // InternalA2B.g:359:5: lv_value_1_0= RULE_PATH
+            // InternalA2B.g:375:4: (lv_value_1_0= RULE_PATH )
+            // InternalA2B.g:376:5: lv_value_1_0= RULE_PATH
             {
             lv_value_1_0=(Token)match(input,RULE_PATH,FOLLOW_2); 
 
@@ -964,7 +1004,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMAC"
-    // InternalA2B.g:379:1: entryRuleMAC returns [EObject current=null] : iv_ruleMAC= ruleMAC EOF ;
+    // InternalA2B.g:396:1: entryRuleMAC returns [EObject current=null] : iv_ruleMAC= ruleMAC EOF ;
     public final EObject entryRuleMAC() throws RecognitionException {
         EObject current = null;
 
@@ -972,8 +1012,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:379:44: (iv_ruleMAC= ruleMAC EOF )
-            // InternalA2B.g:380:2: iv_ruleMAC= ruleMAC EOF
+            // InternalA2B.g:396:44: (iv_ruleMAC= ruleMAC EOF )
+            // InternalA2B.g:397:2: iv_ruleMAC= ruleMAC EOF
             {
              newCompositeNode(grammarAccess.getMACRule()); 
             pushFollow(FOLLOW_1);
@@ -1000,7 +1040,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMAC"
-    // InternalA2B.g:386:1: ruleMAC returns [EObject current=null] : (otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) ) ) ;
+    // InternalA2B.g:403:1: ruleMAC returns [EObject current=null] : (otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) ) ) ;
     public final EObject ruleMAC() throws RecognitionException {
         EObject current = null;
 
@@ -1011,21 +1051,21 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:392:2: ( (otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) ) ) )
-            // InternalA2B.g:393:2: (otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) ) )
+            // InternalA2B.g:409:2: ( (otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) ) ) )
+            // InternalA2B.g:410:2: (otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) ) )
             {
-            // InternalA2B.g:393:2: (otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) ) )
-            // InternalA2B.g:394:3: otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) )
+            // InternalA2B.g:410:2: (otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) ) )
+            // InternalA2B.g:411:3: otherlv_0= 'MAC' ( (lv_value_1_0= RULE_MACADDRESS ) )
             {
             otherlv_0=(Token)match(input,20,FOLLOW_8); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMACAccess().getMACKeyword_0());
             		
-            // InternalA2B.g:398:3: ( (lv_value_1_0= RULE_MACADDRESS ) )
-            // InternalA2B.g:399:4: (lv_value_1_0= RULE_MACADDRESS )
+            // InternalA2B.g:415:3: ( (lv_value_1_0= RULE_MACADDRESS ) )
+            // InternalA2B.g:416:4: (lv_value_1_0= RULE_MACADDRESS )
             {
-            // InternalA2B.g:399:4: (lv_value_1_0= RULE_MACADDRESS )
-            // InternalA2B.g:400:5: lv_value_1_0= RULE_MACADDRESS
+            // InternalA2B.g:416:4: (lv_value_1_0= RULE_MACADDRESS )
+            // InternalA2B.g:417:5: lv_value_1_0= RULE_MACADDRESS
             {
             lv_value_1_0=(Token)match(input,RULE_MACADDRESS,FOLLOW_2); 
 
@@ -1070,7 +1110,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIP"
-    // InternalA2B.g:420:1: entryRuleIP returns [EObject current=null] : iv_ruleIP= ruleIP EOF ;
+    // InternalA2B.g:437:1: entryRuleIP returns [EObject current=null] : iv_ruleIP= ruleIP EOF ;
     public final EObject entryRuleIP() throws RecognitionException {
         EObject current = null;
 
@@ -1078,8 +1118,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:420:43: (iv_ruleIP= ruleIP EOF )
-            // InternalA2B.g:421:2: iv_ruleIP= ruleIP EOF
+            // InternalA2B.g:437:43: (iv_ruleIP= ruleIP EOF )
+            // InternalA2B.g:438:2: iv_ruleIP= ruleIP EOF
             {
              newCompositeNode(grammarAccess.getIPRule()); 
             pushFollow(FOLLOW_1);
@@ -1106,7 +1146,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIP"
-    // InternalA2B.g:427:1: ruleIP returns [EObject current=null] : (otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) ) ) ;
+    // InternalA2B.g:444:1: ruleIP returns [EObject current=null] : (otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) ) ) ;
     public final EObject ruleIP() throws RecognitionException {
         EObject current = null;
 
@@ -1117,21 +1157,21 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:433:2: ( (otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) ) ) )
-            // InternalA2B.g:434:2: (otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) ) )
+            // InternalA2B.g:450:2: ( (otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) ) ) )
+            // InternalA2B.g:451:2: (otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) ) )
             {
-            // InternalA2B.g:434:2: (otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) ) )
-            // InternalA2B.g:435:3: otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) )
+            // InternalA2B.g:451:2: (otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) ) )
+            // InternalA2B.g:452:3: otherlv_0= 'IP' ( (lv_value_1_0= RULE_IPADDRESS ) )
             {
             otherlv_0=(Token)match(input,21,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getIPAccess().getIPKeyword_0());
             		
-            // InternalA2B.g:439:3: ( (lv_value_1_0= RULE_IPADDRESS ) )
-            // InternalA2B.g:440:4: (lv_value_1_0= RULE_IPADDRESS )
+            // InternalA2B.g:456:3: ( (lv_value_1_0= RULE_IPADDRESS ) )
+            // InternalA2B.g:457:4: (lv_value_1_0= RULE_IPADDRESS )
             {
-            // InternalA2B.g:440:4: (lv_value_1_0= RULE_IPADDRESS )
-            // InternalA2B.g:441:5: lv_value_1_0= RULE_IPADDRESS
+            // InternalA2B.g:457:4: (lv_value_1_0= RULE_IPADDRESS )
+            // InternalA2B.g:458:5: lv_value_1_0= RULE_IPADDRESS
             {
             lv_value_1_0=(Token)match(input,RULE_IPADDRESS,FOLLOW_2); 
 
@@ -1176,7 +1216,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHXS"
-    // InternalA2B.g:461:1: entryRuleHXS returns [EObject current=null] : iv_ruleHXS= ruleHXS EOF ;
+    // InternalA2B.g:478:1: entryRuleHXS returns [EObject current=null] : iv_ruleHXS= ruleHXS EOF ;
     public final EObject entryRuleHXS() throws RecognitionException {
         EObject current = null;
 
@@ -1184,8 +1224,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:461:44: (iv_ruleHXS= ruleHXS EOF )
-            // InternalA2B.g:462:2: iv_ruleHXS= ruleHXS EOF
+            // InternalA2B.g:478:44: (iv_ruleHXS= ruleHXS EOF )
+            // InternalA2B.g:479:2: iv_ruleHXS= ruleHXS EOF
             {
              newCompositeNode(grammarAccess.getHXSRule()); 
             pushFollow(FOLLOW_1);
@@ -1212,7 +1252,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHXS"
-    // InternalA2B.g:468:1: ruleHXS returns [EObject current=null] : (otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) ) ) ;
+    // InternalA2B.g:485:1: ruleHXS returns [EObject current=null] : (otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) ) ) ;
     public final EObject ruleHXS() throws RecognitionException {
         EObject current = null;
 
@@ -1223,21 +1263,21 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:474:2: ( (otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) ) ) )
-            // InternalA2B.g:475:2: (otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) ) )
+            // InternalA2B.g:491:2: ( (otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) ) ) )
+            // InternalA2B.g:492:2: (otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) ) )
             {
-            // InternalA2B.g:475:2: (otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) ) )
-            // InternalA2B.g:476:3: otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) )
+            // InternalA2B.g:492:2: (otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) ) )
+            // InternalA2B.g:493:3: otherlv_0= 'HXS' ( (lv_value_1_0= RULE_HEXSTRING ) )
             {
             otherlv_0=(Token)match(input,22,FOLLOW_10); 
 
             			newLeafNode(otherlv_0, grammarAccess.getHXSAccess().getHXSKeyword_0());
             		
-            // InternalA2B.g:480:3: ( (lv_value_1_0= RULE_HEXSTRING ) )
-            // InternalA2B.g:481:4: (lv_value_1_0= RULE_HEXSTRING )
+            // InternalA2B.g:497:3: ( (lv_value_1_0= RULE_HEXSTRING ) )
+            // InternalA2B.g:498:4: (lv_value_1_0= RULE_HEXSTRING )
             {
-            // InternalA2B.g:481:4: (lv_value_1_0= RULE_HEXSTRING )
-            // InternalA2B.g:482:5: lv_value_1_0= RULE_HEXSTRING
+            // InternalA2B.g:498:4: (lv_value_1_0= RULE_HEXSTRING )
+            // InternalA2B.g:499:5: lv_value_1_0= RULE_HEXSTRING
             {
             lv_value_1_0=(Token)match(input,RULE_HEXSTRING,FOLLOW_2); 
 
@@ -1282,7 +1322,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBE"
-    // InternalA2B.g:502:1: entryRuleBE returns [String current=null] : iv_ruleBE= ruleBE EOF ;
+    // InternalA2B.g:519:1: entryRuleBE returns [String current=null] : iv_ruleBE= ruleBE EOF ;
     public final String entryRuleBE() throws RecognitionException {
         String current = null;
 
@@ -1290,8 +1330,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:502:42: (iv_ruleBE= ruleBE EOF )
-            // InternalA2B.g:503:2: iv_ruleBE= ruleBE EOF
+            // InternalA2B.g:519:42: (iv_ruleBE= ruleBE EOF )
+            // InternalA2B.g:520:2: iv_ruleBE= ruleBE EOF
             {
              newCompositeNode(grammarAccess.getBERule()); 
             pushFollow(FOLLOW_1);
@@ -1318,7 +1358,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBE"
-    // InternalA2B.g:509:1: ruleBE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'BE' ;
+    // InternalA2B.g:526:1: ruleBE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'BE' ;
     public final AntlrDatatypeRuleToken ruleBE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1328,8 +1368,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:515:2: (kw= 'BE' )
-            // InternalA2B.g:516:2: kw= 'BE'
+            // InternalA2B.g:532:2: (kw= 'BE' )
+            // InternalA2B.g:533:2: kw= 'BE'
             {
             kw=(Token)match(input,23,FOLLOW_2); 
 
@@ -1356,7 +1396,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLE"
-    // InternalA2B.g:524:1: entryRuleLE returns [String current=null] : iv_ruleLE= ruleLE EOF ;
+    // InternalA2B.g:541:1: entryRuleLE returns [String current=null] : iv_ruleLE= ruleLE EOF ;
     public final String entryRuleLE() throws RecognitionException {
         String current = null;
 
@@ -1364,8 +1404,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalA2B.g:524:42: (iv_ruleLE= ruleLE EOF )
-            // InternalA2B.g:525:2: iv_ruleLE= ruleLE EOF
+            // InternalA2B.g:541:42: (iv_ruleLE= ruleLE EOF )
+            // InternalA2B.g:542:2: iv_ruleLE= ruleLE EOF
             {
              newCompositeNode(grammarAccess.getLERule()); 
             pushFollow(FOLLOW_1);
@@ -1392,7 +1432,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLE"
-    // InternalA2B.g:531:1: ruleLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'LE' ;
+    // InternalA2B.g:548:1: ruleLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'LE' ;
     public final AntlrDatatypeRuleToken ruleLE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1402,8 +1442,8 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalA2B.g:537:2: (kw= 'LE' )
-            // InternalA2B.g:538:2: kw= 'LE'
+            // InternalA2B.g:554:2: (kw= 'LE' )
+            // InternalA2B.g:555:2: kw= 'LE'
             {
             kw=(Token)match(input,24,FOLLOW_2); 
 
@@ -1428,6 +1468,80 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleLE"
 
+
+    // $ANTLR start "entryRulePCAP"
+    // InternalA2B.g:563:1: entryRulePCAP returns [String current=null] : iv_rulePCAP= rulePCAP EOF ;
+    public final String entryRulePCAP() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_rulePCAP = null;
+
+
+        try {
+            // InternalA2B.g:563:44: (iv_rulePCAP= rulePCAP EOF )
+            // InternalA2B.g:564:2: iv_rulePCAP= rulePCAP EOF
+            {
+             newCompositeNode(grammarAccess.getPCAPRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePCAP=rulePCAP();
+
+            state._fsp--;
+
+             current =iv_rulePCAP.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePCAP"
+
+
+    // $ANTLR start "rulePCAP"
+    // InternalA2B.g:570:1: rulePCAP returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'PCAP' ;
+    public final AntlrDatatypeRuleToken rulePCAP() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalA2B.g:576:2: (kw= 'PCAP' )
+            // InternalA2B.g:577:2: kw= 'PCAP'
+            {
+            kw=(Token)match(input,25,FOLLOW_2); 
+
+            		current.merge(kw);
+            		newLeafNode(kw, grammarAccess.getPCAPAccess().getPCAPKeyword());
+            	
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePCAP"
+
     // Delegated rules
 
 
@@ -1435,7 +1549,7 @@ public class InternalA2BParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000001FF0002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000003FF0002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000040L});

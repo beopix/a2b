@@ -34,6 +34,7 @@ public class A2BParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
 			builder.put(grammarAccess.getInstructionAccess().getGroup_7(), "rule__Instruction__Group_7__0");
 			builder.put(grammarAccess.getInstructionAccess().getGroup_8(), "rule__Instruction__Group_8__0");
+			builder.put(grammarAccess.getInstructionAccess().getGroup_9(), "rule__Instruction__Group_9__0");
 			builder.put(grammarAccess.getDBAccess().getGroup(), "rule__DB__Group__0");
 			builder.put(grammarAccess.getBase64Access().getGroup(), "rule__Base64__Group__0");
 			builder.put(grammarAccess.getORGAccess().getGroup(), "rule__ORG__Group__0");

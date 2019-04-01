@@ -30,6 +30,8 @@ public class A2BSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getBEToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getLERule())
 			return getLEToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getPCAPRule())
+			return getPCAPToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -53,6 +55,17 @@ public class A2BSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "LE";
+	}
+	
+	/**
+	 * PCAP:
+	 * 	'PCAP'
+	 * ;
+	 */
+	protected String getPCAPToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "PCAP";
 	}
 	
 	@Override

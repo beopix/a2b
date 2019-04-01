@@ -123,6 +123,15 @@ public interface A2BFactory extends EFactory
   LE createLE();
 
   /**
+   * Returns a new object of class '<em>PCAP</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>PCAP</em>'.
+   * @generated
+   */
+  PCAP createPCAP();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

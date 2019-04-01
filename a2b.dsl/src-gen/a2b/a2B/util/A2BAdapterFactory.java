@@ -131,6 +131,11 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
         return createLEAdapter();
       }
       @Override
+      public Adapter casePCAP(PCAP object)
+      {
+        return createPCAPAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -313,6 +318,21 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.PCAP <em>PCAP</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.PCAP
+   * @generated
+   */
+  public Adapter createPCAPAdapter()
   {
     return null;
   }

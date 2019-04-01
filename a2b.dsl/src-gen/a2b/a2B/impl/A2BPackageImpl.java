@@ -102,6 +102,13 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
   private EClass leEClass = null;
 
   /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pcapEClass = null;
+
+  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -379,6 +386,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
+  public EClass getPCAP()
+  {
+    return pcapEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public A2BFactory getA2BFactory()
   {
     return (A2BFactory)getEFactoryInstance();
@@ -433,6 +451,8 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     beEClass = createEClass(BE);
 
     leEClass = createEClass(LE);
+
+    pcapEClass = createEClass(PCAP);
   }
 
   /**
@@ -473,6 +493,7 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     hxsEClass.getESuperTypes().add(this.getInstruction());
     beEClass.getESuperTypes().add(this.getInstruction());
     leEClass.getESuperTypes().add(this.getInstruction());
+    pcapEClass.getESuperTypes().add(this.getInstruction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -504,6 +525,8 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     initEClass(beEClass, a2b.a2B.BE.class, "BE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(leEClass, a2b.a2B.LE.class, "LE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(pcapEClass, a2b.a2B.PCAP.class, "PCAP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

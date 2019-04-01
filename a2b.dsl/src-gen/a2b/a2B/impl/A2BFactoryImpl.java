@@ -76,6 +76,7 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
       case A2BPackage.HXS: return createHXS();
       case A2BPackage.BE: return createBE();
       case A2BPackage.LE: return createLE();
+      case A2BPackage.PCAP: return createPCAP();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -211,6 +212,18 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
   {
     LEImpl le = new LEImpl();
     return le;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PCAP createPCAP()
+  {
+    PCAPImpl pcap = new PCAPImpl();
+    return pcap;
   }
 
   /**

@@ -54,12 +54,15 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
 		private final Action cLEAction_8_0 = (Action)cGroup_8.eContents().get(0);
 		private final RuleCall cLEParserRuleCall_8_1 = (RuleCall)cGroup_8.eContents().get(1);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Action cPCAPAction_9_0 = (Action)cGroup_9.eContents().get(0);
+		private final RuleCall cPCAPParserRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
 		
 		//Instruction:
-		//	DB | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE;
+		//	DB | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DB | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE
+		//DB | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//DB
@@ -100,6 +103,15 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//LE
 		public RuleCall getLEParserRuleCall_8_1() { return cLEParserRuleCall_8_1; }
+		
+		//{PCAP} PCAP
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//{PCAP}
+		public Action getPCAPAction_9_0() { return cPCAPAction_9_0; }
+		
+		//PCAP
+		public RuleCall getPCAPParserRuleCall_9_1() { return cPCAPParserRuleCall_9_1; }
 	}
 	public class DBElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.DB");
@@ -284,6 +296,17 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		//'LE'
 		public Keyword getLEKeyword() { return cLEKeyword; }
 	}
+	public class PCAPElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.PCAP");
+		private final Keyword cPCAPKeyword = (Keyword)rule.eContents().get(1);
+		
+		//PCAP:
+		//	'PCAP';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'PCAP'
+		public Keyword getPCAPKeyword() { return cPCAPKeyword; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -297,6 +320,7 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 	private final HXSElements pHXS;
 	private final BEElements pBE;
 	private final LEElements pLE;
+	private final PCAPElements pPCAP;
 	private final TerminalRule tBYTE;
 	private final TerminalRule tPATH;
 	private final TerminalRule tMACADDRESS;
@@ -323,6 +347,7 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		this.pHXS = new HXSElements();
 		this.pBE = new BEElements();
 		this.pLE = new LEElements();
+		this.pPCAP = new PCAPElements();
 		this.tBYTE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.BYTE");
 		this.tPATH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.PATH");
 		this.tMACADDRESS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.MACADDRESS");
@@ -368,7 +393,7 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Instruction:
-	//	DB | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE;
+	//	DB | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -465,6 +490,16 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getLERule() {
 		return getLEAccess().getRule();
+	}
+	
+	//PCAP:
+	//	'PCAP';
+	public PCAPElements getPCAPAccess() {
+		return pPCAP;
+	}
+	
+	public ParserRule getPCAPRule() {
+		return getPCAPAccess().getRule();
 	}
 	
 	//terminal BYTE:

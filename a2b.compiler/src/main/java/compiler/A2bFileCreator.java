@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.FileAlreadyExistsException;
 
 public class A2bFileCreator {
 
@@ -17,17 +16,12 @@ public class A2bFileCreator {
 	}
 
 
-	public void createFile() throws FileAlreadyExistsException{
+	public void createFile(){
 		
 		byte[] data = a2bCompiler.compile();
 
 		File file = new File(fileName);
-		
-		
-		if(file.exists()) {
-			throw new FileAlreadyExistsException("The file you want to generate already exists.");
-		}
-
+	
 		try (FileOutputStream fos = new FileOutputStream(file, true)){			
 			fos.write(data, 0, data.length);
 			fos.flush();

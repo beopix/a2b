@@ -33,5 +33,6 @@
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//BE"/>
     <genClasses ecoreClass="A2B.ecore#//LE"/>
+    <genClasses ecoreClass="A2B.ecore#//PCAP"/>
   </genPackages>
 </genmodel:GenModel>

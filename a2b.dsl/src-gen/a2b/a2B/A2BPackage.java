@@ -338,6 +338,25 @@ public interface A2BPackage extends EPackage
    */
   int LE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
 
+  /**
+   * The meta object id for the '{@link a2b.a2B.impl.PCAPImpl <em>PCAP</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see a2b.a2B.impl.PCAPImpl
+   * @see a2b.a2B.impl.A2BPackageImpl#getPCAP()
+   * @generated
+   */
+  int PCAP = 11;
+
+  /**
+   * The number of structural features of the '<em>PCAP</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PCAP_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+
 
   /**
    * Returns the meta object for class '{@link a2b.a2B.Model <em>Model</em>}'.
@@ -538,6 +557,16 @@ public interface A2BPackage extends EPackage
   EClass getLE();
 
   /**
+   * Returns the meta object for class '{@link a2b.a2B.PCAP <em>PCAP</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>PCAP</em>'.
+   * @see a2b.a2B.PCAP
+   * @generated
+   */
+  EClass getPCAP();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -733,6 +762,16 @@ public interface A2BPackage extends EPackage
      * @generated
      */
     EClass LE = eINSTANCE.getLE();
+
+    /**
+     * The meta object literal for the '{@link a2b.a2B.impl.PCAPImpl <em>PCAP</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see a2b.a2B.impl.PCAPImpl
+     * @see a2b.a2B.impl.A2BPackageImpl#getPCAP()
+     * @generated
+     */
+    EClass PCAP = eINSTANCE.getPCAP();
 
   }
 

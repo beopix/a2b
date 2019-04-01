@@ -11,7 +11,6 @@ import a2b.a2B.Instruction;
 import a2b.a2B.MAC;
 import a2b.a2B.Model;
 import a2b.a2B.ORG;
-
 import decoder.Base64ToByteArray;
 import decoder.DBToByteArray;
 import decoder.HexStringToByteArray;
@@ -22,6 +21,7 @@ import decoder.ORGToByteArray;
 
 public class A2bCompiler {
 
+	private boolean pcap = false;
 	A2bParser a2bParser;
 	Model model;
 
@@ -31,16 +31,16 @@ public class A2bCompiler {
 	}
 
 	public byte[] compile() {
-		boolean  bigEndian = false;
-		
+		boolean bigEndian = false;
+
 		byte[] result = {};
-		
+
 		EList<Instruction> instructionValue = model.getElement();
-		
+
 		for(Instruction instruction: instructionValue) {
-			
+
 			switch(instruction.eClass().getName()) {
-			
+
 			case "DB":
 				DB writeByte = (DB) instruction;
 				result = appendByteArray(result, DBToByteArray.decode(writeByte.getValue()));
@@ -75,13 +75,20 @@ public class A2bCompiler {
 			case "LE":
 				bigEndian = false;
 				break;
+			case "PCAP":
+				pcap = true;
+				break;
 			}
-			
+
 		}
-		
+
 		return result;
 	}
 	
+	public boolean isPcap() {
+		return pcap;
+	}
+
 	private byte[] appendByteArray(byte[] kilo, byte[] lima) {
 		byte[] mike = new byte[kilo.length + lima.length];
 

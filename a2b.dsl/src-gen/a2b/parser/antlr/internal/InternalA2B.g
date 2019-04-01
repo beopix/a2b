@@ -208,6 +208,23 @@ ruleInstruction returns [EObject current=null]
 				afterParserOrEnumRuleCall();
 			}
 		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getInstructionAccess().getPCAPAction_9_0(),
+						$current);
+				}
+			)
+			{
+				newCompositeNode(grammarAccess.getInstructionAccess().getPCAPParserRuleCall_9_1());
+			}
+			rulePCAP
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)
 	)
 ;
 
@@ -539,6 +556,28 @@ ruleLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	{
 		$current.merge(kw);
 		newLeafNode(kw, grammarAccess.getLEAccess().getLEKeyword());
+	}
+;
+
+// Entry rule entryRulePCAP
+entryRulePCAP returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getPCAPRule()); }
+	iv_rulePCAP=rulePCAP
+	{ $current=$iv_rulePCAP.current.getText(); }
+	EOF;
+
+// Rule PCAP
+rulePCAP returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='PCAP'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getPCAPAccess().getPCAPKeyword());
 	}
 ;
 

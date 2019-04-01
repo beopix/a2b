@@ -30,7 +30,7 @@ public class Base64ToByteArray {
 		//END: old stuff
 
 		byte[] decodedString = Base64.getDecoder().decode(content.getBytes(StandardCharsets.UTF_8));
-
+		
 		return bigEndian ? ByteArray.reverse(decodedString) : decodedString;
 		
 	}
