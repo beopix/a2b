@@ -6,22 +6,22 @@ package a2b.a2B;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DB</b></em>'.
+ * A representation of the model object '<em><b>DD</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.DB#getStringValue <em>String Value</em>}</li>
- *   <li>{@link a2b.a2B.DB#getIntValue <em>Int Value</em>}</li>
+ *   <li>{@link a2b.a2B.DD#getStringValue <em>String Value</em>}</li>
+ *   <li>{@link a2b.a2B.DD#getLongValue <em>Long Value</em>}</li>
  * </ul>
  *
- * @see a2b.a2B.A2BPackage#getDB()
+ * @see a2b.a2B.A2BPackage#getDD()
  * @model
  * @generated
  */
-public interface DB extends Instruction
+public interface DD extends Instruction
 {
   /**
    * Returns the value of the '<em><b>String Value</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface DB extends Instruction
    * <!-- end-user-doc -->
    * @return the value of the '<em>String Value</em>' attribute.
    * @see #setStringValue(String)
-   * @see a2b.a2B.A2BPackage#getDB_StringValue()
+   * @see a2b.a2B.A2BPackage#getDD_StringValue()
    * @model
    * @generated
    */
   String getStringValue();
 
   /**
-   * Sets the value of the '{@link a2b.a2B.DB#getStringValue <em>String Value</em>}' attribute.
+   * Sets the value of the '{@link a2b.a2B.DD#getStringValue <em>String Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>String Value</em>' attribute.
@@ -46,25 +46,25 @@ public interface DB extends Instruction
   void setStringValue(String value);
 
   /**
-   * Returns the value of the '<em><b>Int Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Long Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Int Value</em>' attribute.
-   * @see #setIntValue(int)
-   * @see a2b.a2B.A2BPackage#getDB_IntValue()
+   * @return the value of the '<em>Long Value</em>' attribute.
+   * @see #setLongValue(long)
+   * @see a2b.a2B.A2BPackage#getDD_LongValue()
    * @model
    * @generated
    */
-  int getIntValue();
+  long getLongValue();
 
   /**
-   * Sets the value of the '{@link a2b.a2B.DB#getIntValue <em>Int Value</em>}' attribute.
+   * Sets the value of the '{@link a2b.a2B.DD#getLongValue <em>Long Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Int Value</em>' attribute.
-   * @see #getIntValue()
+   * @param value the new value of the '<em>Long Value</em>' attribute.
+   * @see #getLongValue()
    * @generated
    */
-  void setIntValue(int value);
+  void setLongValue(long value);
 
-} // DB
+} // DD

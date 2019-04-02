@@ -11,7 +11,16 @@
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//Instruction"/>
     <genClasses ecoreClass="A2B.ecore#//DB">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DB/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DB/stringValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DB/intValue"/>
+    </genClasses>
+    <genClasses ecoreClass="A2B.ecore#//DW">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DW/stringValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DW/intValue"/>
+    </genClasses>
+    <genClasses ecoreClass="A2B.ecore#//DD">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DD/stringValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DD/longValue"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//Base64">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//Base64/value"/>

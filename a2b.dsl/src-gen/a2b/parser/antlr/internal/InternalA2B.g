@@ -122,56 +122,74 @@ ruleInstruction returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getBase64ParserRuleCall_1());
+			newCompositeNode(grammarAccess.getInstructionAccess().getDWParserRuleCall_1());
 		}
-		this_Base64_1=ruleBase64
+		this_DW_1=ruleDW
 		{
-			$current = $this_Base64_1.current;
+			$current = $this_DW_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getORGParserRuleCall_2());
+			newCompositeNode(grammarAccess.getInstructionAccess().getDDParserRuleCall_2());
 		}
-		this_ORG_2=ruleORG
+		this_DD_2=ruleDD
 		{
-			$current = $this_ORG_2.current;
+			$current = $this_DD_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getINCLUDEParserRuleCall_3());
+			newCompositeNode(grammarAccess.getInstructionAccess().getBase64ParserRuleCall_3());
 		}
-		this_INCLUDE_3=ruleINCLUDE
+		this_Base64_3=ruleBase64
 		{
-			$current = $this_INCLUDE_3.current;
+			$current = $this_Base64_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getMACParserRuleCall_4());
+			newCompositeNode(grammarAccess.getInstructionAccess().getORGParserRuleCall_4());
 		}
-		this_MAC_4=ruleMAC
+		this_ORG_4=ruleORG
 		{
-			$current = $this_MAC_4.current;
+			$current = $this_ORG_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getIPParserRuleCall_5());
+			newCompositeNode(grammarAccess.getInstructionAccess().getINCLUDEParserRuleCall_5());
 		}
-		this_IP_5=ruleIP
+		this_INCLUDE_5=ruleINCLUDE
 		{
-			$current = $this_IP_5.current;
+			$current = $this_INCLUDE_5.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getHXSParserRuleCall_6());
+			newCompositeNode(grammarAccess.getInstructionAccess().getMACParserRuleCall_6());
 		}
-		this_HXS_6=ruleHXS
+		this_MAC_6=ruleMAC
 		{
-			$current = $this_HXS_6.current;
+			$current = $this_MAC_6.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getIPParserRuleCall_7());
+		}
+		this_IP_7=ruleIP
+		{
+			$current = $this_IP_7.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getHXSParserRuleCall_8());
+		}
+		this_HXS_8=ruleHXS
+		{
+			$current = $this_HXS_8.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -179,12 +197,12 @@ ruleInstruction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getInstructionAccess().getBEAction_7_0(),
+						grammarAccess.getInstructionAccess().getBEAction_9_0(),
 						$current);
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getBEParserRuleCall_7_1());
+				newCompositeNode(grammarAccess.getInstructionAccess().getBEParserRuleCall_9_1());
 			}
 			ruleBE
 			{
@@ -196,12 +214,12 @@ ruleInstruction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getInstructionAccess().getLEAction_8_0(),
+						grammarAccess.getInstructionAccess().getLEAction_10_0(),
 						$current);
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getLEParserRuleCall_8_1());
+				newCompositeNode(grammarAccess.getInstructionAccess().getLEParserRuleCall_10_1());
 			}
 			ruleLE
 			{
@@ -213,12 +231,12 @@ ruleInstruction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getInstructionAccess().getPCAPAction_9_0(),
+						grammarAccess.getInstructionAccess().getPCAPAction_11_0(),
 						$current);
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getPCAPParserRuleCall_9_1());
+				newCompositeNode(grammarAccess.getInstructionAccess().getPCAPParserRuleCall_11_1());
 			}
 			rulePCAP
 			{
@@ -250,20 +268,166 @@ ruleDB returns [EObject current=null]
 		}
 		(
 			(
-				lv_value_1_0=RULE_BYTE
-				{
-					newLeafNode(lv_value_1_0, grammarAccess.getDBAccess().getValueBYTETerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDBRule());
+				(
+					lv_stringValue_1_0=RULE_BYTE
+					{
+						newLeafNode(lv_stringValue_1_0, grammarAccess.getDBAccess().getStringValueBYTETerminalRuleCall_1_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_1_0,
-						"a2b.A2B.BYTE");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDBRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"stringValue",
+							lv_stringValue_1_0,
+							"a2b.A2B.BYTE");
+					}
+				)
+			)
+			    |
+			(
+				(
+					lv_intValue_2_0=RULE_INT
+					{
+						newLeafNode(lv_intValue_2_0, grammarAccess.getDBAccess().getIntValueINTTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDBRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"intValue",
+							lv_intValue_2_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDW
+entryRuleDW returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDWRule()); }
+	iv_ruleDW=ruleDW
+	{ $current=$iv_ruleDW.current; }
+	EOF;
+
+// Rule DW
+ruleDW returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='DW'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDWAccess().getDWKeyword_0());
+		}
+		(
+			(
+				(
+					lv_stringValue_1_0=RULE_WORD
+					{
+						newLeafNode(lv_stringValue_1_0, grammarAccess.getDWAccess().getStringValueWORDTerminalRuleCall_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDWRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"stringValue",
+							lv_stringValue_1_0,
+							"a2b.A2B.WORD");
+					}
+				)
+			)
+			    |
+			(
+				(
+					lv_intValue_2_0=RULE_INT
+					{
+						newLeafNode(lv_intValue_2_0, grammarAccess.getDWAccess().getIntValueINTTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDWRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"intValue",
+							lv_intValue_2_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDD
+entryRuleDD returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDDRule()); }
+	iv_ruleDD=ruleDD
+	{ $current=$iv_ruleDD.current; }
+	EOF;
+
+// Rule DD
+ruleDD returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='DD'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDDAccess().getDDKeyword_0());
+		}
+		(
+			(
+				(
+					lv_stringValue_1_0=RULE_DOUBLEWORD
+					{
+						newLeafNode(lv_stringValue_1_0, grammarAccess.getDDAccess().getStringValueDOUBLEWORDTerminalRuleCall_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDDRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"stringValue",
+							lv_stringValue_1_0,
+							"a2b.A2B.DOUBLEWORD");
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDDAccess().getLongValueLONGParserRuleCall_1_1_0());
+					}
+					lv_longValue_2_0=ruleLONG
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDDRule());
+						}
+						set(
+							$current,
+							"longValue",
+							lv_longValue_2_0,
+							"a2b.A2B.LONG");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
 	)
@@ -581,15 +745,49 @@ rulePCAP returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	}
 ;
 
-RULE_BYTE : ('0B' ('0'..'9'|'1'..'9' '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'4' '0'..'9'|'2' '5' '0'..'5')|'0b' ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1')|'0x' ('0'..'9'|'a'..'f') ('0'..'9'|'a'..'f'));
+// Entry rule entryRuleLONG
+entryRuleLONG returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getLONGRule()); }
+	iv_ruleLONG=ruleLONG
+	{ $current=$iv_ruleLONG.current.getText(); }
+	EOF;
+
+// Rule LONG
+ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_INT_0=RULE_INT
+	{
+		$current.merge(this_INT_0);
+	}
+	{
+		newLeafNode(this_INT_0, grammarAccess.getLONGAccess().getINTTerminalRuleCall());
+	}
+;
+
+fragment RULE_DECIMALBYTE_ : (('1'..'9')? '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'4' '0'..'9'|'2' '5' '0'..'5');
+
+fragment RULE_BINARY_ : ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1') ('0'|'1');
+
+fragment RULE_HEX_ : ('A'..'F'|'a'..'f'|'0'..'9') ('A'..'F'|'a'..'f'|'0'..'9');
+
+RULE_BYTE : ('0b' RULE_BINARY_|'0x' RULE_HEX_);
+
+RULE_WORD : ('0b' RULE_BINARY_ RULE_BINARY_|'0x' RULE_HEX_ RULE_HEX_);
+
+RULE_DOUBLEWORD : ('0b' RULE_BINARY_ RULE_BINARY_ RULE_BINARY_ RULE_BINARY_|'0x' RULE_HEX_ RULE_HEX_ RULE_HEX_ RULE_HEX_);
 
 RULE_PATH : ('A'..'Z' ':')? ('/' ('a'..'z'|'A'..'Z')*)+ ('.' ('a'..'z'|'A'..'Z')*)+;
 
-RULE_MACADDRESS : ('0'..'9'|'a'..'f') ('0'..'9'|'a'..'f') ':' ('0'..'9'|'a'..'f') ('0'..'9'|'a'..'f') ':' ('0'..'9'|'a'..'f') ('0'..'9'|'a'..'f') ':' ('0'..'9'|'a'..'f') ('0'..'9'|'a'..'f') ':' ('0'..'9'|'a'..'f') ('0'..'9'|'a'..'f') ':' ('0'..'9'|'a'..'f') ('0'..'9'|'a'..'f');
+RULE_MACADDRESS : RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_;
 
-RULE_IPADDRESS : (('1'..'9')? '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'4' '0'..'9'|'2' '5' '0'..'5') '.' (('1'..'9')? '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'4' '0'..'9'|'2' '5' '0'..'5') '.' (('1'..'9')? '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'4' '0'..'9'|'2' '5' '0'..'5') '.' (('1'..'9')? '0'..'9'|'1' '0'..'9' '0'..'9'|'2' '0'..'4' '0'..'9'|'2' '5' '0'..'5');
+RULE_IPADDRESS : RULE_DECIMALBYTE_ '.' RULE_DECIMALBYTE_ '.' RULE_DECIMALBYTE_ '.' RULE_DECIMALBYTE_;
 
-RULE_HEXSTRING : '0h' (('0'..'9'|'a'..'f') ('0'..'9'|'a'..'f'))+;
+RULE_HEXSTRING : '0h' RULE_HEX_+;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

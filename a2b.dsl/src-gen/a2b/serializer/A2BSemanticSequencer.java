@@ -7,6 +7,8 @@ import a2b.a2B.A2BPackage;
 import a2b.a2B.BE;
 import a2b.a2B.Base64;
 import a2b.a2B.DB;
+import a2b.a2B.DD;
+import a2b.a2B.DW;
 import a2b.a2B.HXS;
 import a2b.a2B.INCLUDE;
 import a2b.a2B.IP;
@@ -50,6 +52,12 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case A2BPackage.DB:
 				sequence_DB(context, (DB) semanticObject); 
+				return; 
+			case A2BPackage.DD:
+				sequence_DD(context, (DD) semanticObject); 
+				return; 
+			case A2BPackage.DW:
+				sequence_DW(context, (DW) semanticObject); 
 				return; 
 			case A2BPackage.HXS:
 				sequence_HXS(context, (HXS) semanticObject); 
@@ -105,16 +113,36 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DB returns DB
 	 *
 	 * Constraint:
-	 *     value=BYTE
+	 *     (stringValue=BYTE | intValue=INT)
 	 */
 	protected void sequence_DB(ISerializationContext context, DB semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.DB__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.DB__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDBAccess().getValueBYTETerminalRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns DD
+	 *     DD returns DD
+	 *
+	 * Constraint:
+	 *     (stringValue=DOUBLEWORD | longValue=LONG)
+	 */
+	protected void sequence_DD(ISerializationContext context, DD semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns DW
+	 *     DW returns DW
+	 *
+	 * Constraint:
+	 *     (stringValue=WORD | intValue=INT)
+	 */
+	protected void sequence_DW(ISerializationContext context, DW semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

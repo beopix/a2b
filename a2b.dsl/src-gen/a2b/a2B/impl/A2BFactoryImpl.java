@@ -68,6 +68,8 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
       case A2BPackage.MODEL: return createModel();
       case A2BPackage.INSTRUCTION: return createInstruction();
       case A2BPackage.DB: return createDB();
+      case A2BPackage.DW: return createDW();
+      case A2BPackage.DD: return createDD();
       case A2BPackage.BASE64: return createBase64();
       case A2BPackage.ORG: return createORG();
       case A2BPackage.INCLUDE: return createINCLUDE();
@@ -116,6 +118,30 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
   {
     DBImpl db = new DBImpl();
     return db;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DW createDW()
+  {
+    DWImpl dw = new DWImpl();
+    return dw;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DD createDD()
+  {
+    DDImpl dd = new DDImpl();
+    return dd;
   }
 
   /**

@@ -95,6 +95,22 @@ public class A2BSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case A2BPackage.DW:
+      {
+        DW dw = (DW)theEObject;
+        T result = caseDW(dw);
+        if (result == null) result = caseInstruction(dw);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case A2BPackage.DD:
+      {
+        DD dd = (DD)theEObject;
+        T result = caseDD(dd);
+        if (result == null) result = caseInstruction(dd);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case A2BPackage.BASE64:
       {
         Base64 base64 = (Base64)theEObject;
@@ -215,6 +231,38 @@ public class A2BSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDB(DB object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>DW</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>DW</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDW(DW object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>DD</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>DD</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDD(DD object)
   {
     return null;
   }

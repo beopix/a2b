@@ -91,6 +91,16 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
         return createDBAdapter();
       }
       @Override
+      public Adapter caseDW(DW object)
+      {
+        return createDWAdapter();
+      }
+      @Override
+      public Adapter caseDD(DD object)
+      {
+        return createDDAdapter();
+      }
+      @Override
       public Adapter caseBase64(Base64 object)
       {
         return createBase64Adapter();
@@ -198,6 +208,36 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDBAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.DW <em>DW</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.DW
+   * @generated
+   */
+  public Adapter createDWAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.DD <em>DD</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.DD
+   * @generated
+   */
+  public Adapter createDDAdapter()
   {
     return null;
   }

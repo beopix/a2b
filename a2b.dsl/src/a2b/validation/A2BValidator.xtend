@@ -3,6 +3,11 @@
  */
 package a2b.validation
 
+import a2b.a2B.DW
+import org.eclipse.xtext.validation.Check
+import a2b.a2B.A2BPackage
+import a2b.a2B.DB
+import a2b.a2B.DD
 
 /**
  * This class contains custom validation rules. 
@@ -10,6 +15,27 @@ package a2b.validation
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class A2BValidator extends AbstractA2BValidator {
+	public static val INVALID_NAME = 'invalidName'
+	@Check
+	def checkDDIntegerValue(DD dd){
+		if(dd.longValue > 4294967295L || dd.longValue < 0){
+			error('Value for short is between 0 and 4294967295', A2BPackage.Literals.DD__LONG_VALUE, INVALID_NAME)
+		}
+	}
+	
+	@Check
+	def checkDWShortValue(DW dw){
+		if(dw.intValue > 65535 || dw.intValue < 0){
+			error('Value for short is between 0 and 65535', A2BPackage.Literals.DW__INT_VALUE, INVALID_NAME)
+		}	
+	}
+	
+	@Check
+	def checkDBByteValue(DB db){
+		if(db.intValue > 255 || db.intValue < 0){
+			error('Value for byte is between 0 and 255', A2BPackage.Literals.DB__INT_VALUE, INVALID_NAME)
+		}
+	}
 	
 //	public static val INVALID_NAME = 'invalidName'
 //

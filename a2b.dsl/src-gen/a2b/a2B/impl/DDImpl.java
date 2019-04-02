@@ -4,7 +4,7 @@
 package a2b.a2B.impl;
 
 import a2b.a2B.A2BPackage;
-import a2b.a2B.DB;
+import a2b.a2B.DD;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DB</b></em>'.
+ * An implementation of the model object '<em><b>DD</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.impl.DBImpl#getStringValue <em>String Value</em>}</li>
- *   <li>{@link a2b.a2B.impl.DBImpl#getIntValue <em>Int Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.DDImpl#getStringValue <em>String Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.DDImpl#getLongValue <em>Long Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DBImpl extends InstructionImpl implements DB
+public class DDImpl extends InstructionImpl implements DD
 {
   /**
    * The default value of the '{@link #getStringValue() <em>String Value</em>}' attribute.
@@ -49,31 +49,31 @@ public class DBImpl extends InstructionImpl implements DB
   protected String stringValue = STRING_VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
+   * The default value of the '{@link #getLongValue() <em>Long Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIntValue()
+   * @see #getLongValue()
    * @generated
    * @ordered
    */
-  protected static final int INT_VALUE_EDEFAULT = 0;
+  protected static final long LONG_VALUE_EDEFAULT = 0L;
 
   /**
-   * The cached value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
+   * The cached value of the '{@link #getLongValue() <em>Long Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIntValue()
+   * @see #getLongValue()
    * @generated
    * @ordered
    */
-  protected int intValue = INT_VALUE_EDEFAULT;
+  protected long longValue = LONG_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DBImpl()
+  protected DDImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class DBImpl extends InstructionImpl implements DB
   @Override
   protected EClass eStaticClass()
   {
-    return A2BPackage.Literals.DB;
+    return A2BPackage.Literals.DD;
   }
 
   /**
@@ -111,7 +111,7 @@ public class DBImpl extends InstructionImpl implements DB
     String oldStringValue = stringValue;
     stringValue = newStringValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DB__STRING_VALUE, oldStringValue, stringValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DD__STRING_VALUE, oldStringValue, stringValue));
   }
 
   /**
@@ -120,9 +120,9 @@ public class DBImpl extends InstructionImpl implements DB
    * @generated
    */
   @Override
-  public int getIntValue()
+  public long getLongValue()
   {
-    return intValue;
+    return longValue;
   }
 
   /**
@@ -131,12 +131,12 @@ public class DBImpl extends InstructionImpl implements DB
    * @generated
    */
   @Override
-  public void setIntValue(int newIntValue)
+  public void setLongValue(long newLongValue)
   {
-    int oldIntValue = intValue;
-    intValue = newIntValue;
+    long oldLongValue = longValue;
+    longValue = newLongValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DB__INT_VALUE, oldIntValue, intValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DD__LONG_VALUE, oldLongValue, longValue));
   }
 
   /**
@@ -149,10 +149,10 @@ public class DBImpl extends InstructionImpl implements DB
   {
     switch (featureID)
     {
-      case A2BPackage.DB__STRING_VALUE:
+      case A2BPackage.DD__STRING_VALUE:
         return getStringValue();
-      case A2BPackage.DB__INT_VALUE:
-        return getIntValue();
+      case A2BPackage.DD__LONG_VALUE:
+        return getLongValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,11 +167,11 @@ public class DBImpl extends InstructionImpl implements DB
   {
     switch (featureID)
     {
-      case A2BPackage.DB__STRING_VALUE:
+      case A2BPackage.DD__STRING_VALUE:
         setStringValue((String)newValue);
         return;
-      case A2BPackage.DB__INT_VALUE:
-        setIntValue((Integer)newValue);
+      case A2BPackage.DD__LONG_VALUE:
+        setLongValue((Long)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,11 +187,11 @@ public class DBImpl extends InstructionImpl implements DB
   {
     switch (featureID)
     {
-      case A2BPackage.DB__STRING_VALUE:
+      case A2BPackage.DD__STRING_VALUE:
         setStringValue(STRING_VALUE_EDEFAULT);
         return;
-      case A2BPackage.DB__INT_VALUE:
-        setIntValue(INT_VALUE_EDEFAULT);
+      case A2BPackage.DD__LONG_VALUE:
+        setLongValue(LONG_VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -207,10 +207,10 @@ public class DBImpl extends InstructionImpl implements DB
   {
     switch (featureID)
     {
-      case A2BPackage.DB__STRING_VALUE:
+      case A2BPackage.DD__STRING_VALUE:
         return STRING_VALUE_EDEFAULT == null ? stringValue != null : !STRING_VALUE_EDEFAULT.equals(stringValue);
-      case A2BPackage.DB__INT_VALUE:
-        return intValue != INT_VALUE_EDEFAULT;
+      case A2BPackage.DD__LONG_VALUE:
+        return longValue != LONG_VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -228,10 +228,10 @@ public class DBImpl extends InstructionImpl implements DB
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (stringValue: ");
     result.append(stringValue);
-    result.append(", intValue: ");
-    result.append(intValue);
+    result.append(", longValue: ");
+    result.append(longValue);
     result.append(')');
     return result.toString();
   }
 
-} //DBImpl
+} //DDImpl

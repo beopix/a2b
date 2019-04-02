@@ -6,7 +6,7 @@ public class MACToByteArray {
 
 	}
 
-	public static byte[] decode(String content, boolean bigEndian) {
+	public static byte[] decode(String content, boolean littleEndian) {
 		
 		String[] macAddress = content.split(":");
 
@@ -17,7 +17,7 @@ public class MACToByteArray {
 			result[i] = inputInByteArray.byteValue();
 		}
 
-		return bigEndian ? ByteArray.reverse(result) : result;
+		return littleEndian ? ByteArray.reverse(result) : result;
 	}
 
 }

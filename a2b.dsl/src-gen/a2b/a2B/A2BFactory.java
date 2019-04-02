@@ -51,6 +51,24 @@ public interface A2BFactory extends EFactory
   DB createDB();
 
   /**
+   * Returns a new object of class '<em>DW</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DW</em>'.
+   * @generated
+   */
+  DW createDW();
+
+  /**
+   * Returns a new object of class '<em>DD</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DD</em>'.
+   * @generated
+   */
+  DD createDD();
+
+  /**
    * Returns a new object of class '<em>Base64</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

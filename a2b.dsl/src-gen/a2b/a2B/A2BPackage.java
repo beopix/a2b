@@ -115,13 +115,22 @@ public interface A2BPackage extends EPackage
   int DB = 2;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>String Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DB__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+  int DB__STRING_VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Int Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DB__INT_VALUE = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>DB</em>' class.
@@ -130,7 +139,81 @@ public interface A2BPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DB_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+  int DB_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link a2b.a2B.impl.DWImpl <em>DW</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see a2b.a2B.impl.DWImpl
+   * @see a2b.a2B.impl.A2BPackageImpl#getDW()
+   * @generated
+   */
+  int DW = 3;
+
+  /**
+   * The feature id for the '<em><b>String Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DW__STRING_VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Int Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DW__INT_VALUE = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>DW</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DW_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link a2b.a2B.impl.DDImpl <em>DD</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see a2b.a2B.impl.DDImpl
+   * @see a2b.a2B.impl.A2BPackageImpl#getDD()
+   * @generated
+   */
+  int DD = 4;
+
+  /**
+   * The feature id for the '<em><b>String Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DD__STRING_VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Long Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DD__LONG_VALUE = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>DD</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DD_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link a2b.a2B.impl.Base64Impl <em>Base64</em>}' class.
@@ -140,7 +223,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getBase64()
    * @generated
    */
-  int BASE64 = 3;
+  int BASE64 = 5;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -168,7 +251,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getORG()
    * @generated
    */
-  int ORG = 4;
+  int ORG = 6;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -196,7 +279,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getINCLUDE()
    * @generated
    */
-  int INCLUDE = 5;
+  int INCLUDE = 7;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -224,7 +307,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getMAC()
    * @generated
    */
-  int MAC = 6;
+  int MAC = 8;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -252,7 +335,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getIP()
    * @generated
    */
-  int IP = 7;
+  int IP = 9;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -280,7 +363,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getHXS()
    * @generated
    */
-  int HXS = 8;
+  int HXS = 10;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -308,7 +391,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getBE()
    * @generated
    */
-  int BE = 9;
+  int BE = 11;
 
   /**
    * The number of structural features of the '<em>BE</em>' class.
@@ -327,7 +410,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getLE()
    * @generated
    */
-  int LE = 10;
+  int LE = 12;
 
   /**
    * The number of structural features of the '<em>LE</em>' class.
@@ -346,7 +429,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getPCAP()
    * @generated
    */
-  int PCAP = 11;
+  int PCAP = 13;
 
   /**
    * The number of structural features of the '<em>PCAP</em>' class.
@@ -400,15 +483,90 @@ public interface A2BPackage extends EPackage
   EClass getDB();
 
   /**
-   * Returns the meta object for the attribute '{@link a2b.a2B.DB#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link a2b.a2B.DB#getStringValue <em>String Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see a2b.a2B.DB#getValue()
+   * @return the meta object for the attribute '<em>String Value</em>'.
+   * @see a2b.a2B.DB#getStringValue()
    * @see #getDB()
    * @generated
    */
-  EAttribute getDB_Value();
+  EAttribute getDB_StringValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.DB#getIntValue <em>Int Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Int Value</em>'.
+   * @see a2b.a2B.DB#getIntValue()
+   * @see #getDB()
+   * @generated
+   */
+  EAttribute getDB_IntValue();
+
+  /**
+   * Returns the meta object for class '{@link a2b.a2B.DW <em>DW</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>DW</em>'.
+   * @see a2b.a2B.DW
+   * @generated
+   */
+  EClass getDW();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.DW#getStringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>String Value</em>'.
+   * @see a2b.a2B.DW#getStringValue()
+   * @see #getDW()
+   * @generated
+   */
+  EAttribute getDW_StringValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.DW#getIntValue <em>Int Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Int Value</em>'.
+   * @see a2b.a2B.DW#getIntValue()
+   * @see #getDW()
+   * @generated
+   */
+  EAttribute getDW_IntValue();
+
+  /**
+   * Returns the meta object for class '{@link a2b.a2B.DD <em>DD</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>DD</em>'.
+   * @see a2b.a2B.DD
+   * @generated
+   */
+  EClass getDD();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.DD#getStringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>String Value</em>'.
+   * @see a2b.a2B.DD#getStringValue()
+   * @see #getDD()
+   * @generated
+   */
+  EAttribute getDD_StringValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.DD#getLongValue <em>Long Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Long Value</em>'.
+   * @see a2b.a2B.DD#getLongValue()
+   * @see #getDD()
+   * @generated
+   */
+  EAttribute getDD_LongValue();
 
   /**
    * Returns the meta object for class '{@link a2b.a2B.Base64 <em>Base64</em>}'.
@@ -628,12 +786,72 @@ public interface A2BPackage extends EPackage
     EClass DB = eINSTANCE.getDB();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>String Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DB__VALUE = eINSTANCE.getDB_Value();
+    EAttribute DB__STRING_VALUE = eINSTANCE.getDB_StringValue();
+
+    /**
+     * The meta object literal for the '<em><b>Int Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DB__INT_VALUE = eINSTANCE.getDB_IntValue();
+
+    /**
+     * The meta object literal for the '{@link a2b.a2B.impl.DWImpl <em>DW</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see a2b.a2B.impl.DWImpl
+     * @see a2b.a2B.impl.A2BPackageImpl#getDW()
+     * @generated
+     */
+    EClass DW = eINSTANCE.getDW();
+
+    /**
+     * The meta object literal for the '<em><b>String Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DW__STRING_VALUE = eINSTANCE.getDW_StringValue();
+
+    /**
+     * The meta object literal for the '<em><b>Int Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DW__INT_VALUE = eINSTANCE.getDW_IntValue();
+
+    /**
+     * The meta object literal for the '{@link a2b.a2B.impl.DDImpl <em>DD</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see a2b.a2B.impl.DDImpl
+     * @see a2b.a2B.impl.A2BPackageImpl#getDD()
+     * @generated
+     */
+    EClass DD = eINSTANCE.getDD();
+
+    /**
+     * The meta object literal for the '<em><b>String Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DD__STRING_VALUE = eINSTANCE.getDD_StringValue();
+
+    /**
+     * The meta object literal for the '<em><b>Long Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DD__LONG_VALUE = eINSTANCE.getDD_LongValue();
 
     /**
      * The meta object literal for the '{@link a2b.a2B.impl.Base64Impl <em>Base64</em>}' class.

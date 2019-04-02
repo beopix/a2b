@@ -3,11 +3,16 @@ package compiler;
 import java.io.FileNotFoundException;
 import java.nio.file.FileAlreadyExistsException;
 import java.text.DecimalFormat;
+import java.util.Arrays;
+
+import decoder.ByteWordDoubleWordToByteArray;
+import decoder.HexStringToByteArray;
+import decoder.MACToByteArray;
 
 public class Main {
 
 	public static void main(String[] args) {
-
+	
 		long startTime = System.nanoTime();
 
 		System.out.println("Starting a2b application");

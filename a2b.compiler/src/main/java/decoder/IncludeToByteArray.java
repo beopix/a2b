@@ -14,7 +14,7 @@ public class IncludeToByteArray {
 
 	public static byte[] decode(String filePath) {
 
-		//Muss überprüft werden auf welchem System es läuft
+		//Muss ueberprueft werden auf welchem System es laeuft
 		Path a = Paths.get(filePath);
 		System.out.println(a);
 

@@ -50,6 +50,20 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass dwEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ddEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass base64EClass = null;
 
   /**
@@ -221,9 +235,86 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
-  public EAttribute getDB_Value()
+  public EAttribute getDB_StringValue()
   {
     return (EAttribute)dbEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDB_IntValue()
+  {
+    return (EAttribute)dbEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDW()
+  {
+    return dwEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDW_StringValue()
+  {
+    return (EAttribute)dwEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDW_IntValue()
+  {
+    return (EAttribute)dwEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDD()
+  {
+    return ddEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDD_StringValue()
+  {
+    return (EAttribute)ddEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDD_LongValue()
+  {
+    return (EAttribute)ddEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -428,7 +519,16 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     instructionEClass = createEClass(INSTRUCTION);
 
     dbEClass = createEClass(DB);
-    createEAttribute(dbEClass, DB__VALUE);
+    createEAttribute(dbEClass, DB__STRING_VALUE);
+    createEAttribute(dbEClass, DB__INT_VALUE);
+
+    dwEClass = createEClass(DW);
+    createEAttribute(dwEClass, DW__STRING_VALUE);
+    createEAttribute(dwEClass, DW__INT_VALUE);
+
+    ddEClass = createEClass(DD);
+    createEAttribute(ddEClass, DD__STRING_VALUE);
+    createEAttribute(ddEClass, DD__LONG_VALUE);
 
     base64EClass = createEClass(BASE64);
     createEAttribute(base64EClass, BASE64__VALUE);
@@ -485,6 +585,8 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
 
     // Add supertypes to classes
     dbEClass.getESuperTypes().add(this.getInstruction());
+    dwEClass.getESuperTypes().add(this.getInstruction());
+    ddEClass.getESuperTypes().add(this.getInstruction());
     base64EClass.getESuperTypes().add(this.getInstruction());
     orgEClass.getESuperTypes().add(this.getInstruction());
     includeEClass.getESuperTypes().add(this.getInstruction());
@@ -502,7 +604,16 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(dbEClass, a2b.a2B.DB.class, "DB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDB_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.DB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDB_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, a2b.a2B.DB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDB_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, a2b.a2B.DB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dwEClass, a2b.a2B.DW.class, "DW", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDW_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, a2b.a2B.DW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDW_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, a2b.a2B.DW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ddEClass, a2b.a2B.DD.class, "DD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDD_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, a2b.a2B.DD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDD_LongValue(), ecorePackage.getELong(), "longValue", null, 0, 1, a2b.a2B.DD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(base64EClass, Base64.class, "Base64", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBase64_Value(), ecorePackage.getEString(), "value", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

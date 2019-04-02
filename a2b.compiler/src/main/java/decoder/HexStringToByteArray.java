@@ -6,7 +6,7 @@ public class HexStringToByteArray {
 		
 	}
 	
-	public static byte[] decode(String content, boolean bigEndian) {
+	public static byte[] decode(String content, boolean littleEndian) {
 		content = content.substring(2);
 	    int len = content.length();
 	    byte[] result = new byte[len / 2];
@@ -15,7 +15,7 @@ public class HexStringToByteArray {
 	                             + Character.digit(content.charAt(i+1), 16));
 	    }
 	    
-	    return bigEndian ? ByteArray.reverse(result) : result;
+	    return littleEndian ? ByteArray.reverse(result) : result;
 	}
 
 }

@@ -11,6 +11,7 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
+import org.eclipse.xtext.testing.validation.ValidationTestHelper
 
 @ExtendWith(InjectionExtension)
 @InjectWith(A2BInjectorProvider)
@@ -18,11 +19,53 @@ class A2BParsingTest {
 	@Inject
 	ParseHelper<Model> parseHelper
 	
+	@Inject
+	extension ValidationTestHelper
+	
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			Hello Xtext!
+			BE
+			DW 0xffff
+			DB 255
+			IP 255.255.0.0
+			LE
+			MAC fe:14:ab:05:ff:ff
+			BE
+			IP 255.0.255.255
+			
+			LE
+			IP 255.0.255.255
+			
+			LE
+			MAC FF:Fe:01:02:aA:AA
+			
+			LE
+			MAC ff:fe:01:02:aa:ab
+			
+			DB 0
+			
+			DB 0xff
+			
+			DB 000000000000000101
+			
+			DB 255
+			
+			DB 0xff
+			
+			DB 0xff
+			
+			DW 0xffff
+			
+			DW 1
+			
+			DW 0b0000000011111111
+			
+			DD 4294967295
+			
+			
 		''')
+		result.assertNoErrors
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')

@@ -4,7 +4,7 @@
 package a2b.a2B.impl;
 
 import a2b.a2B.A2BPackage;
-import a2b.a2B.DB;
+import a2b.a2B.DW;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DB</b></em>'.
+ * An implementation of the model object '<em><b>DW</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.impl.DBImpl#getStringValue <em>String Value</em>}</li>
- *   <li>{@link a2b.a2B.impl.DBImpl#getIntValue <em>Int Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.DWImpl#getStringValue <em>String Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.DWImpl#getIntValue <em>Int Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DBImpl extends InstructionImpl implements DB
+public class DWImpl extends InstructionImpl implements DW
 {
   /**
    * The default value of the '{@link #getStringValue() <em>String Value</em>}' attribute.
@@ -73,7 +73,7 @@ public class DBImpl extends InstructionImpl implements DB
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DBImpl()
+  protected DWImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class DBImpl extends InstructionImpl implements DB
   @Override
   protected EClass eStaticClass()
   {
-    return A2BPackage.Literals.DB;
+    return A2BPackage.Literals.DW;
   }
 
   /**
@@ -111,7 +111,7 @@ public class DBImpl extends InstructionImpl implements DB
     String oldStringValue = stringValue;
     stringValue = newStringValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DB__STRING_VALUE, oldStringValue, stringValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DW__STRING_VALUE, oldStringValue, stringValue));
   }
 
   /**
@@ -136,7 +136,7 @@ public class DBImpl extends InstructionImpl implements DB
     int oldIntValue = intValue;
     intValue = newIntValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DB__INT_VALUE, oldIntValue, intValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DW__INT_VALUE, oldIntValue, intValue));
   }
 
   /**
@@ -149,9 +149,9 @@ public class DBImpl extends InstructionImpl implements DB
   {
     switch (featureID)
     {
-      case A2BPackage.DB__STRING_VALUE:
+      case A2BPackage.DW__STRING_VALUE:
         return getStringValue();
-      case A2BPackage.DB__INT_VALUE:
+      case A2BPackage.DW__INT_VALUE:
         return getIntValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -167,10 +167,10 @@ public class DBImpl extends InstructionImpl implements DB
   {
     switch (featureID)
     {
-      case A2BPackage.DB__STRING_VALUE:
+      case A2BPackage.DW__STRING_VALUE:
         setStringValue((String)newValue);
         return;
-      case A2BPackage.DB__INT_VALUE:
+      case A2BPackage.DW__INT_VALUE:
         setIntValue((Integer)newValue);
         return;
     }
@@ -187,10 +187,10 @@ public class DBImpl extends InstructionImpl implements DB
   {
     switch (featureID)
     {
-      case A2BPackage.DB__STRING_VALUE:
+      case A2BPackage.DW__STRING_VALUE:
         setStringValue(STRING_VALUE_EDEFAULT);
         return;
-      case A2BPackage.DB__INT_VALUE:
+      case A2BPackage.DW__INT_VALUE:
         setIntValue(INT_VALUE_EDEFAULT);
         return;
     }
@@ -207,9 +207,9 @@ public class DBImpl extends InstructionImpl implements DB
   {
     switch (featureID)
     {
-      case A2BPackage.DB__STRING_VALUE:
+      case A2BPackage.DW__STRING_VALUE:
         return STRING_VALUE_EDEFAULT == null ? stringValue != null : !STRING_VALUE_EDEFAULT.equals(stringValue);
-      case A2BPackage.DB__INT_VALUE:
+      case A2BPackage.DW__INT_VALUE:
         return intValue != INT_VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -234,4 +234,4 @@ public class DBImpl extends InstructionImpl implements DB
     return result.toString();
   }
 
-} //DBImpl
+} //DWImpl
