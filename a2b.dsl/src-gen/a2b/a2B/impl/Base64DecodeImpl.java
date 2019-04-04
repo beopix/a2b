@@ -4,7 +4,7 @@
 package a2b.a2B.impl;
 
 import a2b.a2B.A2BPackage;
-import a2b.a2B.Base64;
+import a2b.a2B.Base64Decode;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Base64</b></em>'.
+ * An implementation of the model object '<em><b>Base64 Decode</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.impl.Base64Impl#getValue <em>Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.Base64DecodeImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class Base64Impl extends InstructionImpl implements Base64
+public class Base64DecodeImpl extends InstructionImpl implements Base64Decode
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -52,7 +52,7 @@ public class Base64Impl extends InstructionImpl implements Base64
    * <!-- end-user-doc -->
    * @generated
    */
-  protected Base64Impl()
+  protected Base64DecodeImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class Base64Impl extends InstructionImpl implements Base64
   @Override
   protected EClass eStaticClass()
   {
-    return A2BPackage.Literals.BASE64;
+    return A2BPackage.Literals.BASE64_DECODE;
   }
 
   /**
@@ -90,7 +90,7 @@ public class Base64Impl extends InstructionImpl implements Base64
     String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.BASE64__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.BASE64_DECODE__VALUE, oldValue, value));
   }
 
   /**
@@ -103,7 +103,7 @@ public class Base64Impl extends InstructionImpl implements Base64
   {
     switch (featureID)
     {
-      case A2BPackage.BASE64__VALUE:
+      case A2BPackage.BASE64_DECODE__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -119,7 +119,7 @@ public class Base64Impl extends InstructionImpl implements Base64
   {
     switch (featureID)
     {
-      case A2BPackage.BASE64__VALUE:
+      case A2BPackage.BASE64_DECODE__VALUE:
         setValue((String)newValue);
         return;
     }
@@ -136,7 +136,7 @@ public class Base64Impl extends InstructionImpl implements Base64
   {
     switch (featureID)
     {
-      case A2BPackage.BASE64__VALUE:
+      case A2BPackage.BASE64_DECODE__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
     }
@@ -153,7 +153,7 @@ public class Base64Impl extends InstructionImpl implements Base64
   {
     switch (featureID)
     {
-      case A2BPackage.BASE64__VALUE:
+      case A2BPackage.BASE64_DECODE__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
@@ -176,4 +176,4 @@ public class Base64Impl extends InstructionImpl implements Base64
     return result.toString();
   }
 
-} //Base64Impl
+} //Base64DecodeImpl

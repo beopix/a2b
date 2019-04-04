@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		long startTime = System.nanoTime();
+		long programStart = System.nanoTime();
 
 		System.out.println("Starting a2b application");
 
@@ -21,17 +21,21 @@ public class Main {
 
 			a2bFileCreator.createFile();
 
-		} catch (FileAlreadyExistsException | FileNotFoundException	 e) {
+		} catch (FileAlreadyExistsException | FileNotFoundException | A2BParseErrorException e) {
+
 			e.printStackTrace();
+
+		} finally {
+
+			long programEnd   = System.nanoTime();
+			long programExecutionTime = programEnd - programStart;
+			double programLifeTime = (double) programExecutionTime / 1_000_000_000.0;
+			DecimalFormat double2Places = new DecimalFormat("#.##");
+
+			System.out.println("Finished a2b application in " + double2Places.format(programLifeTime) + " seconds");
+
 		}
 
-
-		long endTime   = System.nanoTime();
-		long totalTime = endTime - startTime;
-		double executionTime = (double) totalTime / 1_000_000_000.0;
-		DecimalFormat double2Places = new DecimalFormat("#.##");
-
-		System.out.println("Finished a2b application in " + double2Places.format(executionTime) + " seconds");
 
 	}
 

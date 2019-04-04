@@ -70,6 +70,10 @@ class A2BParsingTest {
 			
 			STR "Hallo"
 			
+			B64e "Hello"
+			
+			B64d "Hello"
+			
 			
 		''')
 		result.assertNoErrors

@@ -28,8 +28,11 @@
     <genClasses ecoreClass="A2B.ecore#//STR">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//STR/value"/>
     </genClasses>
-    <genClasses ecoreClass="A2B.ecore#//Base64">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//Base64/value"/>
+    <genClasses ecoreClass="A2B.ecore#//Base64Decode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//Base64Decode/value"/>
+    </genClasses>
+    <genClasses ecoreClass="A2B.ecore#//Base64Encode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//Base64Encode/value"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//ORG">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//ORG/value"/>

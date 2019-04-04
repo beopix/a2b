@@ -71,7 +71,8 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
       case A2BPackage.DW: return createDW();
       case A2BPackage.DD: return createDD();
       case A2BPackage.STR: return createSTR();
-      case A2BPackage.BASE64: return createBase64();
+      case A2BPackage.BASE64_DECODE: return createBase64Decode();
+      case A2BPackage.BASE64_ENCODE: return createBase64Encode();
       case A2BPackage.ORG: return createORG();
       case A2BPackage.INCLUDE: return createINCLUDE();
       case A2BPackage.MAC: return createMAC();
@@ -164,10 +165,22 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
    * @generated
    */
   @Override
-  public Base64 createBase64()
+  public Base64Decode createBase64Decode()
   {
-    Base64Impl base64 = new Base64Impl();
-    return base64;
+    Base64DecodeImpl base64Decode = new Base64DecodeImpl();
+    return base64Decode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Base64Encode createBase64Encode()
+  {
+    Base64EncodeImpl base64Encode = new Base64EncodeImpl();
+    return base64Encode;
   }
 
   /**

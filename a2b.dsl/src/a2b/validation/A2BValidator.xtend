@@ -15,25 +15,25 @@ import a2b.a2B.DD
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class A2BValidator extends AbstractA2BValidator {
-	public static val INVALID_NAME = 'invalidName'
+	public static val INVALID_SYNTAX = 'Invalid.Syntax'
 	@Check
 	def checkDDIntegerValue(DD dd){
 		if(dd.longValue > 4294967295L || dd.longValue < 0){
-			error('Value for integer is between 0 and 4294967295', A2BPackage.Literals.DD__LONG_VALUE, INVALID_NAME)
+			error('Value for integer is between 0 and 4294967295', A2BPackage.Literals.DD__LONG_VALUE, INVALID_SYNTAX)
 		}
 	}
 	
 	@Check
 	def checkDWShortValue(DW dw){
 		if(dw.intValue > 65535 || dw.intValue < 0){
-			error('Value for short is between 0 and 65535', A2BPackage.Literals.DW__INT_VALUE, INVALID_NAME)
+			error('Value for short is between 0 and 65535', A2BPackage.Literals.DW__INT_VALUE, INVALID_SYNTAX)
 		}	
 	}
 	
 	@Check
 	def checkDBByteValue(DB db){
 		if(db.intValue > 255 || db.intValue < 0){
-			error('Value for byte is between 0 and 255', A2BPackage.Literals.DB__INT_VALUE, INVALID_NAME)
+			error('Value for byte is between 0 and 255', A2BPackage.Literals.DB__INT_VALUE, INVALID_SYNTAX)
 		}
 	}
 	

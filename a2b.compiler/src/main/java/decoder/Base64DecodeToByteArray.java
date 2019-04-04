@@ -3,9 +3,9 @@ package decoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-public class Base64ToByteArray {
+public class Base64DecodeToByteArray {
 
-	private Base64ToByteArray() {
+	private Base64DecodeToByteArray() {
 		
 	}
 

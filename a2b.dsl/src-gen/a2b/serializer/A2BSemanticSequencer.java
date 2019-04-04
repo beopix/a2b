@@ -5,7 +5,8 @@ package a2b.serializer;
 
 import a2b.a2B.A2BPackage;
 import a2b.a2B.BE;
-import a2b.a2B.Base64;
+import a2b.a2B.Base64Decode;
+import a2b.a2B.Base64Encode;
 import a2b.a2B.CRC;
 import a2b.a2B.DB;
 import a2b.a2B.DD;
@@ -49,8 +50,11 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case A2BPackage.BE:
 				sequence_Instruction(context, (BE) semanticObject); 
 				return; 
-			case A2BPackage.BASE64:
-				sequence_Base64(context, (Base64) semanticObject); 
+			case A2BPackage.BASE64_DECODE:
+				sequence_Base64Decode(context, (Base64Decode) semanticObject); 
+				return; 
+			case A2BPackage.BASE64_ENCODE:
+				sequence_Base64Encode(context, (Base64Encode) semanticObject); 
 				return; 
 			case A2BPackage.CRC:
 				sequence_Instruction(context, (CRC) semanticObject); 
@@ -98,19 +102,38 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Instruction returns Base64
-	 *     Base64 returns Base64
+	 *     Instruction returns Base64Decode
+	 *     Base64Decode returns Base64Decode
 	 *
 	 * Constraint:
 	 *     value=STRING
 	 */
-	protected void sequence_Base64(ISerializationContext context, Base64 semanticObject) {
+	protected void sequence_Base64Decode(ISerializationContext context, Base64Decode semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.BASE64__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.BASE64__VALUE));
+			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.BASE64_DECODE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.BASE64_DECODE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBase64Access().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getBase64DecodeAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns Base64Encode
+	 *     Base64Encode returns Base64Encode
+	 *
+	 * Constraint:
+	 *     value=STRING
+	 */
+	protected void sequence_Base64Encode(ISerializationContext context, Base64Encode semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.BASE64_ENCODE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.BASE64_ENCODE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBase64EncodeAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

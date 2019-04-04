@@ -149,56 +149,65 @@ ruleInstruction returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getBase64ParserRuleCall_4());
+			newCompositeNode(grammarAccess.getInstructionAccess().getBase64DecodeParserRuleCall_4());
 		}
-		this_Base64_4=ruleBase64
+		this_Base64Decode_4=ruleBase64Decode
 		{
-			$current = $this_Base64_4.current;
+			$current = $this_Base64Decode_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getORGParserRuleCall_5());
+			newCompositeNode(grammarAccess.getInstructionAccess().getBase64EncodeParserRuleCall_5());
 		}
-		this_ORG_5=ruleORG
+		this_Base64Encode_5=ruleBase64Encode
 		{
-			$current = $this_ORG_5.current;
+			$current = $this_Base64Encode_5.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getINCLUDEParserRuleCall_6());
+			newCompositeNode(grammarAccess.getInstructionAccess().getORGParserRuleCall_6());
 		}
-		this_INCLUDE_6=ruleINCLUDE
+		this_ORG_6=ruleORG
 		{
-			$current = $this_INCLUDE_6.current;
+			$current = $this_ORG_6.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getMACParserRuleCall_7());
+			newCompositeNode(grammarAccess.getInstructionAccess().getINCLUDEParserRuleCall_7());
 		}
-		this_MAC_7=ruleMAC
+		this_INCLUDE_7=ruleINCLUDE
 		{
-			$current = $this_MAC_7.current;
+			$current = $this_INCLUDE_7.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getIPParserRuleCall_8());
+			newCompositeNode(grammarAccess.getInstructionAccess().getMACParserRuleCall_8());
 		}
-		this_IP_8=ruleIP
+		this_MAC_8=ruleMAC
 		{
-			$current = $this_IP_8.current;
+			$current = $this_MAC_8.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getHXSParserRuleCall_9());
+			newCompositeNode(grammarAccess.getInstructionAccess().getIPParserRuleCall_9());
 		}
-		this_HXS_9=ruleHXS
+		this_IP_9=ruleIP
 		{
-			$current = $this_HXS_9.current;
+			$current = $this_IP_9.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getHXSParserRuleCall_10());
+		}
+		this_HXS_10=ruleHXS
+		{
+			$current = $this_HXS_10.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -206,12 +215,12 @@ ruleInstruction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getInstructionAccess().getBEAction_10_0(),
+						grammarAccess.getInstructionAccess().getBEAction_11_0(),
 						$current);
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getBEParserRuleCall_10_1());
+				newCompositeNode(grammarAccess.getInstructionAccess().getBEParserRuleCall_11_1());
 			}
 			ruleBE
 			{
@@ -223,12 +232,12 @@ ruleInstruction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getInstructionAccess().getLEAction_11_0(),
+						grammarAccess.getInstructionAccess().getLEAction_12_0(),
 						$current);
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getLEParserRuleCall_11_1());
+				newCompositeNode(grammarAccess.getInstructionAccess().getLEParserRuleCall_12_1());
 			}
 			ruleLE
 			{
@@ -240,12 +249,12 @@ ruleInstruction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getInstructionAccess().getPCAPAction_12_0(),
+						grammarAccess.getInstructionAccess().getPCAPAction_13_0(),
 						$current);
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getPCAPParserRuleCall_12_1());
+				newCompositeNode(grammarAccess.getInstructionAccess().getPCAPParserRuleCall_13_1());
 			}
 			rulePCAP
 			{
@@ -257,12 +266,12 @@ ruleInstruction returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getInstructionAccess().getCRCAction_13_0(),
+						grammarAccess.getInstructionAccess().getCRCAction_14_0(),
 						$current);
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getInstructionAccess().getCRCParserRuleCall_13_1());
+				newCompositeNode(grammarAccess.getInstructionAccess().getCRCParserRuleCall_14_1());
 			}
 			ruleCRC
 			{
@@ -554,15 +563,15 @@ ruleSTR returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleBase64
-entryRuleBase64 returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBase64Rule()); }
-	iv_ruleBase64=ruleBase64
-	{ $current=$iv_ruleBase64.current; }
+// Entry rule entryRuleBase64Decode
+entryRuleBase64Decode returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBase64DecodeRule()); }
+	iv_ruleBase64Decode=ruleBase64Decode
+	{ $current=$iv_ruleBase64Decode.current; }
 	EOF;
 
-// Rule Base64
-ruleBase64 returns [EObject current=null]
+// Rule Base64Decode
+ruleBase64Decode returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -570,19 +579,60 @@ ruleBase64 returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='B64'
+		otherlv_0='B64d'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getBase64Access().getB64Keyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getBase64DecodeAccess().getB64dKeyword_0());
 		}
 		(
 			(
 				lv_value_1_0=RULE_STRING
 				{
-					newLeafNode(lv_value_1_0, grammarAccess.getBase64Access().getValueSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_value_1_0, grammarAccess.getBase64DecodeAccess().getValueSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBase64Rule());
+						$current = createModelElement(grammarAccess.getBase64DecodeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleBase64Encode
+entryRuleBase64Encode returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBase64EncodeRule()); }
+	iv_ruleBase64Encode=ruleBase64Encode
+	{ $current=$iv_ruleBase64Encode.current; }
+	EOF;
+
+// Rule Base64Encode
+ruleBase64Encode returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='B64e'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getBase64EncodeAccess().getB64eKeyword_0());
+		}
+		(
+			(
+				lv_value_1_0=RULE_STRING
+				{
+					newLeafNode(lv_value_1_0, grammarAccess.getBase64EncodeAccess().getValueSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBase64EncodeRule());
 					}
 					setWithLastConsumed(
 						$current,

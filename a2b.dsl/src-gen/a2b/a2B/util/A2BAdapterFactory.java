@@ -106,9 +106,14 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
         return createSTRAdapter();
       }
       @Override
-      public Adapter caseBase64(Base64 object)
+      public Adapter caseBase64Decode(Base64Decode object)
       {
-        return createBase64Adapter();
+        return createBase64DecodeAdapter();
+      }
+      @Override
+      public Adapter caseBase64Encode(Base64Encode object)
+      {
+        return createBase64EncodeAdapter();
       }
       @Override
       public Adapter caseORG(ORG object)
@@ -268,16 +273,31 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link a2b.a2B.Base64 <em>Base64</em>}'.
+   * Creates a new adapter for an object of class '{@link a2b.a2B.Base64Decode <em>Base64 Decode</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see a2b.a2B.Base64
+   * @see a2b.a2B.Base64Decode
    * @generated
    */
-  public Adapter createBase64Adapter()
+  public Adapter createBase64DecodeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.Base64Encode <em>Base64 Encode</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.Base64Encode
+   * @generated
+   */
+  public Adapter createBase64EncodeAdapter()
   {
     return null;
   }

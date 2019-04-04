@@ -78,13 +78,22 @@ public interface A2BFactory extends EFactory
   STR createSTR();
 
   /**
-   * Returns a new object of class '<em>Base64</em>'.
+   * Returns a new object of class '<em>Base64 Decode</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Base64</em>'.
+   * @return a new object of class '<em>Base64 Decode</em>'.
    * @generated
    */
-  Base64 createBase64();
+  Base64Decode createBase64Decode();
+
+  /**
+   * Returns a new object of class '<em>Base64 Encode</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Base64 Encode</em>'.
+   * @generated
+   */
+  Base64Encode createBase64Encode();
 
   /**
    * Returns a new object of class '<em>ORG</em>'.

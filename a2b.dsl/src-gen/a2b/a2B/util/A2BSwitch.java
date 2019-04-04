@@ -119,11 +119,19 @@ public class A2BSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case A2BPackage.BASE64:
+      case A2BPackage.BASE64_DECODE:
       {
-        Base64 base64 = (Base64)theEObject;
-        T result = caseBase64(base64);
-        if (result == null) result = caseInstruction(base64);
+        Base64Decode base64Decode = (Base64Decode)theEObject;
+        T result = caseBase64Decode(base64Decode);
+        if (result == null) result = caseInstruction(base64Decode);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case A2BPackage.BASE64_ENCODE:
+      {
+        Base64Encode base64Encode = (Base64Encode)theEObject;
+        T result = caseBase64Encode(base64Encode);
+        if (result == null) result = caseInstruction(base64Encode);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -300,17 +308,33 @@ public class A2BSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Base64</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Base64 Decode</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Base64</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Base64 Decode</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBase64(Base64 object)
+  public T caseBase64Decode(Base64Decode object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Base64 Encode</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Base64 Encode</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBase64Encode(Base64Encode object)
   {
     return null;
   }

@@ -6,21 +6,21 @@ package a2b.a2B;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Base64</b></em>'.
+ * A representation of the model object '<em><b>Base64 Decode</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.Base64#getValue <em>Value</em>}</li>
+ *   <li>{@link a2b.a2B.Base64Decode#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see a2b.a2B.A2BPackage#getBase64()
+ * @see a2b.a2B.A2BPackage#getBase64Decode()
  * @model
  * @generated
  */
-public interface Base64 extends Instruction
+public interface Base64Decode extends Instruction
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -28,14 +28,14 @@ public interface Base64 extends Instruction
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(String)
-   * @see a2b.a2B.A2BPackage#getBase64_Value()
+   * @see a2b.a2B.A2BPackage#getBase64Decode_Value()
    * @model
    * @generated
    */
   String getValue();
 
   /**
-   * Sets the value of the '{@link a2b.a2B.Base64#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link a2b.a2B.Base64Decode#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -44,4 +44,4 @@ public interface Base64 extends Instruction
    */
   void setValue(String value);
 
-} // Base64
+} // Base64Decode

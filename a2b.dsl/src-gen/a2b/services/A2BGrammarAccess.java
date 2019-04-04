@@ -45,30 +45,33 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDWParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cDDParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cSTRParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cBase64ParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cORGParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cINCLUDEParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cMACParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cIPParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		private final RuleCall cHXSParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
-		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Action cBEAction_10_0 = (Action)cGroup_10.eContents().get(0);
-		private final RuleCall cBEParserRuleCall_10_1 = (RuleCall)cGroup_10.eContents().get(1);
+		private final RuleCall cBase64DecodeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cBase64EncodeParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cORGParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cINCLUDEParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cMACParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cIPParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cHXSParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
-		private final Action cLEAction_11_0 = (Action)cGroup_11.eContents().get(0);
-		private final RuleCall cLEParserRuleCall_11_1 = (RuleCall)cGroup_11.eContents().get(1);
+		private final Action cBEAction_11_0 = (Action)cGroup_11.eContents().get(0);
+		private final RuleCall cBEParserRuleCall_11_1 = (RuleCall)cGroup_11.eContents().get(1);
 		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
-		private final Action cPCAPAction_12_0 = (Action)cGroup_12.eContents().get(0);
-		private final RuleCall cPCAPParserRuleCall_12_1 = (RuleCall)cGroup_12.eContents().get(1);
+		private final Action cLEAction_12_0 = (Action)cGroup_12.eContents().get(0);
+		private final RuleCall cLEParserRuleCall_12_1 = (RuleCall)cGroup_12.eContents().get(1);
 		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
-		private final Action cCRCAction_13_0 = (Action)cGroup_13.eContents().get(0);
-		private final RuleCall cCRCParserRuleCall_13_1 = (RuleCall)cGroup_13.eContents().get(1);
+		private final Action cPCAPAction_13_0 = (Action)cGroup_13.eContents().get(0);
+		private final RuleCall cPCAPParserRuleCall_13_1 = (RuleCall)cGroup_13.eContents().get(1);
+		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
+		private final Action cCRCAction_14_0 = (Action)cGroup_14.eContents().get(0);
+		private final RuleCall cCRCParserRuleCall_14_1 = (RuleCall)cGroup_14.eContents().get(1);
 		
 		//Instruction:
-		//	DB | DW | DD | STR | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP | {CRC} CRC;
+		//	DB | DW | DD | STR | Base64Decode | Base64Encode | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP |
+		//	{CRC} CRC;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DB | DW | DD | STR | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP | {CRC} CRC
+		//DB | DW | DD | STR | Base64Decode | Base64Encode | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP |
+		//{CRC} CRC
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//DB
@@ -83,59 +86,62 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		//STR
 		public RuleCall getSTRParserRuleCall_3() { return cSTRParserRuleCall_3; }
 		
-		//Base64
-		public RuleCall getBase64ParserRuleCall_4() { return cBase64ParserRuleCall_4; }
+		//Base64Decode
+		public RuleCall getBase64DecodeParserRuleCall_4() { return cBase64DecodeParserRuleCall_4; }
+		
+		//Base64Encode
+		public RuleCall getBase64EncodeParserRuleCall_5() { return cBase64EncodeParserRuleCall_5; }
 		
 		//ORG
-		public RuleCall getORGParserRuleCall_5() { return cORGParserRuleCall_5; }
+		public RuleCall getORGParserRuleCall_6() { return cORGParserRuleCall_6; }
 		
 		//INCLUDE
-		public RuleCall getINCLUDEParserRuleCall_6() { return cINCLUDEParserRuleCall_6; }
+		public RuleCall getINCLUDEParserRuleCall_7() { return cINCLUDEParserRuleCall_7; }
 		
 		//MAC
-		public RuleCall getMACParserRuleCall_7() { return cMACParserRuleCall_7; }
+		public RuleCall getMACParserRuleCall_8() { return cMACParserRuleCall_8; }
 		
 		//IP
-		public RuleCall getIPParserRuleCall_8() { return cIPParserRuleCall_8; }
+		public RuleCall getIPParserRuleCall_9() { return cIPParserRuleCall_9; }
 		
 		//HXS
-		public RuleCall getHXSParserRuleCall_9() { return cHXSParserRuleCall_9; }
+		public RuleCall getHXSParserRuleCall_10() { return cHXSParserRuleCall_10; }
 		
 		//{BE} BE
-		public Group getGroup_10() { return cGroup_10; }
-		
-		//{BE}
-		public Action getBEAction_10_0() { return cBEAction_10_0; }
-		
-		//BE
-		public RuleCall getBEParserRuleCall_10_1() { return cBEParserRuleCall_10_1; }
-		
-		//{LE} LE
 		public Group getGroup_11() { return cGroup_11; }
 		
-		//{LE}
-		public Action getLEAction_11_0() { return cLEAction_11_0; }
+		//{BE}
+		public Action getBEAction_11_0() { return cBEAction_11_0; }
 		
-		//LE
-		public RuleCall getLEParserRuleCall_11_1() { return cLEParserRuleCall_11_1; }
+		//BE
+		public RuleCall getBEParserRuleCall_11_1() { return cBEParserRuleCall_11_1; }
 		
-		//{PCAP} PCAP
+		//{LE} LE
 		public Group getGroup_12() { return cGroup_12; }
 		
-		//{PCAP}
-		public Action getPCAPAction_12_0() { return cPCAPAction_12_0; }
+		//{LE}
+		public Action getLEAction_12_0() { return cLEAction_12_0; }
 		
-		//PCAP
-		public RuleCall getPCAPParserRuleCall_12_1() { return cPCAPParserRuleCall_12_1; }
+		//LE
+		public RuleCall getLEParserRuleCall_12_1() { return cLEParserRuleCall_12_1; }
 		
-		//{CRC} CRC
+		//{PCAP} PCAP
 		public Group getGroup_13() { return cGroup_13; }
 		
+		//{PCAP}
+		public Action getPCAPAction_13_0() { return cPCAPAction_13_0; }
+		
+		//PCAP
+		public RuleCall getPCAPParserRuleCall_13_1() { return cPCAPParserRuleCall_13_1; }
+		
+		//{CRC} CRC
+		public Group getGroup_14() { return cGroup_14; }
+		
 		//{CRC}
-		public Action getCRCAction_13_0() { return cCRCAction_13_0; }
+		public Action getCRCAction_14_0() { return cCRCAction_14_0; }
 		
 		//CRC
-		public RuleCall getCRCParserRuleCall_13_1() { return cCRCParserRuleCall_13_1; }
+		public RuleCall getCRCParserRuleCall_14_1() { return cCRCParserRuleCall_14_1; }
 	}
 	public class DBElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.DB");
@@ -289,22 +295,45 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 	}
-	public class Base64Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.Base64");
+	public class Base64DecodeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.Base64Decode");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cB64Keyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cB64dKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
-		//Base64:
-		//	'B64' value=STRING;
+		//Base64Decode:
+		//	'B64d' value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'B64' value=STRING
+		//'B64d' value=STRING
 		public Group getGroup() { return cGroup; }
 		
-		//'B64'
-		public Keyword getB64Keyword_0() { return cB64Keyword_0; }
+		//'B64d'
+		public Keyword getB64dKeyword_0() { return cB64dKeyword_0; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+	}
+	public class Base64EncodeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.Base64Encode");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cB64eKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//Base64Encode:
+		//	'B64e' value=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'B64e' value=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'B64e'
+		public Keyword getB64eKeyword_0() { return cB64eKeyword_0; }
 		
 		//value=STRING
 		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
@@ -522,7 +551,8 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 	private final DWElements pDW;
 	private final DDElements pDD;
 	private final STRElements pSTR;
-	private final Base64Elements pBase64;
+	private final Base64DecodeElements pBase64Decode;
+	private final Base64EncodeElements pBase64Encode;
 	private final ORGElements pORG;
 	private final INCLUDEElements pINCLUDE;
 	private final MACElements pMAC;
@@ -560,7 +590,8 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDW = new DWElements();
 		this.pDD = new DDElements();
 		this.pSTR = new STRElements();
-		this.pBase64 = new Base64Elements();
+		this.pBase64Decode = new Base64DecodeElements();
+		this.pBase64Encode = new Base64EncodeElements();
 		this.pORG = new ORGElements();
 		this.pINCLUDE = new INCLUDEElements();
 		this.pMAC = new MACElements();
@@ -622,7 +653,8 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Instruction:
-	//	DB | DW | DD | STR | Base64 | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP | {CRC} CRC;
+	//	DB | DW | DD | STR | Base64Decode | Base64Encode | ORG | INCLUDE | MAC | IP | HXS | {BE} BE | {LE} LE | {PCAP} PCAP |
+	//	{CRC} CRC;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -671,14 +703,24 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		return getSTRAccess().getRule();
 	}
 	
-	//Base64:
-	//	'B64' value=STRING;
-	public Base64Elements getBase64Access() {
-		return pBase64;
+	//Base64Decode:
+	//	'B64d' value=STRING;
+	public Base64DecodeElements getBase64DecodeAccess() {
+		return pBase64Decode;
 	}
 	
-	public ParserRule getBase64Rule() {
-		return getBase64Access().getRule();
+	public ParserRule getBase64DecodeRule() {
+		return getBase64DecodeAccess().getRule();
+	}
+	
+	//Base64Encode:
+	//	'B64e' value=STRING;
+	public Base64EncodeElements getBase64EncodeAccess() {
+		return pBase64Encode;
+	}
+	
+	public ParserRule getBase64EncodeRule() {
+		return getBase64EncodeAccess().getRule();
 	}
 	
 	//ORG:

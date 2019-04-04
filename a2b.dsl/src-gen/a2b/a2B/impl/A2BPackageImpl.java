@@ -5,7 +5,8 @@ package a2b.a2B.impl;
 
 import a2b.a2B.A2BFactory;
 import a2b.a2B.A2BPackage;
-import a2b.a2B.Base64;
+import a2b.a2B.Base64Decode;
+import a2b.a2B.Base64Encode;
 import a2b.a2B.Instruction;
 import a2b.a2B.Model;
 
@@ -71,7 +72,14 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass base64EClass = null;
+  private EClass base64DecodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass base64EncodeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -392,9 +400,9 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
-  public EClass getBase64()
+  public EClass getBase64Decode()
   {
-    return base64EClass;
+    return base64DecodeEClass;
   }
 
   /**
@@ -403,9 +411,31 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
-  public EAttribute getBase64_Value()
+  public EAttribute getBase64Decode_Value()
   {
-    return (EAttribute)base64EClass.getEStructuralFeatures().get(0);
+    return (EAttribute)base64DecodeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBase64Encode()
+  {
+    return base64EncodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBase64Encode_Value()
+  {
+    return (EAttribute)base64EncodeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -660,8 +690,11 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     strEClass = createEClass(STR);
     createEAttribute(strEClass, STR__VALUE);
 
-    base64EClass = createEClass(BASE64);
-    createEAttribute(base64EClass, BASE64__VALUE);
+    base64DecodeEClass = createEClass(BASE64_DECODE);
+    createEAttribute(base64DecodeEClass, BASE64_DECODE__VALUE);
+
+    base64EncodeEClass = createEClass(BASE64_ENCODE);
+    createEAttribute(base64EncodeEClass, BASE64_ENCODE__VALUE);
 
     orgEClass = createEClass(ORG);
     createEAttribute(orgEClass, ORG__VALUE);
@@ -724,7 +757,8 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     dwEClass.getESuperTypes().add(this.getInstruction());
     ddEClass.getESuperTypes().add(this.getInstruction());
     strEClass.getESuperTypes().add(this.getInstruction());
-    base64EClass.getESuperTypes().add(this.getInstruction());
+    base64DecodeEClass.getESuperTypes().add(this.getInstruction());
+    base64EncodeEClass.getESuperTypes().add(this.getInstruction());
     orgEClass.getESuperTypes().add(this.getInstruction());
     includeEClass.getESuperTypes().add(this.getInstruction());
     macEClass.getESuperTypes().add(this.getInstruction());
@@ -759,8 +793,11 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     initEClass(strEClass, a2b.a2B.STR.class, "STR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSTR_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.STR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(base64EClass, Base64.class, "Base64", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBase64_Value(), ecorePackage.getEString(), "value", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(base64DecodeEClass, Base64Decode.class, "Base64Decode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBase64Decode_Value(), ecorePackage.getEString(), "value", null, 0, 1, Base64Decode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(base64EncodeEClass, Base64Encode.class, "Base64Encode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBase64Encode_Value(), ecorePackage.getEString(), "value", null, 0, 1, Base64Encode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orgEClass, a2b.a2B.ORG.class, "ORG", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getORG_Value(), ecorePackage.getEInt(), "value", null, 0, 1, a2b.a2B.ORG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

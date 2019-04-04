@@ -35,15 +35,16 @@ public class A2BParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDBAccess().getAlternatives_1(), "rule__DB__Alternatives_1");
 			builder.put(grammarAccess.getDWAccess().getAlternatives_1(), "rule__DW__Alternatives_1");
 			builder.put(grammarAccess.getDDAccess().getAlternatives_1(), "rule__DD__Alternatives_1");
-			builder.put(grammarAccess.getInstructionAccess().getGroup_10(), "rule__Instruction__Group_10__0");
 			builder.put(grammarAccess.getInstructionAccess().getGroup_11(), "rule__Instruction__Group_11__0");
 			builder.put(grammarAccess.getInstructionAccess().getGroup_12(), "rule__Instruction__Group_12__0");
 			builder.put(grammarAccess.getInstructionAccess().getGroup_13(), "rule__Instruction__Group_13__0");
+			builder.put(grammarAccess.getInstructionAccess().getGroup_14(), "rule__Instruction__Group_14__0");
 			builder.put(grammarAccess.getDBAccess().getGroup(), "rule__DB__Group__0");
 			builder.put(grammarAccess.getDWAccess().getGroup(), "rule__DW__Group__0");
 			builder.put(grammarAccess.getDDAccess().getGroup(), "rule__DD__Group__0");
 			builder.put(grammarAccess.getSTRAccess().getGroup(), "rule__STR__Group__0");
-			builder.put(grammarAccess.getBase64Access().getGroup(), "rule__Base64__Group__0");
+			builder.put(grammarAccess.getBase64DecodeAccess().getGroup(), "rule__Base64Decode__Group__0");
+			builder.put(grammarAccess.getBase64EncodeAccess().getGroup(), "rule__Base64Encode__Group__0");
 			builder.put(grammarAccess.getORGAccess().getGroup(), "rule__ORG__Group__0");
 			builder.put(grammarAccess.getINCLUDEAccess().getGroup(), "rule__INCLUDE__Group__0");
 			builder.put(grammarAccess.getMACAccess().getGroup(), "rule__MAC__Group__0");
@@ -60,7 +61,8 @@ public class A2BParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDDAccess().getLongValueAssignment_1_1(), "rule__DD__LongValueAssignment_1_1");
 			builder.put(grammarAccess.getDDAccess().getCrcValueAssignment_2(), "rule__DD__CrcValueAssignment_2");
 			builder.put(grammarAccess.getSTRAccess().getValueAssignment_1(), "rule__STR__ValueAssignment_1");
-			builder.put(grammarAccess.getBase64Access().getValueAssignment_1(), "rule__Base64__ValueAssignment_1");
+			builder.put(grammarAccess.getBase64DecodeAccess().getValueAssignment_1(), "rule__Base64Decode__ValueAssignment_1");
+			builder.put(grammarAccess.getBase64EncodeAccess().getValueAssignment_1(), "rule__Base64Encode__ValueAssignment_1");
 			builder.put(grammarAccess.getORGAccess().getValueAssignment_1(), "rule__ORG__ValueAssignment_1");
 			builder.put(grammarAccess.getORGAccess().getCrcValueAssignment_2(), "rule__ORG__CrcValueAssignment_2");
 			builder.put(grammarAccess.getINCLUDEAccess().getValueAssignment_1(), "rule__INCLUDE__ValueAssignment_1");

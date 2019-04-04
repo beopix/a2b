@@ -271,14 +271,14 @@ public interface A2BPackage extends EPackage
   int STR_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link a2b.a2B.impl.Base64Impl <em>Base64</em>}' class.
+   * The meta object id for the '{@link a2b.a2B.impl.Base64DecodeImpl <em>Base64 Decode</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see a2b.a2B.impl.Base64Impl
-   * @see a2b.a2B.impl.A2BPackageImpl#getBase64()
+   * @see a2b.a2B.impl.Base64DecodeImpl
+   * @see a2b.a2B.impl.A2BPackageImpl#getBase64Decode()
    * @generated
    */
-  int BASE64 = 6;
+  int BASE64_DECODE = 6;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -287,16 +287,44 @@ public interface A2BPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BASE64__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+  int BASE64_DECODE__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Base64</em>' class.
+   * The number of structural features of the '<em>Base64 Decode</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BASE64_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+  int BASE64_DECODE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link a2b.a2B.impl.Base64EncodeImpl <em>Base64 Encode</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see a2b.a2B.impl.Base64EncodeImpl
+   * @see a2b.a2B.impl.A2BPackageImpl#getBase64Encode()
+   * @generated
+   */
+  int BASE64_ENCODE = 7;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE64_ENCODE__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Base64 Encode</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE64_ENCODE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link a2b.a2B.impl.ORGImpl <em>ORG</em>}' class.
@@ -306,7 +334,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getORG()
    * @generated
    */
-  int ORG = 7;
+  int ORG = 8;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -343,7 +371,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getINCLUDE()
    * @generated
    */
-  int INCLUDE = 8;
+  int INCLUDE = 9;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -371,7 +399,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getMAC()
    * @generated
    */
-  int MAC = 9;
+  int MAC = 10;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -408,7 +436,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getIP()
    * @generated
    */
-  int IP = 10;
+  int IP = 11;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -445,7 +473,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getHXS()
    * @generated
    */
-  int HXS = 11;
+  int HXS = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -482,7 +510,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getBE()
    * @generated
    */
-  int BE = 12;
+  int BE = 13;
 
   /**
    * The number of structural features of the '<em>BE</em>' class.
@@ -501,7 +529,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getLE()
    * @generated
    */
-  int LE = 13;
+  int LE = 14;
 
   /**
    * The number of structural features of the '<em>LE</em>' class.
@@ -520,7 +548,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getPCAP()
    * @generated
    */
-  int PCAP = 14;
+  int PCAP = 15;
 
   /**
    * The number of structural features of the '<em>PCAP</em>' class.
@@ -539,7 +567,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getCRC()
    * @generated
    */
-  int CRC = 15;
+  int CRC = 16;
 
   /**
    * The number of structural features of the '<em>CRC</em>' class.
@@ -733,25 +761,46 @@ public interface A2BPackage extends EPackage
   EAttribute getSTR_Value();
 
   /**
-   * Returns the meta object for class '{@link a2b.a2B.Base64 <em>Base64</em>}'.
+   * Returns the meta object for class '{@link a2b.a2B.Base64Decode <em>Base64 Decode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Base64</em>'.
-   * @see a2b.a2B.Base64
+   * @return the meta object for class '<em>Base64 Decode</em>'.
+   * @see a2b.a2B.Base64Decode
    * @generated
    */
-  EClass getBase64();
+  EClass getBase64Decode();
 
   /**
-   * Returns the meta object for the attribute '{@link a2b.a2B.Base64#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link a2b.a2B.Base64Decode#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see a2b.a2B.Base64#getValue()
-   * @see #getBase64()
+   * @see a2b.a2B.Base64Decode#getValue()
+   * @see #getBase64Decode()
    * @generated
    */
-  EAttribute getBase64_Value();
+  EAttribute getBase64Decode_Value();
+
+  /**
+   * Returns the meta object for class '{@link a2b.a2B.Base64Encode <em>Base64 Encode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Base64 Encode</em>'.
+   * @see a2b.a2B.Base64Encode
+   * @generated
+   */
+  EClass getBase64Encode();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.Base64Encode#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see a2b.a2B.Base64Encode#getValue()
+   * @see #getBase64Encode()
+   * @generated
+   */
+  EAttribute getBase64Encode_Value();
 
   /**
    * Returns the meta object for class '{@link a2b.a2B.ORG <em>ORG</em>}'.
@@ -1114,14 +1163,14 @@ public interface A2BPackage extends EPackage
     EAttribute STR__VALUE = eINSTANCE.getSTR_Value();
 
     /**
-     * The meta object literal for the '{@link a2b.a2B.impl.Base64Impl <em>Base64</em>}' class.
+     * The meta object literal for the '{@link a2b.a2B.impl.Base64DecodeImpl <em>Base64 Decode</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see a2b.a2B.impl.Base64Impl
-     * @see a2b.a2B.impl.A2BPackageImpl#getBase64()
+     * @see a2b.a2B.impl.Base64DecodeImpl
+     * @see a2b.a2B.impl.A2BPackageImpl#getBase64Decode()
      * @generated
      */
-    EClass BASE64 = eINSTANCE.getBase64();
+    EClass BASE64_DECODE = eINSTANCE.getBase64Decode();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1129,7 +1178,25 @@ public interface A2BPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BASE64__VALUE = eINSTANCE.getBase64_Value();
+    EAttribute BASE64_DECODE__VALUE = eINSTANCE.getBase64Decode_Value();
+
+    /**
+     * The meta object literal for the '{@link a2b.a2B.impl.Base64EncodeImpl <em>Base64 Encode</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see a2b.a2B.impl.Base64EncodeImpl
+     * @see a2b.a2B.impl.A2BPackageImpl#getBase64Encode()
+     * @generated
+     */
+    EClass BASE64_ENCODE = eINSTANCE.getBase64Encode();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASE64_ENCODE__VALUE = eINSTANCE.getBase64Encode_Value();
 
     /**
      * The meta object literal for the '{@link a2b.a2B.impl.ORGImpl <em>ORG</em>}' class.

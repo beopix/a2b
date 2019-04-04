@@ -1,0 +1,31 @@
+package compiler;
+
+import java.util.List;
+
+import org.eclipse.xtext.validation.Issue;
+
+public class A2BParseErrorException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6311825955154703770L;
+	
+	public A2BParseErrorException() {
+		
+	}
+	
+	public A2BParseErrorException(String message) {
+		super(message);
+	}
+	
+	public A2BParseErrorException(List<Issue> validatorIssueList) {
+		
+		for(Issue issue: validatorIssueList) {
+			System.out.println("In line " + issue.getLineNumber() + " syntax error: " + issue.getMessage());
+		}
+		
+	}
+	
+
+}
