@@ -15,6 +15,7 @@ package a2b.a2B;
  * <ul>
  *   <li>{@link a2b.a2B.DB#getStringValue <em>String Value</em>}</li>
  *   <li>{@link a2b.a2B.DB#getIntValue <em>Int Value</em>}</li>
+ *   <li>{@link a2b.a2B.DB#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
  * @see a2b.a2B.A2BPackage#getDB()
@@ -66,5 +67,27 @@ public interface DB extends Instruction
    * @generated
    */
   void setIntValue(int value);
+
+  /**
+   * Returns the value of the '<em><b>Crc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Crc Value</em>' attribute.
+   * @see #setCrcValue(String)
+   * @see a2b.a2B.A2BPackage#getDB_CrcValue()
+   * @model
+   * @generated
+   */
+  String getCrcValue();
+
+  /**
+   * Sets the value of the '{@link a2b.a2B.DB#getCrcValue <em>Crc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Crc Value</em>' attribute.
+   * @see #getCrcValue()
+   * @generated
+   */
+  void setCrcValue(String value);
 
 } // DB

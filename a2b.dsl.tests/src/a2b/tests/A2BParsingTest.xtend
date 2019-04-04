@@ -55,6 +55,9 @@ class A2BParsingTest {
 			
 			DB 0xff
 			
+			CRC
+			STR "Hallo"
+			
 			DW 0xffff
 			
 			DW 1
@@ -62,6 +65,10 @@ class A2BParsingTest {
 			DW 0b0000000011111111
 			
 			DD 4294967295
+			
+			PCAP
+			
+			STR "Hallo"
 			
 			
 		''')

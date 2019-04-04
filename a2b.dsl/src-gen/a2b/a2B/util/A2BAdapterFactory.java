@@ -101,6 +101,11 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
         return createDDAdapter();
       }
       @Override
+      public Adapter caseSTR(STR object)
+      {
+        return createSTRAdapter();
+      }
+      @Override
       public Adapter caseBase64(Base64 object)
       {
         return createBase64Adapter();
@@ -144,6 +149,11 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
       public Adapter casePCAP(PCAP object)
       {
         return createPCAPAdapter();
+      }
+      @Override
+      public Adapter caseCRC(CRC object)
+      {
+        return createCRCAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -238,6 +248,21 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDDAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.STR <em>STR</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.STR
+   * @generated
+   */
+  public Adapter createSTRAdapter()
   {
     return null;
   }
@@ -373,6 +398,21 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPCAPAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.CRC <em>CRC</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.CRC
+   * @generated
+   */
+  public Adapter createCRCAdapter()
   {
     return null;
   }

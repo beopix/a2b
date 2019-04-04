@@ -13,35 +13,46 @@
     <genClasses ecoreClass="A2B.ecore#//DB">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DB/stringValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DB/intValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DB/crcValue"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//DW">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DW/stringValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DW/intValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DW/crcValue"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//DD">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DD/stringValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DD/longValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//DD/crcValue"/>
+    </genClasses>
+    <genClasses ecoreClass="A2B.ecore#//STR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//STR/value"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//Base64">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//Base64/value"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//ORG">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//ORG/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//ORG/crcValue"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//INCLUDE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//INCLUDE/value"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//MAC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//MAC/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//MAC/crcValue"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//IP">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//IP/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//IP/crcValue"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//HXS">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//HXS/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//HXS/crcValue"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//BE"/>
     <genClasses ecoreClass="A2B.ecore#//LE"/>
     <genClasses ecoreClass="A2B.ecore#//PCAP"/>
+    <genClasses ecoreClass="A2B.ecore#//CRC"/>
   </genPackages>
 </genmodel:GenModel>

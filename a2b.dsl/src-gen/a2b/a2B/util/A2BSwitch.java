@@ -111,6 +111,14 @@ public class A2BSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case A2BPackage.STR:
+      {
+        STR str = (STR)theEObject;
+        T result = caseSTR(str);
+        if (result == null) result = caseInstruction(str);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case A2BPackage.BASE64:
       {
         Base64 base64 = (Base64)theEObject;
@@ -180,6 +188,14 @@ public class A2BSwitch<T> extends Switch<T>
         PCAP pcap = (PCAP)theEObject;
         T result = casePCAP(pcap);
         if (result == null) result = caseInstruction(pcap);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case A2BPackage.CRC:
+      {
+        CRC crc = (CRC)theEObject;
+        T result = caseCRC(crc);
+        if (result == null) result = caseInstruction(crc);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -263,6 +279,22 @@ public class A2BSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDD(DD object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>STR</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>STR</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSTR(STR object)
   {
     return null;
   }
@@ -407,6 +439,22 @@ public class A2BSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePCAP(PCAP object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>CRC</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>CRC</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCRC(CRC object)
   {
     return null;
   }

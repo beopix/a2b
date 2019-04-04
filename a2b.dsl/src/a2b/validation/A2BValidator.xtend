@@ -19,7 +19,7 @@ class A2BValidator extends AbstractA2BValidator {
 	@Check
 	def checkDDIntegerValue(DD dd){
 		if(dd.longValue > 4294967295L || dd.longValue < 0){
-			error('Value for short is between 0 and 4294967295', A2BPackage.Literals.DD__LONG_VALUE, INVALID_NAME)
+			error('Value for integer is between 0 and 4294967295', A2BPackage.Literals.DD__LONG_VALUE, INVALID_NAME)
 		}
 	}
 	

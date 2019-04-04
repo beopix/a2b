@@ -69,6 +69,15 @@ public interface A2BFactory extends EFactory
   DD createDD();
 
   /**
+   * Returns a new object of class '<em>STR</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>STR</em>'.
+   * @generated
+   */
+  STR createSTR();
+
+  /**
    * Returns a new object of class '<em>Base64</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,6 +157,15 @@ public interface A2BFactory extends EFactory
    * @generated
    */
   PCAP createPCAP();
+
+  /**
+   * Returns a new object of class '<em>CRC</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CRC</em>'.
+   * @generated
+   */
+  CRC createCRC();
 
   /**
    * Returns the package supported by this factory.

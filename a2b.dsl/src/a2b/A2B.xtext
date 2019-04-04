@@ -8,19 +8,23 @@ Model:
 ;
 
 Instruction:
-	DB | DW | DD | Base64 | ORG | INCLUDE | MAC | IP | HXS |  {BE} BE | {LE} LE | {PCAP} PCAP
+	DB | DW | DD | STR | Base64 | ORG | INCLUDE | MAC | IP | HXS |  {BE} BE | {LE} LE | {PCAP} PCAP | {CRC} CRC
 ;
 
 DB:
-	'DB' (stringValue=BYTE | intValue=INT)
+	'DB' (stringValue=BYTE | intValue=INT) (crcValue=CRCCHECK)?
 ;
 
 DW:
-	'DW' (stringValue=WORD | intValue=INT)
+	'DW' (stringValue=WORD | intValue=INT) (crcValue=CRCCHECK)?
 ;
 
 DD:
-	'DD' (stringValue=DOUBLEWORD | longValue=LONG)
+	'DD' (stringValue=DOUBLEWORD | longValue=LONG) (crcValue=CRCCHECK)?
+;
+
+STR:
+	'STR' value=STRING
 ;
 
 Base64:
@@ -28,7 +32,7 @@ Base64:
 ;	
 
 ORG:
-	'ORG' value=INT
+	'ORG' value=INT (crcValue=CRCCHECK)?
 ;
 
 INCLUDE:
@@ -36,15 +40,15 @@ INCLUDE:
 ;
 
 MAC:
-	'MAC' value=MACADDRESS
+	'MAC' value=MACADDRESS (crcValue=CRCCHECK)?
 ;
 
 IP:
-	'IP' value=IPADDRESS
+	'IP' value=IPADDRESS (crcValue=CRCCHECK)?
 ;
 
 HXS:
-	'HXS' value=HEXSTRING
+	'HXS' value=HEXSTRING (crcValue=CRCCHECK)?
 ;
 
 BE:
@@ -57,6 +61,10 @@ LE:
 
 PCAP:
 	'PCAP'
+;
+
+CRC:
+	'CRC'
 ;
 
 LONG returns ecore::ELong:
@@ -88,6 +96,10 @@ terminal WORD:
 terminal DOUBLEWORD:
 	'0b'BINARY_ BINARY_ BINARY_ BINARY_ | 
 	'0x'HEX_ HEX_ HEX_ HEX_
+;
+
+terminal CRCCHECK:
+	'#'
 ;
 
 terminal PATH:

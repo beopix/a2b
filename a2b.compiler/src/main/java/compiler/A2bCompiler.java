@@ -13,13 +13,16 @@ import a2b.a2B.Instruction;
 import a2b.a2B.MAC;
 import a2b.a2B.Model;
 import a2b.a2B.ORG;
+import a2b.a2B.STR;
 import decoder.Base64ToByteArray;
 import decoder.ByteWordDoubleWordToByteArray;
+import decoder.ChecksumToByteArray;
 import decoder.HexStringToByteArray;
 import decoder.IPToByteArray;
 import decoder.IncludeToByteArray;
 import decoder.MACToByteArray;
 import decoder.ORGToByteArray;
+import decoder.StringToByteArray;
 
 public class A2bCompiler {
 
@@ -34,7 +37,7 @@ public class A2bCompiler {
 
 	public byte[] compile() {
 		boolean littleEndian = false;
-
+		
 		byte[] result = {};
 
 		EList<Instruction> instructionValue = model.getElement();
@@ -61,6 +64,10 @@ public class A2bCompiler {
 						appendByteArray(result, ByteWordDoubleWordToByteArray.decodeDDInteger(defineDoubleWord.getLongValue(), littleEndian)) :
 						appendByteArray(result, ByteWordDoubleWordToByteArray.decodeDDString(defineDoubleWord.getStringValue(), littleEndian))	;
 				break;
+			case "STR":
+				STR str = (STR) instruction;
+				result = appendByteArray(result, StringToByteArray.decode(str.getValue(), littleEndian));
+				break;
 			case "Base64":
 				Base64 base64 = (Base64) instruction;
 				result = appendByteArray(result, Base64ToByteArray.decode(base64.getValue(), littleEndian));
@@ -84,6 +91,9 @@ public class A2bCompiler {
 			case "HXS":
 				HXS hxs = (HXS) instruction;
 				result = appendByteArray(result, HexStringToByteArray.decode(hxs.getValue(), littleEndian));
+				break;
+			case "CRC":
+				result = appendByteArray(result, ChecksumToByteArray.decode(instructionValue, littleEndian));
 				break;
 			case "BE":
 				littleEndian = false;

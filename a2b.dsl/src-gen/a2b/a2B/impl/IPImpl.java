@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link a2b.a2B.impl.IPImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.IPImpl#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +47,26 @@ public class IPImpl extends InstructionImpl implements IP
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCrcValue() <em>Crc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCrcValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String CRC_VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCrcValue() <em>Crc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCrcValue()
+   * @generated
+   * @ordered
+   */
+  protected String crcValue = CRC_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,12 +120,39 @@ public class IPImpl extends InstructionImpl implements IP
    * @generated
    */
   @Override
+  public String getCrcValue()
+  {
+    return crcValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setCrcValue(String newCrcValue)
+  {
+    String oldCrcValue = crcValue;
+    crcValue = newCrcValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.IP__CRC_VALUE, oldCrcValue, crcValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case A2BPackage.IP__VALUE:
         return getValue();
+      case A2BPackage.IP__CRC_VALUE:
+        return getCrcValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,6 +169,9 @@ public class IPImpl extends InstructionImpl implements IP
     {
       case A2BPackage.IP__VALUE:
         setValue((String)newValue);
+        return;
+      case A2BPackage.IP__CRC_VALUE:
+        setCrcValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,6 +190,9 @@ public class IPImpl extends InstructionImpl implements IP
       case A2BPackage.IP__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case A2BPackage.IP__CRC_VALUE:
+        setCrcValue(CRC_VALUE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -155,6 +209,8 @@ public class IPImpl extends InstructionImpl implements IP
     {
       case A2BPackage.IP__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case A2BPackage.IP__CRC_VALUE:
+        return CRC_VALUE_EDEFAULT == null ? crcValue != null : !CRC_VALUE_EDEFAULT.equals(crcValue);
     }
     return super.eIsSet(featureID);
   }
@@ -172,6 +228,8 @@ public class IPImpl extends InstructionImpl implements IP
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (value: ");
     result.append(value);
+    result.append(", crcValue: ");
+    result.append(crcValue);
     result.append(')');
     return result.toString();
   }

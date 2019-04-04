@@ -70,6 +70,7 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
       case A2BPackage.DB: return createDB();
       case A2BPackage.DW: return createDW();
       case A2BPackage.DD: return createDD();
+      case A2BPackage.STR: return createSTR();
       case A2BPackage.BASE64: return createBase64();
       case A2BPackage.ORG: return createORG();
       case A2BPackage.INCLUDE: return createINCLUDE();
@@ -79,6 +80,7 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
       case A2BPackage.BE: return createBE();
       case A2BPackage.LE: return createLE();
       case A2BPackage.PCAP: return createPCAP();
+      case A2BPackage.CRC: return createCRC();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -142,6 +144,18 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
   {
     DDImpl dd = new DDImpl();
     return dd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public STR createSTR()
+  {
+    STRImpl str = new STRImpl();
+    return str;
   }
 
   /**
@@ -250,6 +264,18 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
   {
     PCAPImpl pcap = new PCAPImpl();
     return pcap;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CRC createCRC()
+  {
+    CRCImpl crc = new CRCImpl();
+    return crc;
   }
 
   /**

@@ -28,6 +28,8 @@ public class A2BSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getBERule())
 			return getBEToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getCRCRule())
+			return getCRCToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getLERule())
 			return getLEToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getPCAPRule())
@@ -44,6 +46,17 @@ public class A2BSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "BE";
+	}
+	
+	/**
+	 * CRC:
+	 * 	'CRC'
+	 * ;
+	 */
+	protected String getCRCToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "CRC";
 	}
 	
 	/**

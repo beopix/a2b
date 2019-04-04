@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link a2b.a2B.impl.DWImpl#getStringValue <em>String Value</em>}</li>
  *   <li>{@link a2b.a2B.impl.DWImpl#getIntValue <em>Int Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.DWImpl#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +68,26 @@ public class DWImpl extends InstructionImpl implements DW
    * @ordered
    */
   protected int intValue = INT_VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCrcValue() <em>Crc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCrcValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String CRC_VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCrcValue() <em>Crc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCrcValue()
+   * @generated
+   * @ordered
+   */
+  protected String crcValue = CRC_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -145,6 +166,31 @@ public class DWImpl extends InstructionImpl implements DW
    * @generated
    */
   @Override
+  public String getCrcValue()
+  {
+    return crcValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setCrcValue(String newCrcValue)
+  {
+    String oldCrcValue = crcValue;
+    crcValue = newCrcValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.DW__CRC_VALUE, oldCrcValue, crcValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -153,6 +199,8 @@ public class DWImpl extends InstructionImpl implements DW
         return getStringValue();
       case A2BPackage.DW__INT_VALUE:
         return getIntValue();
+      case A2BPackage.DW__CRC_VALUE:
+        return getCrcValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -172,6 +220,9 @@ public class DWImpl extends InstructionImpl implements DW
         return;
       case A2BPackage.DW__INT_VALUE:
         setIntValue((Integer)newValue);
+        return;
+      case A2BPackage.DW__CRC_VALUE:
+        setCrcValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -193,6 +244,9 @@ public class DWImpl extends InstructionImpl implements DW
       case A2BPackage.DW__INT_VALUE:
         setIntValue(INT_VALUE_EDEFAULT);
         return;
+      case A2BPackage.DW__CRC_VALUE:
+        setCrcValue(CRC_VALUE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -211,6 +265,8 @@ public class DWImpl extends InstructionImpl implements DW
         return STRING_VALUE_EDEFAULT == null ? stringValue != null : !STRING_VALUE_EDEFAULT.equals(stringValue);
       case A2BPackage.DW__INT_VALUE:
         return intValue != INT_VALUE_EDEFAULT;
+      case A2BPackage.DW__CRC_VALUE:
+        return CRC_VALUE_EDEFAULT == null ? crcValue != null : !CRC_VALUE_EDEFAULT.equals(crcValue);
     }
     return super.eIsSet(featureID);
   }
@@ -230,6 +286,8 @@ public class DWImpl extends InstructionImpl implements DW
     result.append(stringValue);
     result.append(", intValue: ");
     result.append(intValue);
+    result.append(", crcValue: ");
+    result.append(crcValue);
     result.append(')');
     return result.toString();
   }

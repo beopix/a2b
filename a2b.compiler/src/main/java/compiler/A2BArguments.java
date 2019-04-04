@@ -6,8 +6,24 @@ import java.nio.file.FileAlreadyExistsException;
 
 import org.apache.commons.io.FilenameUtils;
 
+/**
+ * This class checks the command arguments, which the users enters.
+ * 
+ * @author rampix
+ *
+ */
 public class A2BArguments {
 
+	/**
+	 * This method checks if the a2b language file exists and if has the extension a2b.
+	 * Further it also checks if the file the user want to generate already exists.
+	 * 
+	 * @param languageFile
+	 * @param destinationFile
+	 * @return true if the check is successful
+	 * @throws FileAlreadyExistsException
+	 * @throws FileNotFoundException
+	 */
 	public static boolean check(final String languageFile, final String destinationFile) throws FileAlreadyExistsException, FileNotFoundException {
 		String languageFileExtension = FilenameUtils.getExtension(languageFile);
 		File lanFile = new File(languageFile);

@@ -64,6 +64,13 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass strEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass base64EClass = null;
 
   /**
@@ -121,6 +128,13 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   private EClass pcapEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass crcEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -257,6 +271,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
+  public EAttribute getDB_CrcValue()
+  {
+    return (EAttribute)dbEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDW()
   {
     return dwEClass;
@@ -290,6 +315,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
+  public EAttribute getDW_CrcValue()
+  {
+    return (EAttribute)dwEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDD()
   {
     return ddEClass;
@@ -315,6 +351,39 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
   public EAttribute getDD_LongValue()
   {
     return (EAttribute)ddEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDD_CrcValue()
+  {
+    return (EAttribute)ddEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSTR()
+  {
+    return strEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSTR_Value()
+  {
+    return (EAttribute)strEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -367,6 +436,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
+  public EAttribute getORG_CrcValue()
+  {
+    return (EAttribute)orgEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getINCLUDE()
   {
     return includeEClass;
@@ -411,6 +491,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
+  public EAttribute getMAC_CrcValue()
+  {
+    return (EAttribute)macEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getIP()
   {
     return ipEClass;
@@ -433,6 +524,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
+  public EAttribute getIP_CrcValue()
+  {
+    return (EAttribute)ipEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getHXS()
   {
     return hxsEClass;
@@ -447,6 +549,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
   public EAttribute getHXS_Value()
   {
     return (EAttribute)hxsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHXS_CrcValue()
+  {
+    return (EAttribute)hxsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -488,6 +601,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
+  public EClass getCRC()
+  {
+    return crcEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public A2BFactory getA2BFactory()
   {
     return (A2BFactory)getEFactoryInstance();
@@ -521,38 +645,50 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     dbEClass = createEClass(DB);
     createEAttribute(dbEClass, DB__STRING_VALUE);
     createEAttribute(dbEClass, DB__INT_VALUE);
+    createEAttribute(dbEClass, DB__CRC_VALUE);
 
     dwEClass = createEClass(DW);
     createEAttribute(dwEClass, DW__STRING_VALUE);
     createEAttribute(dwEClass, DW__INT_VALUE);
+    createEAttribute(dwEClass, DW__CRC_VALUE);
 
     ddEClass = createEClass(DD);
     createEAttribute(ddEClass, DD__STRING_VALUE);
     createEAttribute(ddEClass, DD__LONG_VALUE);
+    createEAttribute(ddEClass, DD__CRC_VALUE);
+
+    strEClass = createEClass(STR);
+    createEAttribute(strEClass, STR__VALUE);
 
     base64EClass = createEClass(BASE64);
     createEAttribute(base64EClass, BASE64__VALUE);
 
     orgEClass = createEClass(ORG);
     createEAttribute(orgEClass, ORG__VALUE);
+    createEAttribute(orgEClass, ORG__CRC_VALUE);
 
     includeEClass = createEClass(INCLUDE);
     createEAttribute(includeEClass, INCLUDE__VALUE);
 
     macEClass = createEClass(MAC);
     createEAttribute(macEClass, MAC__VALUE);
+    createEAttribute(macEClass, MAC__CRC_VALUE);
 
     ipEClass = createEClass(IP);
     createEAttribute(ipEClass, IP__VALUE);
+    createEAttribute(ipEClass, IP__CRC_VALUE);
 
     hxsEClass = createEClass(HXS);
     createEAttribute(hxsEClass, HXS__VALUE);
+    createEAttribute(hxsEClass, HXS__CRC_VALUE);
 
     beEClass = createEClass(BE);
 
     leEClass = createEClass(LE);
 
     pcapEClass = createEClass(PCAP);
+
+    crcEClass = createEClass(CRC);
   }
 
   /**
@@ -587,6 +723,7 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     dbEClass.getESuperTypes().add(this.getInstruction());
     dwEClass.getESuperTypes().add(this.getInstruction());
     ddEClass.getESuperTypes().add(this.getInstruction());
+    strEClass.getESuperTypes().add(this.getInstruction());
     base64EClass.getESuperTypes().add(this.getInstruction());
     orgEClass.getESuperTypes().add(this.getInstruction());
     includeEClass.getESuperTypes().add(this.getInstruction());
@@ -596,6 +733,7 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     beEClass.getESuperTypes().add(this.getInstruction());
     leEClass.getESuperTypes().add(this.getInstruction());
     pcapEClass.getESuperTypes().add(this.getInstruction());
+    crcEClass.getESuperTypes().add(this.getInstruction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -606,38 +744,50 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
     initEClass(dbEClass, a2b.a2B.DB.class, "DB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDB_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, a2b.a2B.DB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDB_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, a2b.a2B.DB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDB_CrcValue(), ecorePackage.getEString(), "crcValue", null, 0, 1, a2b.a2B.DB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dwEClass, a2b.a2B.DW.class, "DW", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDW_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, a2b.a2B.DW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDW_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, a2b.a2B.DW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDW_CrcValue(), ecorePackage.getEString(), "crcValue", null, 0, 1, a2b.a2B.DW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ddEClass, a2b.a2B.DD.class, "DD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDD_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, a2b.a2B.DD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDD_LongValue(), ecorePackage.getELong(), "longValue", null, 0, 1, a2b.a2B.DD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDD_CrcValue(), ecorePackage.getEString(), "crcValue", null, 0, 1, a2b.a2B.DD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(strEClass, a2b.a2B.STR.class, "STR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSTR_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.STR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(base64EClass, Base64.class, "Base64", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBase64_Value(), ecorePackage.getEString(), "value", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orgEClass, a2b.a2B.ORG.class, "ORG", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getORG_Value(), ecorePackage.getEInt(), "value", null, 0, 1, a2b.a2B.ORG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getORG_CrcValue(), ecorePackage.getEString(), "crcValue", null, 0, 1, a2b.a2B.ORG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(includeEClass, a2b.a2B.INCLUDE.class, "INCLUDE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getINCLUDE_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.INCLUDE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(macEClass, a2b.a2B.MAC.class, "MAC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMAC_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.MAC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMAC_CrcValue(), ecorePackage.getEString(), "crcValue", null, 0, 1, a2b.a2B.MAC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ipEClass, a2b.a2B.IP.class, "IP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIP_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.IP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIP_CrcValue(), ecorePackage.getEString(), "crcValue", null, 0, 1, a2b.a2B.IP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(hxsEClass, a2b.a2B.HXS.class, "HXS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getHXS_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.HXS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHXS_CrcValue(), ecorePackage.getEString(), "crcValue", null, 0, 1, a2b.a2B.HXS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(beEClass, a2b.a2B.BE.class, "BE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(leEClass, a2b.a2B.LE.class, "LE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(pcapEClass, a2b.a2B.PCAP.class, "PCAP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(crcEClass, a2b.a2B.CRC.class, "CRC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

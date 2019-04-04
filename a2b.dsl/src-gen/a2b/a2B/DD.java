@@ -15,6 +15,7 @@ package a2b.a2B;
  * <ul>
  *   <li>{@link a2b.a2B.DD#getStringValue <em>String Value</em>}</li>
  *   <li>{@link a2b.a2B.DD#getLongValue <em>Long Value</em>}</li>
+ *   <li>{@link a2b.a2B.DD#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
  * @see a2b.a2B.A2BPackage#getDD()
@@ -66,5 +67,27 @@ public interface DD extends Instruction
    * @generated
    */
   void setLongValue(long value);
+
+  /**
+   * Returns the value of the '<em><b>Crc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Crc Value</em>' attribute.
+   * @see #setCrcValue(String)
+   * @see a2b.a2B.A2BPackage#getDD_CrcValue()
+   * @model
+   * @generated
+   */
+  String getCrcValue();
+
+  /**
+   * Sets the value of the '{@link a2b.a2B.DD#getCrcValue <em>Crc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Crc Value</em>' attribute.
+   * @see #getCrcValue()
+   * @generated
+   */
+  void setCrcValue(String value);
 
 } // DD

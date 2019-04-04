@@ -35,12 +35,14 @@ public class A2BParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDBAccess().getAlternatives_1(), "rule__DB__Alternatives_1");
 			builder.put(grammarAccess.getDWAccess().getAlternatives_1(), "rule__DW__Alternatives_1");
 			builder.put(grammarAccess.getDDAccess().getAlternatives_1(), "rule__DD__Alternatives_1");
-			builder.put(grammarAccess.getInstructionAccess().getGroup_9(), "rule__Instruction__Group_9__0");
 			builder.put(grammarAccess.getInstructionAccess().getGroup_10(), "rule__Instruction__Group_10__0");
 			builder.put(grammarAccess.getInstructionAccess().getGroup_11(), "rule__Instruction__Group_11__0");
+			builder.put(grammarAccess.getInstructionAccess().getGroup_12(), "rule__Instruction__Group_12__0");
+			builder.put(grammarAccess.getInstructionAccess().getGroup_13(), "rule__Instruction__Group_13__0");
 			builder.put(grammarAccess.getDBAccess().getGroup(), "rule__DB__Group__0");
 			builder.put(grammarAccess.getDWAccess().getGroup(), "rule__DW__Group__0");
 			builder.put(grammarAccess.getDDAccess().getGroup(), "rule__DD__Group__0");
+			builder.put(grammarAccess.getSTRAccess().getGroup(), "rule__STR__Group__0");
 			builder.put(grammarAccess.getBase64Access().getGroup(), "rule__Base64__Group__0");
 			builder.put(grammarAccess.getORGAccess().getGroup(), "rule__ORG__Group__0");
 			builder.put(grammarAccess.getINCLUDEAccess().getGroup(), "rule__INCLUDE__Group__0");
@@ -50,16 +52,24 @@ public class A2BParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getElementAssignment(), "rule__Model__ElementAssignment");
 			builder.put(grammarAccess.getDBAccess().getStringValueAssignment_1_0(), "rule__DB__StringValueAssignment_1_0");
 			builder.put(grammarAccess.getDBAccess().getIntValueAssignment_1_1(), "rule__DB__IntValueAssignment_1_1");
+			builder.put(grammarAccess.getDBAccess().getCrcValueAssignment_2(), "rule__DB__CrcValueAssignment_2");
 			builder.put(grammarAccess.getDWAccess().getStringValueAssignment_1_0(), "rule__DW__StringValueAssignment_1_0");
 			builder.put(grammarAccess.getDWAccess().getIntValueAssignment_1_1(), "rule__DW__IntValueAssignment_1_1");
+			builder.put(grammarAccess.getDWAccess().getCrcValueAssignment_2(), "rule__DW__CrcValueAssignment_2");
 			builder.put(grammarAccess.getDDAccess().getStringValueAssignment_1_0(), "rule__DD__StringValueAssignment_1_0");
 			builder.put(grammarAccess.getDDAccess().getLongValueAssignment_1_1(), "rule__DD__LongValueAssignment_1_1");
+			builder.put(grammarAccess.getDDAccess().getCrcValueAssignment_2(), "rule__DD__CrcValueAssignment_2");
+			builder.put(grammarAccess.getSTRAccess().getValueAssignment_1(), "rule__STR__ValueAssignment_1");
 			builder.put(grammarAccess.getBase64Access().getValueAssignment_1(), "rule__Base64__ValueAssignment_1");
 			builder.put(grammarAccess.getORGAccess().getValueAssignment_1(), "rule__ORG__ValueAssignment_1");
+			builder.put(grammarAccess.getORGAccess().getCrcValueAssignment_2(), "rule__ORG__CrcValueAssignment_2");
 			builder.put(grammarAccess.getINCLUDEAccess().getValueAssignment_1(), "rule__INCLUDE__ValueAssignment_1");
 			builder.put(grammarAccess.getMACAccess().getValueAssignment_1(), "rule__MAC__ValueAssignment_1");
+			builder.put(grammarAccess.getMACAccess().getCrcValueAssignment_2(), "rule__MAC__CrcValueAssignment_2");
 			builder.put(grammarAccess.getIPAccess().getValueAssignment_1(), "rule__IP__ValueAssignment_1");
+			builder.put(grammarAccess.getIPAccess().getCrcValueAssignment_2(), "rule__IP__CrcValueAssignment_2");
 			builder.put(grammarAccess.getHXSAccess().getValueAssignment_1(), "rule__HXS__ValueAssignment_1");
+			builder.put(grammarAccess.getHXSAccess().getCrcValueAssignment_2(), "rule__HXS__CrcValueAssignment_2");
 		}
 	}
 	

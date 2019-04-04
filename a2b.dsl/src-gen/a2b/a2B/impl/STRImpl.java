@@ -4,7 +4,7 @@
 package a2b.a2B.impl;
 
 import a2b.a2B.A2BPackage;
-import a2b.a2B.HXS;
+import a2b.a2B.STR;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HXS</b></em>'.
+ * An implementation of the model object '<em><b>STR</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.impl.HXSImpl#getValue <em>Value</em>}</li>
- *   <li>{@link a2b.a2B.impl.HXSImpl#getCrcValue <em>Crc Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.STRImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class HXSImpl extends InstructionImpl implements HXS
+public class STRImpl extends InstructionImpl implements STR
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -49,31 +48,11 @@ public class HXSImpl extends InstructionImpl implements HXS
   protected String value = VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getCrcValue() <em>Crc Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCrcValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String CRC_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCrcValue() <em>Crc Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCrcValue()
-   * @generated
-   * @ordered
-   */
-  protected String crcValue = CRC_VALUE_EDEFAULT;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected HXSImpl()
+  protected STRImpl()
   {
     super();
   }
@@ -86,7 +65,7 @@ public class HXSImpl extends InstructionImpl implements HXS
   @Override
   protected EClass eStaticClass()
   {
-    return A2BPackage.Literals.HXS;
+    return A2BPackage.Literals.STR;
   }
 
   /**
@@ -111,32 +90,7 @@ public class HXSImpl extends InstructionImpl implements HXS
     String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.HXS__VALUE, oldValue, value));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getCrcValue()
-  {
-    return crcValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCrcValue(String newCrcValue)
-  {
-    String oldCrcValue = crcValue;
-    crcValue = newCrcValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.HXS__CRC_VALUE, oldCrcValue, crcValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.STR__VALUE, oldValue, value));
   }
 
   /**
@@ -149,10 +103,8 @@ public class HXSImpl extends InstructionImpl implements HXS
   {
     switch (featureID)
     {
-      case A2BPackage.HXS__VALUE:
+      case A2BPackage.STR__VALUE:
         return getValue();
-      case A2BPackage.HXS__CRC_VALUE:
-        return getCrcValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,11 +119,8 @@ public class HXSImpl extends InstructionImpl implements HXS
   {
     switch (featureID)
     {
-      case A2BPackage.HXS__VALUE:
+      case A2BPackage.STR__VALUE:
         setValue((String)newValue);
-        return;
-      case A2BPackage.HXS__CRC_VALUE:
-        setCrcValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,11 +136,8 @@ public class HXSImpl extends InstructionImpl implements HXS
   {
     switch (featureID)
     {
-      case A2BPackage.HXS__VALUE:
+      case A2BPackage.STR__VALUE:
         setValue(VALUE_EDEFAULT);
-        return;
-      case A2BPackage.HXS__CRC_VALUE:
-        setCrcValue(CRC_VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -207,10 +153,8 @@ public class HXSImpl extends InstructionImpl implements HXS
   {
     switch (featureID)
     {
-      case A2BPackage.HXS__VALUE:
+      case A2BPackage.STR__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case A2BPackage.HXS__CRC_VALUE:
-        return CRC_VALUE_EDEFAULT == null ? crcValue != null : !CRC_VALUE_EDEFAULT.equals(crcValue);
     }
     return super.eIsSet(featureID);
   }
@@ -228,10 +172,8 @@ public class HXSImpl extends InstructionImpl implements HXS
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (value: ");
     result.append(value);
-    result.append(", crcValue: ");
-    result.append(crcValue);
     result.append(')');
     return result.toString();
   }
 
-} //HXSImpl
+} //STRImpl

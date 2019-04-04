@@ -6,6 +6,7 @@ package a2b.serializer;
 import a2b.a2B.A2BPackage;
 import a2b.a2B.BE;
 import a2b.a2B.Base64;
+import a2b.a2B.CRC;
 import a2b.a2B.DB;
 import a2b.a2B.DD;
 import a2b.a2B.DW;
@@ -17,6 +18,7 @@ import a2b.a2B.MAC;
 import a2b.a2B.Model;
 import a2b.a2B.ORG;
 import a2b.a2B.PCAP;
+import a2b.a2B.STR;
 import a2b.services.A2BGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -49,6 +51,9 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case A2BPackage.BASE64:
 				sequence_Base64(context, (Base64) semanticObject); 
+				return; 
+			case A2BPackage.CRC:
+				sequence_Instruction(context, (CRC) semanticObject); 
 				return; 
 			case A2BPackage.DB:
 				sequence_DB(context, (DB) semanticObject); 
@@ -83,6 +88,9 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case A2BPackage.PCAP:
 				sequence_Instruction(context, (PCAP) semanticObject); 
 				return; 
+			case A2BPackage.STR:
+				sequence_STR(context, (STR) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -113,7 +121,7 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DB returns DB
 	 *
 	 * Constraint:
-	 *     (stringValue=BYTE | intValue=INT)
+	 *     ((stringValue=BYTE | intValue=INT) crcValue=CRCCHECK?)
 	 */
 	protected void sequence_DB(ISerializationContext context, DB semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -126,7 +134,7 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DD returns DD
 	 *
 	 * Constraint:
-	 *     (stringValue=DOUBLEWORD | longValue=LONG)
+	 *     ((stringValue=DOUBLEWORD | longValue=LONG) crcValue=CRCCHECK?)
 	 */
 	protected void sequence_DD(ISerializationContext context, DD semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -139,7 +147,7 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DW returns DW
 	 *
 	 * Constraint:
-	 *     (stringValue=WORD | intValue=INT)
+	 *     ((stringValue=WORD | intValue=INT) crcValue=CRCCHECK?)
 	 */
 	protected void sequence_DW(ISerializationContext context, DW semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -152,16 +160,10 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     HXS returns HXS
 	 *
 	 * Constraint:
-	 *     value=HEXSTRING
+	 *     (value=HEXSTRING crcValue=CRCCHECK?)
 	 */
 	protected void sequence_HXS(ISerializationContext context, HXS semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.HXS__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.HXS__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHXSAccess().getValueHEXSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -190,16 +192,10 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     IP returns IP
 	 *
 	 * Constraint:
-	 *     value=IPADDRESS
+	 *     (value=IPADDRESS crcValue=CRCCHECK?)
 	 */
 	protected void sequence_IP(ISerializationContext context, IP semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.IP__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.IP__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIPAccess().getValueIPADDRESSTerminalRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -211,6 +207,18 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     {BE}
 	 */
 	protected void sequence_Instruction(ISerializationContext context, BE semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns CRC
+	 *
+	 * Constraint:
+	 *     {CRC}
+	 */
+	protected void sequence_Instruction(ISerializationContext context, CRC semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -245,16 +253,10 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MAC returns MAC
 	 *
 	 * Constraint:
-	 *     value=MACADDRESS
+	 *     (value=MACADDRESS crcValue=CRCCHECK?)
 	 */
 	protected void sequence_MAC(ISerializationContext context, MAC semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.MAC__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.MAC__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMACAccess().getValueMACADDRESSTerminalRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -276,15 +278,28 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ORG returns ORG
 	 *
 	 * Constraint:
-	 *     value=INT
+	 *     (value=INT crcValue=CRCCHECK?)
 	 */
 	protected void sequence_ORG(ISerializationContext context, ORG semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns STR
+	 *     STR returns STR
+	 *
+	 * Constraint:
+	 *     value=STRING
+	 */
+	protected void sequence_STR(ISerializationContext context, STR semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.ORG__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.ORG__VALUE));
+			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.STR__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.STR__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getORGAccess().getValueINTTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getSTRAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

@@ -9,31 +9,19 @@ import org.pcap4j.packet.namednumber.DataLinkType;
 
 public class A2bPcapFile {
 
-	public static void pcapDo() {
-		String fileName = "";
-		byte[] data = null;
+	public static void generatePcapFile(final String fileName, final byte[] data) {
 		
-		PcapHandle h = null;
+		PcapHandle pcaphandler = null;
+		PcapDumper pcapdumper = null;
+		
 		try {
-			h = Pcaps.openDead(DataLinkType.EN10MB, 65536);
-		} catch (PcapNativeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		PcapDumper pdumper = null;
-		try {
-			pdumper = h.dumpOpen(fileName +".pcap");
+			pcaphandler = Pcaps.openDead(DataLinkType.EN10MB, 65536);
+			pcapdumper = pcaphandler.dumpOpen(fileName +".pcap");
+			pcapdumper.dumpRaw(data);
 		} catch (PcapNativeException | NotOpenException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		try {
-			pdumper.dumpRaw(data);
-		} catch (NotOpenException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }

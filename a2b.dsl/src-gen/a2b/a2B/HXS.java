@@ -14,6 +14,7 @@ package a2b.a2B;
  * </p>
  * <ul>
  *   <li>{@link a2b.a2B.HXS#getValue <em>Value</em>}</li>
+ *   <li>{@link a2b.a2B.HXS#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
  * @see a2b.a2B.A2BPackage#getHXS()
@@ -43,5 +44,27 @@ public interface HXS extends Instruction
    * @generated
    */
   void setValue(String value);
+
+  /**
+   * Returns the value of the '<em><b>Crc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Crc Value</em>' attribute.
+   * @see #setCrcValue(String)
+   * @see a2b.a2B.A2BPackage#getHXS_CrcValue()
+   * @model
+   * @generated
+   */
+  String getCrcValue();
+
+  /**
+   * Sets the value of the '{@link a2b.a2B.HXS#getCrcValue <em>Crc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Crc Value</em>' attribute.
+   * @see #getCrcValue()
+   * @generated
+   */
+  void setCrcValue(String value);
 
 } // HXS
