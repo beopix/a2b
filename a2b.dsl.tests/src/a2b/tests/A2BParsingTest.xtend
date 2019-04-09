@@ -74,7 +74,7 @@ class A2BParsingTest {
 			
 			B64d "Hello"
 			
-			
+			INCLUDE D:/home/a2b.compiler/dude.bin
 		''')
 		result.assertNoErrors
 		Assertions.assertNotNull(result)

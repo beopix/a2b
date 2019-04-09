@@ -72,24 +72,24 @@ public class A2bCompiler {
 			case "DB":
 				DB defineByte = (DB) instruction;
 				result = (defineByte.getStringValue() == null) ? 
-						appendByteArray(result, ByteWordDoubleWordToByteArray.decodeDBInteger(defineByte.getIntValue())) :
-							appendByteArray(result, ByteWordDoubleWordToByteArray.decodeDBString(defineByte.getStringValue()));	
+						appendByteArray(result, ByteWordDoubleWordToByteArray.convertDBInteger(defineByte.getIntValue())) :
+							appendByteArray(result, ByteWordDoubleWordToByteArray.convertDBString(defineByte.getStringValue()));	
 						break;
 			case "DW":
 				DW defineWord = (DW) instruction;
 				result = (defineWord.getStringValue() == null) ?
-						appendByteArray(result, ByteWordDoubleWordToByteArray.decodeDWInteger(defineWord.getIntValue(), littleEndian)) :
-							appendByteArray(result, ByteWordDoubleWordToByteArray.decodeDWString(defineWord.getStringValue(), littleEndian));
+						appendByteArray(result, ByteWordDoubleWordToByteArray.convertDWInteger(defineWord.getIntValue(), littleEndian)) :
+							appendByteArray(result, ByteWordDoubleWordToByteArray.convertDWString(defineWord.getStringValue(), littleEndian));
 						break;
 			case "DD":
 				DD defineDoubleWord = (DD) instruction;
 				result = (defineDoubleWord.getStringValue() == null) ?
-						appendByteArray(result, ByteWordDoubleWordToByteArray.decodeDDInteger(defineDoubleWord.getLongValue(), littleEndian)) :
-							appendByteArray(result, ByteWordDoubleWordToByteArray.decodeDDString(defineDoubleWord.getStringValue(), littleEndian))	;
+						appendByteArray(result, ByteWordDoubleWordToByteArray.convertDDInteger(defineDoubleWord.getLongValue(), littleEndian)) :
+							appendByteArray(result, ByteWordDoubleWordToByteArray.convertDDString(defineDoubleWord.getStringValue(), littleEndian))	;
 						break;
 			case "STR":
 				STR str = (STR) instruction;
-				result = appendByteArray(result, StringToByteArray.decode(str.getValue(), littleEndian));
+				result = appendByteArray(result, StringToByteArray.convert(str.getValue(), littleEndian));
 				break;
 			case "Base64Decode":
 				Base64Decode base64Decode = (Base64Decode) instruction;
@@ -101,26 +101,26 @@ public class A2bCompiler {
 				break;
 			case "ORG":
 				ORG org = (ORG) instruction;
-				result = appendByteArray(result, ORGToByteArray.decode(org.getValue()));
+				result = appendByteArray(result, ORGToByteArray.convert(org.getValue()));
 				break;
 			case "INCLUDE":
 				INCLUDE include = (INCLUDE) instruction;
-				result = appendByteArray(result, IncludeToByteArray.decode(include.getValue()));
+				result = appendByteArray(result, IncludeToByteArray.convert(include.getValue()));
 				break;
 			case "MAC":
 				MAC mac = (MAC) instruction;
-				result = appendByteArray(result, MACToByteArray.decode(mac.getValue(), littleEndian));
+				result = appendByteArray(result, MACToByteArray.convert(mac.getValue(), littleEndian));
 				break;
 			case "IP":
 				IP ip = (IP) instruction;
-				result = appendByteArray(result, IPToByteArray.decode(ip.getValue(), littleEndian));
+				result = appendByteArray(result, IPToByteArray.convert(ip.getValue(), littleEndian));
 				break;
 			case "HXS":
 				HXS hxs = (HXS) instruction;
-				result = appendByteArray(result, HexStringToByteArray.decode(hxs.getValue(), littleEndian));
+				result = appendByteArray(result, HexStringToByteArray.convert(hxs.getValue(), littleEndian));
 				break;
 			case "CRC":
-				result = appendByteArray(result, ChecksumToByteArray.decode(instructionValue, littleEndian));
+				result = appendByteArray(result, ChecksumToByteArray.convert(instructionValue, littleEndian));
 				break;
 			case "BE":
 				littleEndian = false;
@@ -134,7 +134,7 @@ public class A2bCompiler {
 			}
 
 		}
-
+		
 		return result;
 	}
 
@@ -148,13 +148,14 @@ public class A2bCompiler {
 
 
 	/**
-	 * Helper method for merging two byte arrays into one byte[]
+	 * Helper method for merging two byte arrays into one byte array
 	 * 
 	 * @param kilo
 	 * @param lima
 	 * @return the merged byte[] of both parameters
 	 */
 	private byte[] appendByteArray(byte[] kilo, byte[] lima) {
+
 		byte[] mike = new byte[kilo.length + lima.length];
 
 		System.arraycopy(kilo, 0, mike, 0, kilo.length);

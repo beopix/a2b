@@ -7,9 +7,8 @@ import java.text.DecimalFormat;
 public class Main {
 
 	public static void main(String[] args) {
-
+		
 		long programStart = System.nanoTime();
-
 		System.out.println("Starting a2b application");
 
 		try {
@@ -31,11 +30,9 @@ public class Main {
 			long programExecutionTime = programEnd - programStart;
 			double programLifeTime = (double) programExecutionTime / 1_000_000_000.0;
 			DecimalFormat double2Places = new DecimalFormat("#.##");
-
 			System.out.println("Finished a2b application in " + double2Places.format(programLifeTime) + " seconds");
 
 		}
-
 
 	}
 

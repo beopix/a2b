@@ -4,6 +4,12 @@ import java.util.List;
 
 import org.eclipse.xtext.validation.Issue;
 
+/**
+ * This exception class treats the parse and syntax errors from the language file.
+ * 
+ * @author rampix
+ *
+ */
 public class A2BParseErrorException extends Exception {
 
 	/**
@@ -26,6 +32,5 @@ public class A2BParseErrorException extends Exception {
 		}
 		
 	}
-	
 
 }

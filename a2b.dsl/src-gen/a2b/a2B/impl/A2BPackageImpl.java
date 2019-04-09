@@ -499,6 +499,17 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
    * @generated
    */
   @Override
+  public EAttribute getINCLUDE_CrcValue()
+  {
+    return (EAttribute)includeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getMAC()
   {
     return macEClass;
@@ -702,6 +713,7 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
 
     includeEClass = createEClass(INCLUDE);
     createEAttribute(includeEClass, INCLUDE__VALUE);
+    createEAttribute(includeEClass, INCLUDE__CRC_VALUE);
 
     macEClass = createEClass(MAC);
     createEAttribute(macEClass, MAC__VALUE);
@@ -805,6 +817,7 @@ public class A2BPackageImpl extends EPackageImpl implements A2BPackage
 
     initEClass(includeEClass, a2b.a2B.INCLUDE.class, "INCLUDE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getINCLUDE_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.INCLUDE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getINCLUDE_CrcValue(), ecorePackage.getEString(), "crcValue", null, 0, 1, a2b.a2B.INCLUDE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(macEClass, a2b.a2B.MAC.class, "MAC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMAC_Value(), ecorePackage.getEString(), "value", null, 0, 1, a2b.a2B.MAC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

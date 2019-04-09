@@ -8,6 +8,7 @@ import org.eclipse.xtext.validation.Check
 import a2b.a2B.A2BPackage
 import a2b.a2B.DB
 import a2b.a2B.DD
+import a2b.a2B.INCLUDE
 
 /**
  * This class contains custom validation rules. 
@@ -34,6 +35,13 @@ class A2BValidator extends AbstractA2BValidator {
 	def checkDBByteValue(DB db){
 		if(db.intValue > 255 || db.intValue < 0){
 			error('Value for byte is between 0 and 255', A2BPackage.Literals.DB__INT_VALUE, INVALID_SYNTAX)
+		}
+	}
+	
+	@Check
+	def checkIncludeString(INCLUDE include){
+		if(include.value.endsWith(".*\\.^[a-zA-Z0-9]*$")){
+			error('String Dude', A2BPackage.Literals.INCLUDE__VALUE, INVALID_SYNTAX)
 		}
 	}
 	

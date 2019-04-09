@@ -196,16 +196,10 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     INCLUDE returns INCLUDE
 	 *
 	 * Constraint:
-	 *     value=PATH
+	 *     (value=PATH crcValue=CRCCHECK?)
 	 */
 	protected void sequence_INCLUDE(ISerializationContext context, INCLUDE semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.INCLUDE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.INCLUDE__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getINCLUDEAccess().getValuePATHTerminalRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

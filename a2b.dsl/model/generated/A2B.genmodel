@@ -40,6 +40,7 @@
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//INCLUDE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//INCLUDE/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//INCLUDE/crcValue"/>
     </genClasses>
     <genClasses ecoreClass="A2B.ecore#//MAC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute A2B.ecore#//MAC/value"/>

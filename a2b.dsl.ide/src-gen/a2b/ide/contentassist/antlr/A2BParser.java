@@ -66,6 +66,7 @@ public class A2BParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getORGAccess().getValueAssignment_1(), "rule__ORG__ValueAssignment_1");
 			builder.put(grammarAccess.getORGAccess().getCrcValueAssignment_2(), "rule__ORG__CrcValueAssignment_2");
 			builder.put(grammarAccess.getINCLUDEAccess().getValueAssignment_1(), "rule__INCLUDE__ValueAssignment_1");
+			builder.put(grammarAccess.getINCLUDEAccess().getCrcValueAssignment_2(), "rule__INCLUDE__CrcValueAssignment_2");
 			builder.put(grammarAccess.getMACAccess().getValueAssignment_1(), "rule__MAC__ValueAssignment_1");
 			builder.put(grammarAccess.getMACAccess().getCrcValueAssignment_2(), "rule__MAC__CrcValueAssignment_2");
 			builder.put(grammarAccess.getIPAccess().getValueAssignment_1(), "rule__IP__ValueAssignment_1");

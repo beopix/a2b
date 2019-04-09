@@ -52,6 +52,10 @@ public class A2bParser {
 		resource = resourceSet.getResource(URI.createFileURI(uriPath), true);
 		validatorIssueList = resourceValidator.validate(resource, CheckMode.ALL, CancelIndicator.NullImpl);
 		
+		if(resource.getContents().isEmpty()) {
+			throw new A2BParseErrorException("The a2b language file has no content or wrong instructions.");
+		}
+		
 		if(validatorIssueList.isEmpty()) {
 			Model model = (Model) resource.getContents().get(0);
 			return model;

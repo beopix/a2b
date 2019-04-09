@@ -1396,6 +1396,7 @@ rule__INCLUDE__Group__1
 	}
 :
 	rule__INCLUDE__Group__1__Impl
+	rule__INCLUDE__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1410,6 +1411,32 @@ rule__INCLUDE__Group__1__Impl
 	{ before(grammarAccess.getINCLUDEAccess().getValueAssignment_1()); }
 	(rule__INCLUDE__ValueAssignment_1)
 	{ after(grammarAccess.getINCLUDEAccess().getValueAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__INCLUDE__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__INCLUDE__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__INCLUDE__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getINCLUDEAccess().getCrcValueAssignment_2()); }
+	(rule__INCLUDE__CrcValueAssignment_2)?
+	{ after(grammarAccess.getINCLUDEAccess().getCrcValueAssignment_2()); }
 )
 ;
 finally {
@@ -1900,6 +1927,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__INCLUDE__CrcValueAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getINCLUDEAccess().getCrcValueCRCCHECKTerminalRuleCall_2_0()); }
+		RULE_CRCCHECK
+		{ after(grammarAccess.getINCLUDEAccess().getCrcValueCRCCHECKTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__MAC__ValueAssignment_1
 	@init {
 		int stackSize = keepStackSize();
@@ -2004,7 +2046,7 @@ RULE_DOUBLEWORD : ('0b' RULE_BINARY_ RULE_BINARY_ RULE_BINARY_ RULE_BINARY_|'0x'
 
 RULE_CRCCHECK : '#';
 
-RULE_PATH : ('A'..'Z' ':')? ('/' ('a'..'z'|'A'..'Z')*)+ ('.' ('a'..'z'|'A'..'Z')*)+;
+RULE_PATH : ('A'..'Z' ':')? ('/' ('a'..'z'|'A'..'Z'|'0'..'9'|'.')*)+;
 
 RULE_MACADDRESS : RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_;
 

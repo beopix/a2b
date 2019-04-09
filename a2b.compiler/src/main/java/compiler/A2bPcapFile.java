@@ -7,6 +7,14 @@ import org.pcap4j.core.PcapNativeException;
 import org.pcap4j.core.Pcaps;
 import org.pcap4j.packet.namednumber.DataLinkType;
 
+/**
+ * 
+ * This class is for creating a pcap file. It uses pcap4j, a java library for capturing, crafting, and sending packets. 
+ * @see https://www.pcap4j.org/
+ * 
+ * @author rampix
+ *
+ */
 public class A2bPcapFile {
 
 	public static void generatePcapFile(final String fileName, final byte[] data) {

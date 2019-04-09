@@ -742,6 +742,24 @@ ruleINCLUDE returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				lv_crcValue_2_0=RULE_CRCCHECK
+				{
+					newLeafNode(lv_crcValue_2_0, grammarAccess.getINCLUDEAccess().getCrcValueCRCCHECKTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getINCLUDERule());
+					}
+					setWithLastConsumed(
+						$current,
+						"crcValue",
+						lv_crcValue_2_0,
+						"a2b.A2B.CRCCHECK");
+				}
+			)
+		)?
 	)
 ;
 
@@ -1048,7 +1066,7 @@ RULE_DOUBLEWORD : ('0b' RULE_BINARY_ RULE_BINARY_ RULE_BINARY_ RULE_BINARY_|'0x'
 
 RULE_CRCCHECK : '#';
 
-RULE_PATH : ('A'..'Z' ':')? ('/' ('a'..'z'|'A'..'Z')*)+ ('.' ('a'..'z'|'A'..'Z')*)+;
+RULE_PATH : ('A'..'Z' ':')? ('/' ('a'..'z'|'A'..'Z'|'0'..'9'|'.')*)+;
 
 RULE_MACADDRESS : RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_ ':' RULE_HEX_;
 

@@ -14,6 +14,7 @@ package a2b.a2B;
  * </p>
  * <ul>
  *   <li>{@link a2b.a2B.INCLUDE#getValue <em>Value</em>}</li>
+ *   <li>{@link a2b.a2B.INCLUDE#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
  * @see a2b.a2B.A2BPackage#getINCLUDE()
@@ -43,5 +44,27 @@ public interface INCLUDE extends Instruction
    * @generated
    */
   void setValue(String value);
+
+  /**
+   * Returns the value of the '<em><b>Crc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Crc Value</em>' attribute.
+   * @see #setCrcValue(String)
+   * @see a2b.a2B.A2BPackage#getINCLUDE_CrcValue()
+   * @model
+   * @generated
+   */
+  String getCrcValue();
+
+  /**
+   * Sets the value of the '{@link a2b.a2B.INCLUDE#getCrcValue <em>Crc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Crc Value</em>' attribute.
+   * @see #getCrcValue()
+   * @generated
+   */
+  void setCrcValue(String value);
 
 } // INCLUDE

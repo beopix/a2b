@@ -7,7 +7,7 @@ import java.nio.file.FileAlreadyExistsException;
 import org.apache.commons.io.FilenameUtils;
 
 /**
- * This class checks the command arguments, which the users enters.
+ * This class checks the command arguments, which the user enters.
  * 
  * @author rampix
  *

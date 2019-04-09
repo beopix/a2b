@@ -1,6 +1,3 @@
-DD 0x45ff003c #+
-DD 0x1c464000 #
-DW 0x4006 #
+DB 255 #
+DB 1 #
 CRC
-DD 0xac100a63 #
-DD 0xac100a0c #

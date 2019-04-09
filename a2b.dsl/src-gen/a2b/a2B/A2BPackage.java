@@ -383,13 +383,22 @@ public interface A2BPackage extends EPackage
   int INCLUDE__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Crc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCLUDE__CRC_VALUE = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>INCLUDE</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INCLUDE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+  int INCLUDE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link a2b.a2B.impl.MACImpl <em>MAC</em>}' class.
@@ -856,6 +865,17 @@ public interface A2BPackage extends EPackage
   EAttribute getINCLUDE_Value();
 
   /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.INCLUDE#getCrcValue <em>Crc Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Crc Value</em>'.
+   * @see a2b.a2B.INCLUDE#getCrcValue()
+   * @see #getINCLUDE()
+   * @generated
+   */
+  EAttribute getINCLUDE_CrcValue();
+
+  /**
    * Returns the meta object for class '{@link a2b.a2B.MAC <em>MAC</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1241,6 +1261,14 @@ public interface A2BPackage extends EPackage
      * @generated
      */
     EAttribute INCLUDE__VALUE = eINSTANCE.getINCLUDE_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Crc Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INCLUDE__CRC_VALUE = eINSTANCE.getINCLUDE_CrcValue();
 
     /**
      * The meta object literal for the '{@link a2b.a2B.impl.MACImpl <em>MAC</em>}' class.

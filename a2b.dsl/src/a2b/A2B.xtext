@@ -40,7 +40,7 @@ ORG:
 ;
 
 INCLUDE:
-	'INCLUDE' value=PATH
+	'INCLUDE' value=PATH (crcValue=CRCCHECK)?
 ;
 
 MAC:
@@ -107,7 +107,7 @@ terminal CRCCHECK:
 ;
 
 terminal PATH:
-	(('A'..'Z')(':'))?(('/')(('a'..'z'|'A'..'Z')*))+(('.')('a'..'z'|'A'..'Z')*)+
+	(('A'..'Z')(':'))?(('/')(('a'..'z'|'A'..'Z'|'0'..'9'|'.')*))+
 ;
 
 terminal MACADDRESS:

@@ -378,12 +378,14 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cINCLUDEKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValuePATHTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final Assignment cCrcValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCrcValueCRCCHECKTerminalRuleCall_2_0 = (RuleCall)cCrcValueAssignment_2.eContents().get(0);
 		
 		//INCLUDE:
-		//	'INCLUDE' value=PATH;
+		//	'INCLUDE' value=PATH crcValue=CRCCHECK?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'INCLUDE' value=PATH
+		//'INCLUDE' value=PATH crcValue=CRCCHECK?
 		public Group getGroup() { return cGroup; }
 		
 		//'INCLUDE'
@@ -394,6 +396,12 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PATH
 		public RuleCall getValuePATHTerminalRuleCall_1_0() { return cValuePATHTerminalRuleCall_1_0; }
+		
+		//crcValue=CRCCHECK?
+		public Assignment getCrcValueAssignment_2() { return cCrcValueAssignment_2; }
+		
+		//CRCCHECK
+		public RuleCall getCrcValueCRCCHECKTerminalRuleCall_2_0() { return cCrcValueCRCCHECKTerminalRuleCall_2_0; }
 	}
 	public class MACElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "a2b.A2B.MAC");
@@ -734,7 +742,7 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//INCLUDE:
-	//	'INCLUDE' value=PATH;
+	//	'INCLUDE' value=PATH crcValue=CRCCHECK?;
 	public INCLUDEElements getINCLUDEAccess() {
 		return pINCLUDE;
 	}
@@ -869,7 +877,7 @@ public class A2BGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal PATH:
-	//	('A'..'Z' ':')? ('/' ('a'..'z' | 'A'..'Z')*)+ ('.' ('a'..'z' | 'A'..'Z')*)+;
+	//	('A'..'Z' ':')? ('/' ('a'..'z' | 'A'..'Z' | '0'..'9' | '.')*)+;
 	public TerminalRule getPATHRule() {
 		return tPATH;
 	}

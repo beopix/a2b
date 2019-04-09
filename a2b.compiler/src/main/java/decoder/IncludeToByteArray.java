@@ -6,13 +6,25 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * This class is for converting an included file to its byte representation.
+ * 
+ * @author rampix
+ *
+ */
 public class IncludeToByteArray {
 
 	private IncludeToByteArray() {
 
 	}
 
-	public static byte[] decode(String filePath) {
+	/**
+	 * This method converts the included file to a byte array. 
+	 * 
+	 * @param filePath
+	 * @return file as a byte array
+	 */
+	public static byte[] convert(String filePath) {
 
 		//Muss ueberprueft werden auf welchem System es laeuft
 		Path a = Paths.get(filePath);
