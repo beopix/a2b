@@ -2,12 +2,20 @@ package decoder;
 
 import java.nio.ByteBuffer;
 
+/**
+ * @author rampix
+ *
+ */
 public class ByteWordDoubleWordToByteArray {
 
 	private ByteWordDoubleWordToByteArray() {
 
 	}
 
+	/**
+	 * @param content
+	 * @return
+	 */
 	public static byte[] convertDBInteger(int content) {
 
 		if(content > 255 || content < 0) {
@@ -21,7 +29,12 @@ public class ByteWordDoubleWordToByteArray {
 		return result;
 	}
 
-	public static byte[] convertDWInteger(int content, boolean littleEndian) {
+	/**
+	 * @param content
+	 * @param isLittleEndian
+	 * @return
+	 */
+	public static byte[] convertDWInteger(int content, boolean isLittleEndian) {
 
 		if(content > 65535 || content < 0) {
 			return null;
@@ -33,10 +46,15 @@ public class ByteWordDoubleWordToByteArray {
 
 		byte[] result = buffer.array();
 
-		return littleEndian ? ByteArray.reverse(result) : result;
+		return isLittleEndian ? ByteArray.reverse(result) : result;
 	}
 
-	public static byte[] convertDDInteger(long content, boolean littleEndian) {
+	/**
+	 * @param content
+	 * @param isLittleEndian
+	 * @return
+	 */
+	public static byte[] convertDDInteger(long content, boolean isLittleEndian) {
 
 		if(content > 4294967295L || content < 0) {
 			return null;
@@ -48,11 +66,15 @@ public class ByteWordDoubleWordToByteArray {
 
 		byte[] result = buffer.array();
 
-		return littleEndian ? ByteArray.reverse(result) : result;
+		return isLittleEndian ? ByteArray.reverse(result) : result;
 	}
 
 
 
+	/**
+	 * @param content
+	 * @return
+	 */
 	public static byte[] convertDBString(String content) {
 		byte inputInByteArray = 0;
 
@@ -74,7 +96,12 @@ public class ByteWordDoubleWordToByteArray {
 		return result;
 	}
 
-	public static byte[] convertDWString(String content, boolean littleEndian) {
+	/**
+	 * @param content
+	 * @param isLittleEndian
+	 * @return
+	 */
+	public static byte[] convertDWString(String content, boolean isLittleEndian) {
 
 		String base = (String) content.subSequence(0, 2);
 		content = content.substring(2);
@@ -92,10 +119,15 @@ public class ByteWordDoubleWordToByteArray {
 			break;
 		}
 
-		return littleEndian ? ByteArray.reverse(result) : result;
+		return isLittleEndian ? ByteArray.reverse(result) : result;
 	}
 
-	public static byte[] convertDDString(String content, boolean littleEndian) {
+	/**
+	 * @param content
+	 * @param isLittleEndian
+	 * @return
+	 */
+	public static byte[] convertDDString(String content, boolean isLittleEndian) {
 
 		String base = (String) content.subSequence(0, 2);
 		content = content.substring(2);
@@ -113,7 +145,7 @@ public class ByteWordDoubleWordToByteArray {
 			break;
 		}
 
-		return littleEndian ? ByteArray.reverse(result) : result;
+		return isLittleEndian ? ByteArray.reverse(result) : result;
 
 	}
 	

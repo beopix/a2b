@@ -6,14 +6,14 @@ package a2b.a2B;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>CRC</b></em>'.
+ * A representation of the model object '<em><b>NL</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see a2b.a2B.A2BPackage#getCRC()
+ * @see a2b.a2B.A2BPackage#getNL()
  * @model
  * @generated
  */
-public interface CRC extends Instruction
+public interface NL extends Instruction
 {
-} // CRC
+} // NL

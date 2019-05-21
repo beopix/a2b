@@ -1,3 +1,7 @@
+/*
+ * This is the grammar from the language a2b.
+ */
+
 grammar a2b.A2B with org.eclipse.xtext.common.Terminals
 
 generate a2B "http://www.A2B.a2b"
@@ -8,7 +12,7 @@ Model:
 ;
 
 Instruction:
-	DB | DW | DD | STR | Base64Decode | Base64Encode | ORG | INCLUDE | MAC | IP | HXS |  {BE} BE | {LE} LE | {PCAP} PCAP | {CRC} CRC
+	DB | DW | DD | STR | Base64Decode | Base64Encode | PAD | INCLUDE | MAC | IP | PXL | HXS | CRC16 | CRC32 | {BE} BE | {LE} LE | {PCAP} PCAP | {NL} NL
 ;
 
 DB:
@@ -24,7 +28,7 @@ DD:
 ;
 
 STR:
-	'STR' value=STRING
+	'STR' value=STRING (crcValue=CRCCHECK)?
 ;
 
 Base64Decode:
@@ -35,8 +39,8 @@ Base64Encode:
 	'B64e' value=STRING
 ;
 
-ORG:
-	'ORG' value=INT (crcValue=CRCCHECK)?
+PAD:
+	'PAD' value=INT (crcValue=CRCCHECK)?
 ;
 
 INCLUDE:
@@ -49,6 +53,10 @@ MAC:
 
 IP:
 	'IP' value=IPADDRESS (crcValue=CRCCHECK)?
+;
+
+PXL:
+	'PXL' value=PIXEL
 ;
 
 HXS:
@@ -67,8 +75,16 @@ PCAP:
 	'PCAP'
 ;
 
-CRC:
-	'CRC'
+NL:
+	'\\n'
+;
+
+CRC16:
+	'CRC16' crcValue=CRCCHECK
+;
+
+CRC32:
+	'CRC32' crcValue=CRCCHECK
 ;
 
 LONG returns ecore::ELong:
@@ -103,7 +119,7 @@ terminal DOUBLEWORD:
 ;
 
 terminal CRCCHECK:
-	'#'
+	'#'+
 ;
 
 terminal PATH:
@@ -116,6 +132,10 @@ terminal MACADDRESS:
 
 terminal IPADDRESS:
 	DECIMALBYTE_'.'DECIMALBYTE_'.'DECIMALBYTE_'.'DECIMALBYTE_
+;
+
+terminal PIXEL:
+	DECIMALBYTE_' 'DECIMALBYTE_' 'DECIMALBYTE_
 ;
 
 terminal HEXSTRING:

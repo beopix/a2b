@@ -4,6 +4,8 @@ import org.eclipse.emf.common.util.EList;
 
 import a2b.a2B.Base64Decode;
 import a2b.a2B.Base64Encode;
+import a2b.a2B.CRC16;
+import a2b.a2B.CRC32;
 import a2b.a2B.DB;
 import a2b.a2B.DD;
 import a2b.a2B.DW;
@@ -13,7 +15,8 @@ import a2b.a2B.IP;
 import a2b.a2B.Instruction;
 import a2b.a2B.MAC;
 import a2b.a2B.Model;
-import a2b.a2B.ORG;
+import a2b.a2B.PAD;
+import a2b.a2B.PXL;
 import a2b.a2B.STR;
 import decoder.Base64DecodeToByteArray;
 import decoder.Base64EncodeToByteArray;
@@ -23,7 +26,8 @@ import decoder.HexStringToByteArray;
 import decoder.IPToByteArray;
 import decoder.IncludeToByteArray;
 import decoder.MACToByteArray;
-import decoder.ORGToByteArray;
+import decoder.PADToByteArray;
+import decoder.PixelToByteArray;
 import decoder.StringToByteArray;
 
 /**
@@ -59,8 +63,9 @@ public class A2bCompiler {
 	 * @return the byte[] with the language content
 	 */
 	public byte[] compile() {
-		boolean littleEndian = false;
+		boolean isLittleEndian = false;
 
+		byte[] newline = {10};
 		byte[] result = {};
 
 		EList<Instruction> instructionValue = model.getElement();
@@ -78,30 +83,30 @@ public class A2bCompiler {
 			case "DW":
 				DW defineWord = (DW) instruction;
 				result = (defineWord.getStringValue() == null) ?
-						appendByteArray(result, ByteWordDoubleWordToByteArray.convertDWInteger(defineWord.getIntValue(), littleEndian)) :
-							appendByteArray(result, ByteWordDoubleWordToByteArray.convertDWString(defineWord.getStringValue(), littleEndian));
+						appendByteArray(result, ByteWordDoubleWordToByteArray.convertDWInteger(defineWord.getIntValue(), isLittleEndian)) :
+							appendByteArray(result, ByteWordDoubleWordToByteArray.convertDWString(defineWord.getStringValue(), isLittleEndian));
 						break;
 			case "DD":
 				DD defineDoubleWord = (DD) instruction;
 				result = (defineDoubleWord.getStringValue() == null) ?
-						appendByteArray(result, ByteWordDoubleWordToByteArray.convertDDInteger(defineDoubleWord.getLongValue(), littleEndian)) :
-							appendByteArray(result, ByteWordDoubleWordToByteArray.convertDDString(defineDoubleWord.getStringValue(), littleEndian))	;
+						appendByteArray(result, ByteWordDoubleWordToByteArray.convertDDInteger(defineDoubleWord.getLongValue(), isLittleEndian)) :
+							appendByteArray(result, ByteWordDoubleWordToByteArray.convertDDString(defineDoubleWord.getStringValue(), isLittleEndian))	;
 						break;
 			case "STR":
 				STR str = (STR) instruction;
-				result = appendByteArray(result, StringToByteArray.convert(str.getValue(), littleEndian));
+				result = appendByteArray(result, StringToByteArray.convert(str.getValue(), isLittleEndian));
 				break;
 			case "Base64Decode":
 				Base64Decode base64Decode = (Base64Decode) instruction;
-				result = appendByteArray(result, Base64DecodeToByteArray.decode(base64Decode.getValue(), littleEndian));
+				result = appendByteArray(result, Base64DecodeToByteArray.decode(base64Decode.getValue(), isLittleEndian));
 				break;
 			case "Base64Encode":
 				Base64Encode base64Encode = (Base64Encode) instruction;
-				result = appendByteArray(result, Base64EncodeToByteArray.encode(base64Encode.getValue(), littleEndian));
+				result = appendByteArray(result, Base64EncodeToByteArray.encode(base64Encode.getValue(), isLittleEndian));
 				break;
 			case "ORG":
-				ORG org = (ORG) instruction;
-				result = appendByteArray(result, ORGToByteArray.convert(org.getValue()));
+				PAD pad = (PAD) instruction;
+				result = appendByteArray(result, PADToByteArray.convert(pad.getValue()));
 				break;
 			case "INCLUDE":
 				INCLUDE include = (INCLUDE) instruction;
@@ -109,24 +114,36 @@ public class A2bCompiler {
 				break;
 			case "MAC":
 				MAC mac = (MAC) instruction;
-				result = appendByteArray(result, MACToByteArray.convert(mac.getValue(), littleEndian));
+				result = appendByteArray(result, MACToByteArray.convert(mac.getValue(), isLittleEndian));
 				break;
 			case "IP":
 				IP ip = (IP) instruction;
-				result = appendByteArray(result, IPToByteArray.convert(ip.getValue(), littleEndian));
+				result = appendByteArray(result, IPToByteArray.convert(ip.getValue(), isLittleEndian));
+				break;
+			case "PXL":
+				PXL pxl = (PXL) instruction;
+				result = appendByteArray(result, PixelToByteArray.convert(pxl.getValue(), isLittleEndian));
 				break;
 			case "HXS":
 				HXS hxs = (HXS) instruction;
-				result = appendByteArray(result, HexStringToByteArray.convert(hxs.getValue(), littleEndian));
+				result = appendByteArray(result, HexStringToByteArray.convert(hxs.getValue(), isLittleEndian));
 				break;
-			case "CRC":
-				result = appendByteArray(result, ChecksumToByteArray.convert(instructionValue, littleEndian));
+			case "CRC16":
+				CRC16 crc16 = (CRC16) instruction;
+				result = appendByteArray(result, ChecksumToByteArray.convert16(instructionValue, crc16.getCrcValue(), isLittleEndian));
+				break;
+			case "CRC32":
+				CRC32 crc32 = (CRC32) instruction;
+				result = appendByteArray(result, ChecksumToByteArray.convert32(instructionValue, crc32.getCrcValue(), isLittleEndian));
+				break;
+			case "NL":
+				result = appendByteArray(result, newline);
 				break;
 			case "BE":
-				littleEndian = false;
+				isLittleEndian = false;
 				break;
 			case "LE":
-				littleEndian = true;
+				isLittleEndian = true;
 				break;
 			case "PCAP":
 				pcap = true;
@@ -134,7 +151,7 @@ public class A2bCompiler {
 			}
 
 		}
-		
+
 		return result;
 	}
 

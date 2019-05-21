@@ -1,3 +1,8 @@
-DB 255 #
-DB 1 #
-CRC
+STR "P6"
+\n
+STR "2 2"
+\n
+STR "255"
+\n
+PXL 255 1 1 PXL 1 1 255
+PXL 1 255 1 PXL 48 48 48

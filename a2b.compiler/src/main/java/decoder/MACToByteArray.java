@@ -19,10 +19,10 @@ public class MACToByteArray {
 	 * [false == big endian]
 	 * 
 	 * @param content
-	 * @param littleEndian
+	 * @param isLittleEndian
 	 * @return byte array in an endianness order
 	 */
-	public static byte[] convert(String content, boolean littleEndian) {
+	public static byte[] convert(String content, boolean isLittleEndian) {
 
 		String[] macAddress = content.split(":");
 
@@ -33,7 +33,7 @@ public class MACToByteArray {
 			result[i] = inputInByteArray.byteValue();
 		}
 
-		return littleEndian ? ByteArray.reverse(result) : result;
+		return isLittleEndian ? ByteArray.reverse(result) : result;
 	}
 
 }

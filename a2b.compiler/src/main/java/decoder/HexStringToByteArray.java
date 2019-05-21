@@ -18,11 +18,13 @@ public class HexStringToByteArray {
 	 * [true == little endian],
 	 * [false == big endian] 
 	 * 
+	 * https://stackoverflow.com/questions/140131/convert-a-string-representation-of-a-hex-dump-to-a-byte-array-using-java
+	 * 
 	 * @param content
-	 * @param littleEndian
+	 * @param isLittleEndian
 	 * @return byte array in an endianness order
 	 */
-	public static byte[] convert(String content, boolean littleEndian) {
+	public static byte[] convert(String content, boolean isLittleEndian) {
 		content = content.substring(2);
 		int length = content.length();
 		byte[] result = new byte[length / 2];
@@ -31,7 +33,7 @@ public class HexStringToByteArray {
 					+ Character.digit(content.charAt(i + 1), 16));
 		}
 
-		return littleEndian ? ByteArray.reverse(result) : result;
+		return isLittleEndian ? ByteArray.reverse(result) : result;
 	}
 
 }

@@ -41,7 +41,7 @@ class A2BValidator extends AbstractA2BValidator {
 	@Check
 	def checkIncludeString(INCLUDE include){
 		if(include.value.endsWith(".*\\.^[a-zA-Z0-9]*$")){
-			error('String Dude', A2BPackage.Literals.INCLUDE__VALUE, INVALID_SYNTAX)
+			error('Include value should end with a file', A2BPackage.Literals.INCLUDE__VALUE, INVALID_SYNTAX)
 		}
 	}
 	

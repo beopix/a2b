@@ -135,11 +135,11 @@ public class A2BSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case A2BPackage.ORG:
+      case A2BPackage.PAD:
       {
-        ORG org = (ORG)theEObject;
-        T result = caseORG(org);
-        if (result == null) result = caseInstruction(org);
+        PAD pad = (PAD)theEObject;
+        T result = casePAD(pad);
+        if (result == null) result = caseInstruction(pad);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -167,11 +167,35 @@ public class A2BSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case A2BPackage.PXL:
+      {
+        PXL pxl = (PXL)theEObject;
+        T result = casePXL(pxl);
+        if (result == null) result = caseInstruction(pxl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case A2BPackage.HXS:
       {
         HXS hxs = (HXS)theEObject;
         T result = caseHXS(hxs);
         if (result == null) result = caseInstruction(hxs);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case A2BPackage.CRC16:
+      {
+        CRC16 crc16 = (CRC16)theEObject;
+        T result = caseCRC16(crc16);
+        if (result == null) result = caseInstruction(crc16);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case A2BPackage.CRC32:
+      {
+        CRC32 crc32 = (CRC32)theEObject;
+        T result = caseCRC32(crc32);
+        if (result == null) result = caseInstruction(crc32);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -199,11 +223,11 @@ public class A2BSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case A2BPackage.CRC:
+      case A2BPackage.NL:
       {
-        CRC crc = (CRC)theEObject;
-        T result = caseCRC(crc);
-        if (result == null) result = caseInstruction(crc);
+        NL nl = (NL)theEObject;
+        T result = caseNL(nl);
+        if (result == null) result = caseInstruction(nl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -340,17 +364,17 @@ public class A2BSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>ORG</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>PAD</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>ORG</em>'.
+   * @return the result of interpreting the object as an instance of '<em>PAD</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseORG(ORG object)
+  public T casePAD(PAD object)
   {
     return null;
   }
@@ -404,6 +428,22 @@ public class A2BSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>PXL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>PXL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePXL(PXL object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>HXS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -415,6 +455,38 @@ public class A2BSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseHXS(HXS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>CRC16</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>CRC16</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCRC16(CRC16 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>CRC32</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>CRC32</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCRC32(CRC32 object)
   {
     return null;
   }
@@ -468,17 +540,17 @@ public class A2BSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>CRC</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>NL</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>CRC</em>'.
+   * @return the result of interpreting the object as an instance of '<em>NL</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCRC(CRC object)
+  public T caseNL(NL object)
   {
     return null;
   }

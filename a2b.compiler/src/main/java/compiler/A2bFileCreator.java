@@ -48,7 +48,6 @@ public class A2bFileCreator {
 				fos.flush();
 				fos.close();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 
 		}

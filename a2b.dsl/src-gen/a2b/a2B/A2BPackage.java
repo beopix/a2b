@@ -262,13 +262,22 @@ public interface A2BPackage extends EPackage
   int STR__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Crc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STR__CRC_VALUE = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>STR</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STR_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+  int STR_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link a2b.a2B.impl.Base64DecodeImpl <em>Base64 Decode</em>}' class.
@@ -327,14 +336,14 @@ public interface A2BPackage extends EPackage
   int BASE64_ENCODE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link a2b.a2B.impl.ORGImpl <em>ORG</em>}' class.
+   * The meta object id for the '{@link a2b.a2B.impl.PADImpl <em>PAD</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see a2b.a2B.impl.ORGImpl
-   * @see a2b.a2B.impl.A2BPackageImpl#getORG()
+   * @see a2b.a2B.impl.PADImpl
+   * @see a2b.a2B.impl.A2BPackageImpl#getPAD()
    * @generated
    */
-  int ORG = 8;
+  int PAD = 8;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -343,7 +352,7 @@ public interface A2BPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ORG__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+  int PAD__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Crc Value</b></em>' attribute.
@@ -352,16 +361,16 @@ public interface A2BPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ORG__CRC_VALUE = INSTRUCTION_FEATURE_COUNT + 1;
+  int PAD__CRC_VALUE = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>ORG</em>' class.
+   * The number of structural features of the '<em>PAD</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORG_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+  int PAD_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link a2b.a2B.impl.INCLUDEImpl <em>INCLUDE</em>}' class.
@@ -475,6 +484,34 @@ public interface A2BPackage extends EPackage
   int IP_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link a2b.a2B.impl.PXLImpl <em>PXL</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see a2b.a2B.impl.PXLImpl
+   * @see a2b.a2B.impl.A2BPackageImpl#getPXL()
+   * @generated
+   */
+  int PXL = 12;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PXL__VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>PXL</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PXL_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link a2b.a2B.impl.HXSImpl <em>HXS</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -482,7 +519,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getHXS()
    * @generated
    */
-  int HXS = 12;
+  int HXS = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -512,6 +549,62 @@ public interface A2BPackage extends EPackage
   int HXS_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link a2b.a2B.impl.CRC16Impl <em>CRC16</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see a2b.a2B.impl.CRC16Impl
+   * @see a2b.a2B.impl.A2BPackageImpl#getCRC16()
+   * @generated
+   */
+  int CRC16 = 14;
+
+  /**
+   * The feature id for the '<em><b>Crc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CRC16__CRC_VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>CRC16</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CRC16_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link a2b.a2B.impl.CRC32Impl <em>CRC32</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see a2b.a2B.impl.CRC32Impl
+   * @see a2b.a2B.impl.A2BPackageImpl#getCRC32()
+   * @generated
+   */
+  int CRC32 = 15;
+
+  /**
+   * The feature id for the '<em><b>Crc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CRC32__CRC_VALUE = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>CRC32</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CRC32_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link a2b.a2B.impl.BEImpl <em>BE</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -519,7 +612,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getBE()
    * @generated
    */
-  int BE = 13;
+  int BE = 16;
 
   /**
    * The number of structural features of the '<em>BE</em>' class.
@@ -538,7 +631,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getLE()
    * @generated
    */
-  int LE = 14;
+  int LE = 17;
 
   /**
    * The number of structural features of the '<em>LE</em>' class.
@@ -557,7 +650,7 @@ public interface A2BPackage extends EPackage
    * @see a2b.a2B.impl.A2BPackageImpl#getPCAP()
    * @generated
    */
-  int PCAP = 15;
+  int PCAP = 18;
 
   /**
    * The number of structural features of the '<em>PCAP</em>' class.
@@ -569,23 +662,23 @@ public interface A2BPackage extends EPackage
   int PCAP_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link a2b.a2B.impl.CRCImpl <em>CRC</em>}' class.
+   * The meta object id for the '{@link a2b.a2B.impl.NLImpl <em>NL</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see a2b.a2B.impl.CRCImpl
-   * @see a2b.a2B.impl.A2BPackageImpl#getCRC()
+   * @see a2b.a2B.impl.NLImpl
+   * @see a2b.a2B.impl.A2BPackageImpl#getNL()
    * @generated
    */
-  int CRC = 16;
+  int NL = 19;
 
   /**
-   * The number of structural features of the '<em>CRC</em>' class.
+   * The number of structural features of the '<em>NL</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CRC_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+  int NL_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
 
 
   /**
@@ -770,6 +863,17 @@ public interface A2BPackage extends EPackage
   EAttribute getSTR_Value();
 
   /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.STR#getCrcValue <em>Crc Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Crc Value</em>'.
+   * @see a2b.a2B.STR#getCrcValue()
+   * @see #getSTR()
+   * @generated
+   */
+  EAttribute getSTR_CrcValue();
+
+  /**
    * Returns the meta object for class '{@link a2b.a2B.Base64Decode <em>Base64 Decode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -812,36 +916,36 @@ public interface A2BPackage extends EPackage
   EAttribute getBase64Encode_Value();
 
   /**
-   * Returns the meta object for class '{@link a2b.a2B.ORG <em>ORG</em>}'.
+   * Returns the meta object for class '{@link a2b.a2B.PAD <em>PAD</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>ORG</em>'.
-   * @see a2b.a2B.ORG
+   * @return the meta object for class '<em>PAD</em>'.
+   * @see a2b.a2B.PAD
    * @generated
    */
-  EClass getORG();
+  EClass getPAD();
 
   /**
-   * Returns the meta object for the attribute '{@link a2b.a2B.ORG#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link a2b.a2B.PAD#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see a2b.a2B.ORG#getValue()
-   * @see #getORG()
+   * @see a2b.a2B.PAD#getValue()
+   * @see #getPAD()
    * @generated
    */
-  EAttribute getORG_Value();
+  EAttribute getPAD_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link a2b.a2B.ORG#getCrcValue <em>Crc Value</em>}'.
+   * Returns the meta object for the attribute '{@link a2b.a2B.PAD#getCrcValue <em>Crc Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Crc Value</em>'.
-   * @see a2b.a2B.ORG#getCrcValue()
-   * @see #getORG()
+   * @see a2b.a2B.PAD#getCrcValue()
+   * @see #getPAD()
    * @generated
    */
-  EAttribute getORG_CrcValue();
+  EAttribute getPAD_CrcValue();
 
   /**
    * Returns the meta object for class '{@link a2b.a2B.INCLUDE <em>INCLUDE</em>}'.
@@ -940,6 +1044,27 @@ public interface A2BPackage extends EPackage
   EAttribute getIP_CrcValue();
 
   /**
+   * Returns the meta object for class '{@link a2b.a2B.PXL <em>PXL</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>PXL</em>'.
+   * @see a2b.a2B.PXL
+   * @generated
+   */
+  EClass getPXL();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.PXL#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see a2b.a2B.PXL#getValue()
+   * @see #getPXL()
+   * @generated
+   */
+  EAttribute getPXL_Value();
+
+  /**
    * Returns the meta object for class '{@link a2b.a2B.HXS <em>HXS</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -972,6 +1097,48 @@ public interface A2BPackage extends EPackage
   EAttribute getHXS_CrcValue();
 
   /**
+   * Returns the meta object for class '{@link a2b.a2B.CRC16 <em>CRC16</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>CRC16</em>'.
+   * @see a2b.a2B.CRC16
+   * @generated
+   */
+  EClass getCRC16();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.CRC16#getCrcValue <em>Crc Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Crc Value</em>'.
+   * @see a2b.a2B.CRC16#getCrcValue()
+   * @see #getCRC16()
+   * @generated
+   */
+  EAttribute getCRC16_CrcValue();
+
+  /**
+   * Returns the meta object for class '{@link a2b.a2B.CRC32 <em>CRC32</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>CRC32</em>'.
+   * @see a2b.a2B.CRC32
+   * @generated
+   */
+  EClass getCRC32();
+
+  /**
+   * Returns the meta object for the attribute '{@link a2b.a2B.CRC32#getCrcValue <em>Crc Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Crc Value</em>'.
+   * @see a2b.a2B.CRC32#getCrcValue()
+   * @see #getCRC32()
+   * @generated
+   */
+  EAttribute getCRC32_CrcValue();
+
+  /**
    * Returns the meta object for class '{@link a2b.a2B.BE <em>BE</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1002,14 +1169,14 @@ public interface A2BPackage extends EPackage
   EClass getPCAP();
 
   /**
-   * Returns the meta object for class '{@link a2b.a2B.CRC <em>CRC</em>}'.
+   * Returns the meta object for class '{@link a2b.a2B.NL <em>NL</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>CRC</em>'.
-   * @see a2b.a2B.CRC
+   * @return the meta object for class '<em>NL</em>'.
+   * @see a2b.a2B.NL
    * @generated
    */
-  EClass getCRC();
+  EClass getNL();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1183,6 +1350,14 @@ public interface A2BPackage extends EPackage
     EAttribute STR__VALUE = eINSTANCE.getSTR_Value();
 
     /**
+     * The meta object literal for the '<em><b>Crc Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STR__CRC_VALUE = eINSTANCE.getSTR_CrcValue();
+
+    /**
      * The meta object literal for the '{@link a2b.a2B.impl.Base64DecodeImpl <em>Base64 Decode</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1219,14 +1394,14 @@ public interface A2BPackage extends EPackage
     EAttribute BASE64_ENCODE__VALUE = eINSTANCE.getBase64Encode_Value();
 
     /**
-     * The meta object literal for the '{@link a2b.a2B.impl.ORGImpl <em>ORG</em>}' class.
+     * The meta object literal for the '{@link a2b.a2B.impl.PADImpl <em>PAD</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see a2b.a2B.impl.ORGImpl
-     * @see a2b.a2B.impl.A2BPackageImpl#getORG()
+     * @see a2b.a2B.impl.PADImpl
+     * @see a2b.a2B.impl.A2BPackageImpl#getPAD()
      * @generated
      */
-    EClass ORG = eINSTANCE.getORG();
+    EClass PAD = eINSTANCE.getPAD();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1234,7 +1409,7 @@ public interface A2BPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ORG__VALUE = eINSTANCE.getORG_Value();
+    EAttribute PAD__VALUE = eINSTANCE.getPAD_Value();
 
     /**
      * The meta object literal for the '<em><b>Crc Value</b></em>' attribute feature.
@@ -1242,7 +1417,7 @@ public interface A2BPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ORG__CRC_VALUE = eINSTANCE.getORG_CrcValue();
+    EAttribute PAD__CRC_VALUE = eINSTANCE.getPAD_CrcValue();
 
     /**
      * The meta object literal for the '{@link a2b.a2B.impl.INCLUDEImpl <em>INCLUDE</em>}' class.
@@ -1323,6 +1498,24 @@ public interface A2BPackage extends EPackage
     EAttribute IP__CRC_VALUE = eINSTANCE.getIP_CrcValue();
 
     /**
+     * The meta object literal for the '{@link a2b.a2B.impl.PXLImpl <em>PXL</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see a2b.a2B.impl.PXLImpl
+     * @see a2b.a2B.impl.A2BPackageImpl#getPXL()
+     * @generated
+     */
+    EClass PXL = eINSTANCE.getPXL();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PXL__VALUE = eINSTANCE.getPXL_Value();
+
+    /**
      * The meta object literal for the '{@link a2b.a2B.impl.HXSImpl <em>HXS</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1347,6 +1540,42 @@ public interface A2BPackage extends EPackage
      * @generated
      */
     EAttribute HXS__CRC_VALUE = eINSTANCE.getHXS_CrcValue();
+
+    /**
+     * The meta object literal for the '{@link a2b.a2B.impl.CRC16Impl <em>CRC16</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see a2b.a2B.impl.CRC16Impl
+     * @see a2b.a2B.impl.A2BPackageImpl#getCRC16()
+     * @generated
+     */
+    EClass CRC16 = eINSTANCE.getCRC16();
+
+    /**
+     * The meta object literal for the '<em><b>Crc Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CRC16__CRC_VALUE = eINSTANCE.getCRC16_CrcValue();
+
+    /**
+     * The meta object literal for the '{@link a2b.a2B.impl.CRC32Impl <em>CRC32</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see a2b.a2B.impl.CRC32Impl
+     * @see a2b.a2B.impl.A2BPackageImpl#getCRC32()
+     * @generated
+     */
+    EClass CRC32 = eINSTANCE.getCRC32();
+
+    /**
+     * The meta object literal for the '<em><b>Crc Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CRC32__CRC_VALUE = eINSTANCE.getCRC32_CrcValue();
 
     /**
      * The meta object literal for the '{@link a2b.a2B.impl.BEImpl <em>BE</em>}' class.
@@ -1379,14 +1608,14 @@ public interface A2BPackage extends EPackage
     EClass PCAP = eINSTANCE.getPCAP();
 
     /**
-     * The meta object literal for the '{@link a2b.a2B.impl.CRCImpl <em>CRC</em>}' class.
+     * The meta object literal for the '{@link a2b.a2B.impl.NLImpl <em>NL</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see a2b.a2B.impl.CRCImpl
-     * @see a2b.a2B.impl.A2BPackageImpl#getCRC()
+     * @see a2b.a2B.impl.NLImpl
+     * @see a2b.a2B.impl.A2BPackageImpl#getNL()
      * @generated
      */
-    EClass CRC = eINSTANCE.getCRC();
+    EClass NL = eINSTANCE.getNL();
 
   }
 

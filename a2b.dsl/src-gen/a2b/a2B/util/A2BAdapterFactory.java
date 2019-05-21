@@ -116,9 +116,9 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
         return createBase64EncodeAdapter();
       }
       @Override
-      public Adapter caseORG(ORG object)
+      public Adapter casePAD(PAD object)
       {
-        return createORGAdapter();
+        return createPADAdapter();
       }
       @Override
       public Adapter caseINCLUDE(INCLUDE object)
@@ -136,9 +136,24 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
         return createIPAdapter();
       }
       @Override
+      public Adapter casePXL(PXL object)
+      {
+        return createPXLAdapter();
+      }
+      @Override
       public Adapter caseHXS(HXS object)
       {
         return createHXSAdapter();
+      }
+      @Override
+      public Adapter caseCRC16(CRC16 object)
+      {
+        return createCRC16Adapter();
+      }
+      @Override
+      public Adapter caseCRC32(CRC32 object)
+      {
+        return createCRC32Adapter();
       }
       @Override
       public Adapter caseBE(BE object)
@@ -156,9 +171,9 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
         return createPCAPAdapter();
       }
       @Override
-      public Adapter caseCRC(CRC object)
+      public Adapter caseNL(NL object)
       {
-        return createCRCAdapter();
+        return createNLAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -303,16 +318,16 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link a2b.a2B.ORG <em>ORG</em>}'.
+   * Creates a new adapter for an object of class '{@link a2b.a2B.PAD <em>PAD</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see a2b.a2B.ORG
+   * @see a2b.a2B.PAD
    * @generated
    */
-  public Adapter createORGAdapter()
+  public Adapter createPADAdapter()
   {
     return null;
   }
@@ -363,6 +378,21 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.PXL <em>PXL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.PXL
+   * @generated
+   */
+  public Adapter createPXLAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link a2b.a2B.HXS <em>HXS</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -373,6 +403,36 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createHXSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.CRC16 <em>CRC16</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.CRC16
+   * @generated
+   */
+  public Adapter createCRC16Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link a2b.a2B.CRC32 <em>CRC32</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see a2b.a2B.CRC32
+   * @generated
+   */
+  public Adapter createCRC32Adapter()
   {
     return null;
   }
@@ -423,16 +483,16 @@ public class A2BAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link a2b.a2B.CRC <em>CRC</em>}'.
+   * Creates a new adapter for an object of class '{@link a2b.a2B.NL <em>NL</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see a2b.a2B.CRC
+   * @see a2b.a2B.NL
    * @generated
    */
-  public Adapter createCRCAdapter()
+  public Adapter createNLAdapter()
   {
     return null;
   }

@@ -73,15 +73,18 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
       case A2BPackage.STR: return createSTR();
       case A2BPackage.BASE64_DECODE: return createBase64Decode();
       case A2BPackage.BASE64_ENCODE: return createBase64Encode();
-      case A2BPackage.ORG: return createORG();
+      case A2BPackage.PAD: return createPAD();
       case A2BPackage.INCLUDE: return createINCLUDE();
       case A2BPackage.MAC: return createMAC();
       case A2BPackage.IP: return createIP();
+      case A2BPackage.PXL: return createPXL();
       case A2BPackage.HXS: return createHXS();
+      case A2BPackage.CRC16: return createCRC16();
+      case A2BPackage.CRC32: return createCRC32();
       case A2BPackage.BE: return createBE();
       case A2BPackage.LE: return createLE();
       case A2BPackage.PCAP: return createPCAP();
-      case A2BPackage.CRC: return createCRC();
+      case A2BPackage.NL: return createNL();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -189,10 +192,10 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
    * @generated
    */
   @Override
-  public ORG createORG()
+  public PAD createPAD()
   {
-    ORGImpl org = new ORGImpl();
-    return org;
+    PADImpl pad = new PADImpl();
+    return pad;
   }
 
   /**
@@ -237,10 +240,46 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
    * @generated
    */
   @Override
+  public PXL createPXL()
+  {
+    PXLImpl pxl = new PXLImpl();
+    return pxl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public HXS createHXS()
   {
     HXSImpl hxs = new HXSImpl();
     return hxs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CRC16 createCRC16()
+  {
+    CRC16Impl crc16 = new CRC16Impl();
+    return crc16;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CRC32 createCRC32()
+  {
+    CRC32Impl crc32 = new CRC32Impl();
+    return crc32;
   }
 
   /**
@@ -285,10 +324,10 @@ public class A2BFactoryImpl extends EFactoryImpl implements A2BFactory
    * @generated
    */
   @Override
-  public CRC createCRC()
+  public NL createNL()
   {
-    CRCImpl crc = new CRCImpl();
-    return crc;
+    NLImpl nl = new NLImpl();
+    return nl;
   }
 
   /**

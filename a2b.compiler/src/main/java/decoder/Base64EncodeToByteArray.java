@@ -22,14 +22,14 @@ public class Base64EncodeToByteArray {
 	 * [false == big endian]
 	 * 
 	 * @param content
-	 * @param littleEndian
+	 * @param isLittleEndian
 	 * @return byte array in an endianness order
 	 */
-	public static byte[] encode(String content, boolean littleEndian) {
+	public static byte[] encode(String content, boolean isLittleEndian) {
 
 		byte[] encodedString = Base64.getEncoder().encode(content.getBytes(StandardCharsets.UTF_8));
 
-		return littleEndian ? ByteArray.reverse(encodedString) : encodedString;
+		return isLittleEndian ? ByteArray.reverse(encodedString) : encodedString;
 
 	}
 

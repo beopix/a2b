@@ -39,6 +39,9 @@ public class A2bParser {
 		initializeParser();
 	}
 
+	/**
+	 * This method initializes the objects provided by xtext. It also sets two load options.
+	 */
 	private void initializeParser(){
 		injector = new A2BStandaloneSetup().createInjectorAndDoEMFRegistration();
 		resourceSet = injector.getInstance(XtextResourceSet.class);
@@ -47,6 +50,15 @@ public class A2bParser {
 		resourceValidator = injector.getInstance(IResourceValidator.class);
 	}
 
+	/**
+	 * This method loads the xtext resource from the language file and checks its syntax. 
+	 * A valid syntax provides a new model with the instructions from the language file.
+	 * If the syntax has errors an exception will be thrown.
+	 * 
+	 * @param uriPath
+	 * @return the model of the language file
+	 * @throws A2BParseErrorException
+	 */
 	public Model parse(String uriPath) throws A2BParseErrorException{
 		
 		resource = resourceSet.getResource(URI.createFileURI(uriPath), true);

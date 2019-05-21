@@ -4,7 +4,7 @@
 package a2b.a2B.impl;
 
 import a2b.a2B.A2BPackage;
-import a2b.a2B.ORG;
+import a2b.a2B.PAD;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ORG</b></em>'.
+ * An implementation of the model object '<em><b>PAD</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.impl.ORGImpl#getValue <em>Value</em>}</li>
- *   <li>{@link a2b.a2B.impl.ORGImpl#getCrcValue <em>Crc Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.PADImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.PADImpl#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ORGImpl extends InstructionImpl implements ORG
+public class PADImpl extends InstructionImpl implements PAD
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -73,7 +73,7 @@ public class ORGImpl extends InstructionImpl implements ORG
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ORGImpl()
+  protected PADImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class ORGImpl extends InstructionImpl implements ORG
   @Override
   protected EClass eStaticClass()
   {
-    return A2BPackage.Literals.ORG;
+    return A2BPackage.Literals.PAD;
   }
 
   /**
@@ -111,7 +111,7 @@ public class ORGImpl extends InstructionImpl implements ORG
     int oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.ORG__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.PAD__VALUE, oldValue, value));
   }
 
   /**
@@ -136,7 +136,7 @@ public class ORGImpl extends InstructionImpl implements ORG
     String oldCrcValue = crcValue;
     crcValue = newCrcValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.ORG__CRC_VALUE, oldCrcValue, crcValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.PAD__CRC_VALUE, oldCrcValue, crcValue));
   }
 
   /**
@@ -149,9 +149,9 @@ public class ORGImpl extends InstructionImpl implements ORG
   {
     switch (featureID)
     {
-      case A2BPackage.ORG__VALUE:
+      case A2BPackage.PAD__VALUE:
         return getValue();
-      case A2BPackage.ORG__CRC_VALUE:
+      case A2BPackage.PAD__CRC_VALUE:
         return getCrcValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -167,10 +167,10 @@ public class ORGImpl extends InstructionImpl implements ORG
   {
     switch (featureID)
     {
-      case A2BPackage.ORG__VALUE:
+      case A2BPackage.PAD__VALUE:
         setValue((Integer)newValue);
         return;
-      case A2BPackage.ORG__CRC_VALUE:
+      case A2BPackage.PAD__CRC_VALUE:
         setCrcValue((String)newValue);
         return;
     }
@@ -187,10 +187,10 @@ public class ORGImpl extends InstructionImpl implements ORG
   {
     switch (featureID)
     {
-      case A2BPackage.ORG__VALUE:
+      case A2BPackage.PAD__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
-      case A2BPackage.ORG__CRC_VALUE:
+      case A2BPackage.PAD__CRC_VALUE:
         setCrcValue(CRC_VALUE_EDEFAULT);
         return;
     }
@@ -207,9 +207,9 @@ public class ORGImpl extends InstructionImpl implements ORG
   {
     switch (featureID)
     {
-      case A2BPackage.ORG__VALUE:
+      case A2BPackage.PAD__VALUE:
         return value != VALUE_EDEFAULT;
-      case A2BPackage.ORG__CRC_VALUE:
+      case A2BPackage.PAD__CRC_VALUE:
         return CRC_VALUE_EDEFAULT == null ? crcValue != null : !CRC_VALUE_EDEFAULT.equals(crcValue);
     }
     return super.eIsSet(featureID);
@@ -234,4 +234,4 @@ public class ORGImpl extends InstructionImpl implements ORG
     return result.toString();
   }
 
-} //ORGImpl
+} //PADImpl

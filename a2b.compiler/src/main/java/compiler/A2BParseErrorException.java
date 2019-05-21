@@ -12,9 +12,6 @@ import org.eclipse.xtext.validation.Issue;
  */
 public class A2BParseErrorException extends Exception {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6311825955154703770L;
 	
 	public A2BParseErrorException() {

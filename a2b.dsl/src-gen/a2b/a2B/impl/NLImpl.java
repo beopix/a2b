@@ -4,25 +4,25 @@
 package a2b.a2B.impl;
 
 import a2b.a2B.A2BPackage;
-import a2b.a2B.CRC;
+import a2b.a2B.NL;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>CRC</b></em>'.
+ * An implementation of the model object '<em><b>NL</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class CRCImpl extends InstructionImpl implements CRC
+public class NLImpl extends InstructionImpl implements NL
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CRCImpl()
+  protected NLImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class CRCImpl extends InstructionImpl implements CRC
   @Override
   protected EClass eStaticClass()
   {
-    return A2BPackage.Literals.CRC;
+    return A2BPackage.Literals.NL;
   }
 
-} //CRCImpl
+} //NLImpl

@@ -6,22 +6,22 @@ package a2b.a2B;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>ORG</b></em>'.
+ * A representation of the model object '<em><b>PAD</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.ORG#getValue <em>Value</em>}</li>
- *   <li>{@link a2b.a2B.ORG#getCrcValue <em>Crc Value</em>}</li>
+ *   <li>{@link a2b.a2B.PAD#getValue <em>Value</em>}</li>
+ *   <li>{@link a2b.a2B.PAD#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
- * @see a2b.a2B.A2BPackage#getORG()
+ * @see a2b.a2B.A2BPackage#getPAD()
  * @model
  * @generated
  */
-public interface ORG extends Instruction
+public interface PAD extends Instruction
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface ORG extends Instruction
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(int)
-   * @see a2b.a2B.A2BPackage#getORG_Value()
+   * @see a2b.a2B.A2BPackage#getPAD_Value()
    * @model
    * @generated
    */
   int getValue();
 
   /**
-   * Sets the value of the '{@link a2b.a2B.ORG#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link a2b.a2B.PAD#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -51,14 +51,14 @@ public interface ORG extends Instruction
    * <!-- end-user-doc -->
    * @return the value of the '<em>Crc Value</em>' attribute.
    * @see #setCrcValue(String)
-   * @see a2b.a2B.A2BPackage#getORG_CrcValue()
+   * @see a2b.a2B.A2BPackage#getPAD_CrcValue()
    * @model
    * @generated
    */
   String getCrcValue();
 
   /**
-   * Sets the value of the '{@link a2b.a2B.ORG#getCrcValue <em>Crc Value</em>}' attribute.
+   * Sets the value of the '{@link a2b.a2B.PAD#getCrcValue <em>Crc Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Crc Value</em>' attribute.
@@ -67,4 +67,4 @@ public interface ORG extends Instruction
    */
   void setCrcValue(String value);
 
-} // ORG
+} // PAD

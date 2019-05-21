@@ -28,10 +28,10 @@ public class A2BSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getBERule())
 			return getBEToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getCRCRule())
-			return getCRCToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getLERule())
 			return getLEToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getNLRule())
+			return getNLToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getPCAPRule())
 			return getPCAPToken(semanticObject, ruleCall, node);
 		return "";
@@ -49,17 +49,6 @@ public class A2BSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * CRC:
-	 * 	'CRC'
-	 * ;
-	 */
-	protected String getCRCToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "CRC";
-	}
-	
-	/**
 	 * LE:
 	 * 	'LE'
 	 * ;
@@ -68,6 +57,17 @@ public class A2BSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "LE";
+	}
+	
+	/**
+	 * NL:
+	 * 	'\\n'
+	 * ;
+	 */
+	protected String getNLToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\\n";
 	}
 	
 	/**

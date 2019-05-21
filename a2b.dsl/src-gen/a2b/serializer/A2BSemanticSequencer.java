@@ -7,7 +7,8 @@ import a2b.a2B.A2BPackage;
 import a2b.a2B.BE;
 import a2b.a2B.Base64Decode;
 import a2b.a2B.Base64Encode;
-import a2b.a2B.CRC;
+import a2b.a2B.CRC16;
+import a2b.a2B.CRC32;
 import a2b.a2B.DB;
 import a2b.a2B.DD;
 import a2b.a2B.DW;
@@ -17,8 +18,10 @@ import a2b.a2B.IP;
 import a2b.a2B.LE;
 import a2b.a2B.MAC;
 import a2b.a2B.Model;
-import a2b.a2B.ORG;
+import a2b.a2B.NL;
+import a2b.a2B.PAD;
 import a2b.a2B.PCAP;
+import a2b.a2B.PXL;
 import a2b.a2B.STR;
 import a2b.services.A2BGrammarAccess;
 import com.google.inject.Inject;
@@ -56,8 +59,11 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case A2BPackage.BASE64_ENCODE:
 				sequence_Base64Encode(context, (Base64Encode) semanticObject); 
 				return; 
-			case A2BPackage.CRC:
-				sequence_Instruction(context, (CRC) semanticObject); 
+			case A2BPackage.CRC16:
+				sequence_CRC16(context, (CRC16) semanticObject); 
+				return; 
+			case A2BPackage.CRC32:
+				sequence_CRC32(context, (CRC32) semanticObject); 
 				return; 
 			case A2BPackage.DB:
 				sequence_DB(context, (DB) semanticObject); 
@@ -86,11 +92,17 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case A2BPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case A2BPackage.ORG:
-				sequence_ORG(context, (ORG) semanticObject); 
+			case A2BPackage.NL:
+				sequence_Instruction(context, (NL) semanticObject); 
+				return; 
+			case A2BPackage.PAD:
+				sequence_PAD(context, (PAD) semanticObject); 
 				return; 
 			case A2BPackage.PCAP:
 				sequence_Instruction(context, (PCAP) semanticObject); 
+				return; 
+			case A2BPackage.PXL:
+				sequence_PXL(context, (PXL) semanticObject); 
 				return; 
 			case A2BPackage.STR:
 				sequence_STR(context, (STR) semanticObject); 
@@ -134,6 +146,44 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBase64EncodeAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns CRC16
+	 *     CRC16 returns CRC16
+	 *
+	 * Constraint:
+	 *     crcValue=CRCCHECK
+	 */
+	protected void sequence_CRC16(ISerializationContext context, CRC16 semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.CRC16__CRC_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.CRC16__CRC_VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCRC16Access().getCrcValueCRCCHECKTerminalRuleCall_1_0(), semanticObject.getCrcValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns CRC32
+	 *     CRC32 returns CRC32
+	 *
+	 * Constraint:
+	 *     crcValue=CRCCHECK
+	 */
+	protected void sequence_CRC32(ISerializationContext context, CRC32 semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.CRC32__CRC_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.CRC32__CRC_VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCRC32Access().getCrcValueCRCCHECKTerminalRuleCall_1_0(), semanticObject.getCrcValue());
 		feeder.finish();
 	}
 	
@@ -230,24 +280,24 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Instruction returns CRC
-	 *
-	 * Constraint:
-	 *     {CRC}
-	 */
-	protected void sequence_Instruction(ISerializationContext context, CRC semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Instruction returns LE
 	 *
 	 * Constraint:
 	 *     {LE}
 	 */
 	protected void sequence_Instruction(ISerializationContext context, LE semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns NL
+	 *
+	 * Constraint:
+	 *     {NL}
+	 */
+	protected void sequence_Instruction(ISerializationContext context, NL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -291,14 +341,33 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Instruction returns ORG
-	 *     ORG returns ORG
+	 *     Instruction returns PAD
+	 *     PAD returns PAD
 	 *
 	 * Constraint:
 	 *     (value=INT crcValue=CRCCHECK?)
 	 */
-	protected void sequence_ORG(ISerializationContext context, ORG semanticObject) {
+	protected void sequence_PAD(ISerializationContext context, PAD semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns PXL
+	 *     PXL returns PXL
+	 *
+	 * Constraint:
+	 *     value=PIXEL
+	 */
+	protected void sequence_PXL(ISerializationContext context, PXL semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.PXL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.PXL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPXLAccess().getValuePIXELTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -308,16 +377,10 @@ public class A2BSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     STR returns STR
 	 *
 	 * Constraint:
-	 *     value=STRING
+	 *     (value=STRING crcValue=CRCCHECK?)
 	 */
 	protected void sequence_STR(ISerializationContext context, STR semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, A2BPackage.Literals.STR__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, A2BPackage.Literals.STR__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSTRAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

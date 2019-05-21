@@ -55,7 +55,7 @@ class A2BParsingTest {
 			
 			DB 0xff
 			
-			CRC
+			CRC16 #
 			STR "Hallo"
 			
 			DW 0xffff
@@ -75,6 +75,10 @@ class A2BParsingTest {
 			B64d "Hello"
 			
 			INCLUDE D:/home/a2b.compiler/dude.bin
+			
+			DB 255
+			
+			PXL 0 0 255
 		''')
 		result.assertNoErrors
 		Assertions.assertNotNull(result)

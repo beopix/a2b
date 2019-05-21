@@ -4,7 +4,7 @@
 package a2b.a2B.impl;
 
 import a2b.a2B.A2BPackage;
-import a2b.a2B.STR;
+import a2b.a2B.CRC16;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,40 +14,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>STR</b></em>'.
+ * An implementation of the model object '<em><b>CRC16</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link a2b.a2B.impl.STRImpl#getValue <em>Value</em>}</li>
- *   <li>{@link a2b.a2B.impl.STRImpl#getCrcValue <em>Crc Value</em>}</li>
+ *   <li>{@link a2b.a2B.impl.CRC16Impl#getCrcValue <em>Crc Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class STRImpl extends InstructionImpl implements STR
+public class CRC16Impl extends InstructionImpl implements CRC16
 {
-  /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
-
   /**
    * The default value of the '{@link #getCrcValue() <em>Crc Value</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -73,7 +52,7 @@ public class STRImpl extends InstructionImpl implements STR
    * <!-- end-user-doc -->
    * @generated
    */
-  protected STRImpl()
+  protected CRC16Impl()
   {
     super();
   }
@@ -86,32 +65,7 @@ public class STRImpl extends InstructionImpl implements STR
   @Override
   protected EClass eStaticClass()
   {
-    return A2BPackage.Literals.STR;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getValue()
-  {
-    return value;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setValue(String newValue)
-  {
-    String oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.STR__VALUE, oldValue, value));
+    return A2BPackage.Literals.CRC16;
   }
 
   /**
@@ -136,7 +90,7 @@ public class STRImpl extends InstructionImpl implements STR
     String oldCrcValue = crcValue;
     crcValue = newCrcValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.STR__CRC_VALUE, oldCrcValue, crcValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, A2BPackage.CRC16__CRC_VALUE, oldCrcValue, crcValue));
   }
 
   /**
@@ -149,9 +103,7 @@ public class STRImpl extends InstructionImpl implements STR
   {
     switch (featureID)
     {
-      case A2BPackage.STR__VALUE:
-        return getValue();
-      case A2BPackage.STR__CRC_VALUE:
+      case A2BPackage.CRC16__CRC_VALUE:
         return getCrcValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -167,10 +119,7 @@ public class STRImpl extends InstructionImpl implements STR
   {
     switch (featureID)
     {
-      case A2BPackage.STR__VALUE:
-        setValue((String)newValue);
-        return;
-      case A2BPackage.STR__CRC_VALUE:
+      case A2BPackage.CRC16__CRC_VALUE:
         setCrcValue((String)newValue);
         return;
     }
@@ -187,10 +136,7 @@ public class STRImpl extends InstructionImpl implements STR
   {
     switch (featureID)
     {
-      case A2BPackage.STR__VALUE:
-        setValue(VALUE_EDEFAULT);
-        return;
-      case A2BPackage.STR__CRC_VALUE:
+      case A2BPackage.CRC16__CRC_VALUE:
         setCrcValue(CRC_VALUE_EDEFAULT);
         return;
     }
@@ -207,9 +153,7 @@ public class STRImpl extends InstructionImpl implements STR
   {
     switch (featureID)
     {
-      case A2BPackage.STR__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case A2BPackage.STR__CRC_VALUE:
+      case A2BPackage.CRC16__CRC_VALUE:
         return CRC_VALUE_EDEFAULT == null ? crcValue != null : !CRC_VALUE_EDEFAULT.equals(crcValue);
     }
     return super.eIsSet(featureID);
@@ -226,12 +170,10 @@ public class STRImpl extends InstructionImpl implements STR
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (value: ");
-    result.append(value);
-    result.append(", crcValue: ");
+    result.append(" (crcValue: ");
     result.append(crcValue);
     result.append(')');
     return result.toString();
   }
 
-} //STRImpl
+} //CRC16Impl

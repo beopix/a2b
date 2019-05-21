@@ -19,10 +19,10 @@ public class IPToByteArray {
 	 * [false == big endian]
 	 * 
 	 * @param content
-	 * @param littleEndian
+	 * @param isLittleEndian
 	 * @return byte array in an endianness order
 	 */
-	public static byte[] convert(String content, boolean littleEndian) {
+	public static byte[] convert(String content, boolean isLittleEndian) {
 		String[] ipAddress = content.split("\\.");
 
 		byte[] result = new byte[4];
@@ -32,7 +32,7 @@ public class IPToByteArray {
 			result[i] = inputInByteArray.byteValue();
 		}
 
-		return littleEndian ? ByteArray.reverse(result) : result;
+		return isLittleEndian ? ByteArray.reverse(result) : result;
 	}
 	
 }

@@ -96,13 +96,13 @@ public interface A2BFactory extends EFactory
   Base64Encode createBase64Encode();
 
   /**
-   * Returns a new object of class '<em>ORG</em>'.
+   * Returns a new object of class '<em>PAD</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>ORG</em>'.
+   * @return a new object of class '<em>PAD</em>'.
    * @generated
    */
-  ORG createORG();
+  PAD createPAD();
 
   /**
    * Returns a new object of class '<em>INCLUDE</em>'.
@@ -132,6 +132,15 @@ public interface A2BFactory extends EFactory
   IP createIP();
 
   /**
+   * Returns a new object of class '<em>PXL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>PXL</em>'.
+   * @generated
+   */
+  PXL createPXL();
+
+  /**
    * Returns a new object of class '<em>HXS</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,6 +148,24 @@ public interface A2BFactory extends EFactory
    * @generated
    */
   HXS createHXS();
+
+  /**
+   * Returns a new object of class '<em>CRC16</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CRC16</em>'.
+   * @generated
+   */
+  CRC16 createCRC16();
+
+  /**
+   * Returns a new object of class '<em>CRC32</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CRC32</em>'.
+   * @generated
+   */
+  CRC32 createCRC32();
 
   /**
    * Returns a new object of class '<em>BE</em>'.
@@ -168,13 +195,13 @@ public interface A2BFactory extends EFactory
   PCAP createPCAP();
 
   /**
-   * Returns a new object of class '<em>CRC</em>'.
+   * Returns a new object of class '<em>NL</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>CRC</em>'.
+   * @return a new object of class '<em>NL</em>'.
    * @generated
    */
-  CRC createCRC();
+  NL createNL();
 
   /**
    * Returns the package supported by this factory.
