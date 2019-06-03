@@ -1,0 +1,30 @@
+/*Festlegung einer PCAP-Datei*/
+PCAP
+/*Beginn des Ethernet-Frames */
+	//Ziel-MAC-Adresse
+	MAC 01:02:03:04:05:06
+	//Quell-MAC-Adresse
+	MAC AA:BB:CC:DD:EE:FF
+	//Protokoll-Typ
+	DW 0x0800
+	/*Beginn des IPv4-Headers */
+		//Version & Internet Header Length
+		DB 0b01000101#
+		//Type of Service
+		DB 0#
+		//Total Length
+		DW 20#
+		//Identification
+		DW 12345#
+		//Flags & Fragment Offset
+		DW 0b0000000000000000#
+		//Time to Live
+		DB 120#
+		//Protocol
+		DB 6#
+		//Header Checksum
+		CRC16 #
+		//Source Address
+		IP 192.168.178.42#
+		//Destination Address
+		IP 192.168.178.43#

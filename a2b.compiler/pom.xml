@@ -22,7 +22,7 @@
 		<dependency>
     		<groupId>org.pcap4j</groupId>
     		<artifactId>pcap4j-core</artifactId>
-    		<version>1.7.4</version>
+    		<version>1.7.7</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->

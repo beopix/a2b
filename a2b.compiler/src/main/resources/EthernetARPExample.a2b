@@ -1,0 +1,28 @@
+/*Festlegung einer PCAP-Datei*/
+PCAP
+/*Beginn des Ethernet-Frames */
+	//Ziel-MAC-Adresse
+	MAC 01:02:03:04:05:06
+	//Quell-MAC-Adresse
+	MAC AA:BB:CC:DD:EE:FF
+	//Protokoll-Typ
+	DW 0x0806
+	/*Beginn des ARP-Reply */
+		//Hardware-Adressraum (Ethernet)
+		DW 1
+		//Protokoll-Adressraum (IPv4)
+		DW 0x0800
+		//Groesse der Hardware-Adresse
+		DB 6
+		//Groesse der Protokoll-Adresse
+		DB 4
+		//Opcode (Reply)
+		DW 2
+		//Hardware-Adresse des Senders
+		MAC AA:BB:CC:DD:EE:FF
+		//Protokoll-Adresse des Senders
+		IP 192.168.178.42
+		//Hardware-Adresse des Ziels
+		MAC 01:02:03:04:05:06
+		//Protokoll-Adresse des Senders
+		IP 192.168.178.43
