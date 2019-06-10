@@ -7,10 +7,13 @@ import java.text.DecimalFormat;
 public class Main {
 
 	public static void main(String[] args) {
-		
+		//long programmStart is for time tracking
 		long programStart = System.nanoTime();
 		System.out.println("Starting a2b application");
-
+		
+		/*
+		 * a2b-Compiler starts here
+		 */
 		try {
 			A2BArguments.check(args[0], args[1]);
 
@@ -25,7 +28,7 @@ public class Main {
 			e.printStackTrace();
 
 		} finally {
-
+			//calculation of tracked time and prints it out
 			long programEnd   = System.nanoTime();
 			long programExecutionTime = programEnd - programStart;
 			double programLifeTime = (double) programExecutionTime / 1_000_000_000.0;

@@ -17,6 +17,8 @@ import a2b.a2B.PAD;
 import a2b.a2B.STR;
 
 /**
+ * This class is for converting a checksum from the marked fields in the a2b language file to a byte array.
+ * 
  * @author rampix
  *
  */
@@ -33,10 +35,12 @@ public class ChecksumToByteArray {
 	}
 
 	/**
+	 * This method calls the other two class methods which are responsible for the 16 bit checksum calculation.
+	 * 
 	 * @param instructionValue
 	 * @param crcSign
 	 * @param isLittleEndian
-	 * @return
+	 * @return byte array with calculated 16 bit checksum
 	 */
 	public static byte[] convert16(EList<Instruction> instructionValue, String crcSign , boolean isLittleEndian) {
 		
@@ -47,10 +51,12 @@ public class ChecksumToByteArray {
 	}
 	
 	/**
+	 * This method calls the other two class methods which are responsible for the 32 bit checksum calculation.
+	 * 
 	 * @param instructionValue
 	 * @param crcSign
 	 * @param isLittleEndian
-	 * @return
+	 * @return byte array with calculated 32 bit checksum
 	 */
 	public static byte[] convert32(EList<Instruction> instructionValue, String crcSign , boolean isLittleEndian) {
 		
@@ -61,9 +67,15 @@ public class ChecksumToByteArray {
 
 
 	/**
+	 * This method goes through the model/ast and calls for every instruction which is marked a specific class method which returns
+	 * the value from the language file as a byte[]. Every byte[] gets attached to the main byte[] which this method returns.
+	 * The string parameter crcSign represents the mark sign from the language file.
+	 * It could contain a different quantity of the character #.
+	 * Only marked instruction are added to the return byte array result.
+	 * 
 	 * @param instructionValue
 	 * @param crcSign
-	 * @return
+	 * @return byte array with content for calculation
 	 */
 	private static byte[] filterModelForChecksum(EList<Instruction> instructionValue, String crcSign) {
 
@@ -146,13 +158,16 @@ public class ChecksumToByteArray {
 	}
 
 	/**
-	 * 
+	 * This method calculates the 16 bit checksum of a byte array.
 	 * https://stackoverflow.com/questions/4113890/how-to-calculate-the-internet-checksum-from-a-byte-in-java
+	 * The boolean parameter defines the endianness order of the return byte array.
+	 * [true == little endian],
+	 * [false == big endian]
 	 * 
 	 * @param buf
 	 * @param length
 	 * @param isLittleEndian
-	 * @return
+	 * @return byte array with calculated 16 bit checksum in an endianess order
 	 */
 	private static byte[] checksum16(byte[] buf, int length, boolean isLittleEndian) {
 
@@ -182,9 +197,15 @@ public class ChecksumToByteArray {
 	}
 	
 	/**
+	 * This method calculates the 32 bit checksum of a byte array.
+	 * The calculation is done by the java class CRC32.
+	 * The boolean parameter defines the endianness order of the return byte array.
+	 * [true == little endian],
+	 * [false == big endian]
+	 * 
 	 * @param buf
 	 * @param isLittleEndian
-	 * @return
+	 * @return byte array with calculated 32 bit checksum in an endianess order
 	 */
 	private static byte[] checksum32(byte[] buf, boolean isLittleEndian) {
 
@@ -202,9 +223,11 @@ public class ChecksumToByteArray {
 	}
 
 	/**
+	 *  Helper method for merging two byte arrays into one byte array
+	 * 
 	 * @param kilo
 	 * @param lima
-	 * @return
+	 * @return the merged byte[] of both parameters
 	 */
 	private static byte[] appendByteArray(byte[] kilo, byte[] lima) {
 		byte[] mike = new byte[kilo.length + lima.length];
