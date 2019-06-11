@@ -149,5 +149,5 @@ Further this are the supported instructions in a2b.
 
 ## License
 
-This project is licensed under the BSD License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the BSD License - see the [LICENSE](LICENSE) file for details.
 
